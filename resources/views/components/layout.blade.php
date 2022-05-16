@@ -36,6 +36,7 @@
             </div>
         @else
             <div>
+                <a href="/">Accueil</a>
                 <a href="/login">Login Page</a>
                 <a href="/register">Register page</a>
             </div>
