@@ -28,7 +28,7 @@
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
         @auth
             <div>
-                <a href="/profil">Profil page</a>
+                <a href="/profile">Profile page</a>
                 <form method="POST" action="/logout">
                     @csrf
                     <input type="submit" value="Log Out">
