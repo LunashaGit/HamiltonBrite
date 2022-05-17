@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index'])->name('Posts');
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
+Route::get('posts/', [PostController::class, 'redirect']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');

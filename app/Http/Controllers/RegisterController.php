@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\EmailVerification;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -25,7 +27,12 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        return redirect('/')->with('success', 'Your account has been created.');;
+
+        Mail::to($attributes['email'])
+            ->cc($attributes['email'])
+            ->bcc($attributes['email'])
+            ->send(new EmailVerification());
+        return redirect('/')->with('success', 'Your account has been created.');
     }
 
 }
