@@ -1,11 +1,9 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
-use App\Models\Post;
-use App\Models\Category;
-use App\Models\User;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Route;
 
@@ -31,5 +29,7 @@ Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
+Route::get('event', [EventController::class, 'create'])->middleware('auth');
+Route::post('event', [EventController::class, 'store'])->middleware('auth');
 /*Route::get('categories/{category:slug}', [PostController::class, 'getPostsByCategories'])->name('category');
 Route::get('authors/{author:username}', [PostController::class, 'getPostsByAuthor']);*/
