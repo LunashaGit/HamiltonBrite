@@ -25,8 +25,8 @@ class PostController extends Controller
 
     public function getPostsByCategories(Category $category)
     {
-        return view('posts', [
-            'posts' => $category->posts,
+            return view('posts', [
+                'posts' => $category->posts,
             'currentCategory' => $category,
             'categories' => Category::all()
         ]);
