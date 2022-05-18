@@ -14,10 +14,10 @@
         }
     </style>
 </head>
-<body class="antialiased text-white">
+<body class="antialiased text-black">
 
-<div class="flex items-top min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 ">
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+<div class="flex min-h-screen bg-gray-100 dark:bg-blue-500 sm:items-center py-4 ">
+    <div class="mx-auto sm:px-6 lg:px-8">
         @auth
             <div>
                 <a href="/">Accueil</a>
@@ -35,7 +35,7 @@
                 <a href="/register">Register page</a>
             </div>
         @endauth
-        <div class="mt-8 bg-white dark:bg-gray-700 overflow-hidden shadow sm:rounded-lg text-center place-content-center">
+        <div class="mt-8 overflow-hidden text-center place-content-center grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             {{$content}}
         </div>
     </div>
