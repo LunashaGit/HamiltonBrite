@@ -1,10 +1,9 @@
-
-
 <x-layout>
     <x-slot name="title">
         Login Page
     </x-slot>
     <x-slot name="content">
+        <section class="h-full w-full bg-green-700">
         <div>
             <h1>Login Page</h1>
             <form method="POST" action="/login">
@@ -31,5 +30,6 @@
                 </ul>
             @endif
         </div>
+        </section>
     </x-slot>
 </x-layout>
