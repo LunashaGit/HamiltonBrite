@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
+use Database\Factories\CommentaryPostFactory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
         Post::truncate();*/
 
         Post::factory(5)->create();
+
         /*$user = User::factory()->create();
 
         $personal = Category::create([
