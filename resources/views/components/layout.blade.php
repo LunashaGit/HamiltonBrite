@@ -35,9 +35,7 @@
                 <a href="/register">Register page</a>
             </div>
         @endauth
-
-        <div class="mt-8 bg-white dark:bg-gray-700 overflow-hidden shadow sm:rounded-lg flex flex-col text-center place-content-center">
-
+        <div class="mt-8 bg-white dark:bg-gray-700 overflow-hidden shadow sm:rounded-lg text-center place-content-center">
             {{$content}}
         </div>
     </div>
