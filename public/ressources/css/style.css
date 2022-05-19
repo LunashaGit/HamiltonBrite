@@ -2,28 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-h2{
-    color: white;
-    font-weight: 500;
-}
-p{
-    color: white;
-    text-align: justify;
-    margin: 2rem;
-}
-.post{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.pagination li{
-    display: inline;
-    margin: 0 1rem;
-}
-.pagination li a{
-    color: white;
-}
-.pagination li span{
-    color: grey;
-}

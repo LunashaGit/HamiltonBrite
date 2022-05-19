@@ -7,9 +7,11 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "tw" : "npx tailwindcss -i ./public/ressources/css/style.css -o ./public/ressources/css/tailwind.css --watch"
     },
     "devDependencies": {
+        "@tailwindcss/line-clamp": "^0.4.0",
         "autoprefixer": "^10.4.7",
         "axios": "^0.25",
         "laravel-mix": "^6.0.6",
