@@ -15,6 +15,20 @@
             <p>{{ $comment->created_at }}</p>
             <p>{{ $comment->comment }}</p>
         @endforeach
+        <form method="POST" action="/posts/{{ $post->slug }}">
+            @csrf
+            <div>
+                <input autocomplete="off" type="text" name="comment" id="comment" placeholder="comment  " value="{{ old('name') }}" required>
+            </div>
+            <input autocomplete="off" type="submit" value="send">
+        </form>
+        @if($errors->any())
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        @endif
         <a href="/">Go Back</a>
     </x-slot>
 </x-layout>

@@ -28,7 +28,6 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-
         Mail::to($attributes['email'])
             ->cc($attributes['email'])
             ->bcc($attributes['email'])

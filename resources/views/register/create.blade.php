@@ -11,7 +11,6 @@
                     @csrf
                     <div>
                         <input autocomplete="off" type="text" name="name" id="name" placeholder="name" value="{{ old('name') }}" required>
-
                     </div>
                     <div>
                         <input autocomplete="off" type="text" name="username" id="username" placeholder="Username" required>
