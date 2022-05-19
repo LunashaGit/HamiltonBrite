@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ParticipationPost', function (Blueprint $table) {
+        Schema::create('participation_posts', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('post_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('post_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ParticipationPost');
+        Schema::dropIfExists('participation_posts');
     }
 };

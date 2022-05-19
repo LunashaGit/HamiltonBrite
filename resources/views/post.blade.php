@@ -10,6 +10,11 @@
         </p>
         <h6>{{$post->date}}</h6>
         <p>{{$post->body}}</p>
+        @foreach($post->comments as $comment)
+            <p>{{ $comment->author->username }}</p>
+            <p>{{ $comment->created_at }}</p>
+            <p>{{ $comment->comment }}</p>
+        @endforeach
         <a href="/">Go Back</a>
     </x-slot>
 </x-layout>

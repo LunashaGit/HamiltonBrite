@@ -13,12 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('CommentaryPost', function (Blueprint $table) {
+        Schema::create('commentary_posts', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('post_id');
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('post_id')->constrained()->cascadeOnDelete();
             $table->text('comment');
             $table->timestamps();
+
+
         });
     }
 
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('CommentaryPost');
+        Schema::dropIfExists('commentary_posts');
     }
 };

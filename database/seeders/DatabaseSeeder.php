@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\CommentaryPost;
+use App\Models\ParticipationPost;
 use App\Models\Post;
 use App\Models\User;
 use Database\Factories\CommentaryPostFactory;
@@ -28,6 +30,9 @@ class DatabaseSeeder extends Seeder
         Post::truncate();*/
 
         Post::factory(5)->create();
+        CommentaryPost::factory(5)->create();
+        ParticipationPost::factory(5)->create();
+
 
         /*$user = User::factory()->create();
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\CommentaryPost;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -16,10 +17,11 @@ class PostController extends Controller
         ]);
     }
 
-    public function show(Post $post)
+    public function show(Post $post, CommentaryPost $commentaryPost)
     {
         return view('post', [
-            'post' => $post
+            'post' => $post,
+            'commentaryPost' => $commentaryPost
         ]);
     }
 
