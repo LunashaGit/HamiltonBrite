@@ -35,24 +35,37 @@
          </span>
     </div>
     <ul class="burger-links md:flex md:items-center z-[500] md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+        @auth()
+            <li class="mx-4 my-6 md:my-0">
+                <a href="/" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="/event" class="text-xl hover:text-cyan-500 duration-500">EVENT</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="#" class="text-xl hover:text-cyan-500 duration-500">ABOUT</a>
+            </li>
+            <li class="mx-4 my-6 md:my-0">
+                <a href="/profile" class="text-xl hover:text-cyan-500 duration-500">PROFILE</a>
+            </li>
+            <form method="POST" action="/logout">
+                @csrf
+                <input type="submit" value="Log Out">
+            </form>
+        @else
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-cyan-500 duration-500">NEW EVENT</a>
+            <a href="/" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
             <a href="#" class="text-xl hover:text-cyan-500 duration-500">ABOUT</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-cyan-500 duration-500">PROFILE</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-cyan-500 duration-500">LOGIN</a>
+            <a href="/login" class="text-xl hover:text-cyan-500 duration-500">LOGIN</a>
         </li>
         <button class="bg-cyan-400 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded">
-            REGISTER
+            <a href="/register">REGISTER</a>
         </button>
+        @endauth
     </ul>
 </nav>
 <div class="flex justify-center min-h-screen bg-white dark:bg-gray-700 sm:items-center py-4 ">
