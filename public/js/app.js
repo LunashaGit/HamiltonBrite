@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	// The require scope
 /******/ 	var __webpack_require__ = {};
-/******/ 	
+/******/
 /************************************************************************/
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
@@ -13,10 +13,10 @@
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
 /******/ 	})();
-/******/ 	
+/******/
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
+// This entry need to be wrapped in an IIFE because it needs to be isolated against other entry modules.
 (() => {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -24,7 +24,7 @@ var __webpack_exports__ = {};
 
 })();
 
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+// This entry need to be wrapped in an IIFE because it needs to be in strict mode.
 (() => {
 "use strict";
 /*!******************************!*\
@@ -32,8 +32,8 @@ var __webpack_exports__ = {};
   \******************************/
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
-
 })();
 
 /******/ })()
 ;
+require('../ressources/js/nav');
