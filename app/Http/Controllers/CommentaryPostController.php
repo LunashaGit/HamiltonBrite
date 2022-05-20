@@ -22,6 +22,13 @@ class CommentaryPostController extends Controller
             ->bcc(request()->user()->email)
             ->send(new EmailVerification());
 
-        return redirect('/')->with('success', 'Your commentary has been created.');
+        return back();
+    }
+
+    public function destroy($id)
+    {
+        $post = CommentaryPost::where('id', $id)->first();
+        $post->delete();
+        return back();
     }
 }

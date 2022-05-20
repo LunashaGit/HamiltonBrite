@@ -14,7 +14,15 @@
             <p>{{ $comment->author->username }}</p>
             <p>{{ $comment->created_at }}</p>
             <p>{{ $comment->comment }}</p>
+            @if($comment->author->id == auth()->id())
+                <form method="POST" action="/comments/{{$comment->id}}">
+                    @csrf
+                    @method('DELETE')
+                    <input autocomplete="off" type="submit" value="Delete">
+                </form>
+            @endif
         @endforeach
+        @auth()
         <form method="POST" action="/posts/{{ $post->slug }}">
             @csrf
             <div>
@@ -22,6 +30,7 @@
             </div>
             <input autocomplete="off" type="submit" value="send">
         </form>
+        @endauth
         @if($errors->any())
             <ul>
                 @foreach($errors->all() as $error)

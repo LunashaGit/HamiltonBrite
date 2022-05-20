@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PostController::class, 'index'])->name('Posts');
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::post('posts/{post:slug}', [CommentaryPostController::class, 'store']);
+Route::delete('comments/{id}', [CommentaryPostController::class, 'destroy']);
 Route::get('posts/', [PostController::class, 'redirect']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
