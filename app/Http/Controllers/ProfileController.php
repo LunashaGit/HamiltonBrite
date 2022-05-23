@@ -14,4 +14,14 @@ class ProfileController extends Controller
             'profile' => $attributes
         ]);
     }
+
+    public function destroy($id)
+    {
+        $user = User::where('id', $id)->first();
+        $user->delete();
+
+        auth()->logout();
+
+        return redirect('/')->with('success', 'Account deleted...');
+    }
 }

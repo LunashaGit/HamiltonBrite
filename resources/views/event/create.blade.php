@@ -17,6 +17,7 @@
                 <input autocomplete="off" type="text" name="title" id="title" placeholder="Title of post" required>
                 <input autocomplete="off" type="text" name="excerpt" id="excerpt" placeholder="excerpt" required>
                 <input autocomplete="off" type="text" name="body" id="body" placeholder="body" required>
+                <input type="date" id="date" name="date" min="2022-01-01" required>
                 <input autocomplete="off" type="submit" value="Create Post">
             </form>
             @if($errors->any())
