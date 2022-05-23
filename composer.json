@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "creativeorange/gravatar": "~1.0",
+        "forxer/laravel-gravatar": "^1.8",
         "guzzlehttp/guzzle": "^7.2",
         "itsgoingd/clockwork": "*",
         "laravel/framework": "^9.11",
