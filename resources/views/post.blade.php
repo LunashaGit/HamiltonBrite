@@ -10,6 +10,23 @@
         </p>
         <h6>{{$post->date}}</h6>
         <p>{{$post->body}}</p>
+        @auth()
+            @if($post->participation->where('user_id', request()->user()->id) == "[]")
+                <form method="POST" action="/posts/{{ $post->slug }}/participation/">
+                    @csrf
+                    <input autocomplete="off" type="submit" value="Participate">
+                </form>
+            @else
+                <p>Already Participate</p>
+            @endif
+            <form method="POST" action="/posts/{{ $post->slug }}">
+                @csrf
+                <div>
+                    <input autocomplete="off" type="text" name="comment" id="comment" placeholder="comment  " value="{{ old('name') }}" required>
+                </div>
+                <input autocomplete="off" type="submit" value="send">
+            </form>
+        @endauth
         @foreach($post->comments as $comment)
             <p>{{ $comment->author->username }}</p>
             <p>{{ $comment->created_at }}</p>
@@ -22,15 +39,6 @@
                 </form>
             @endif
         @endforeach
-        @auth()
-        <form method="POST" action="/posts/{{ $post->slug }}">
-            @csrf
-            <div>
-                <input autocomplete="off" type="text" name="comment" id="comment" placeholder="comment  " value="{{ old('name') }}" required>
-            </div>
-            <input autocomplete="off" type="submit" value="send">
-        </form>
-        @endauth
         @if($errors->any())
             <ul>
                 @foreach($errors->all() as $error)

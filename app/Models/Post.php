@@ -9,9 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id', 'user_id', 'date'];
+    protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id', 'user_id', 'date', 'post_id'];
 
-    protected $with = ['category', 'author'];
+    protected $with = ['category', 'author', 'participation'];
 
     public function scopeFilter($query, $filters)
     {
@@ -34,6 +34,11 @@ class Post extends Model
     public function comments()
     {
         return $this->hasMany(CommentaryPost::class);
+    }
+
+    public function participation()
+    {
+        return $this->hasMany(ParticipationPost::class);
     }
 
     public function category()

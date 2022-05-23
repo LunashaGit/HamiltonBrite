@@ -14,7 +14,6 @@
                     </div>
                     <div>
                         <input autocomplete="off" type="text" name="username" id="username" placeholder="Username" required>
-
                     </div>
                     <div>
                         <input autocomplete="off" type="email" name="email" id="email" placeholder="email" required>

@@ -17,11 +17,6 @@ class CommentaryPostController extends Controller
             'comment' => request('comment')
         ]);
 
-        Mail::to(request()->user()->email)
-            ->cc(request()->user()->email)
-            ->bcc(request()->user()->email)
-            ->send(new EmailVerification());
-
         return back();
     }
 

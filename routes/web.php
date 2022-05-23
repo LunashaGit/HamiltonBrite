@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommentaryPostController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ParticipationPostController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
@@ -24,6 +25,7 @@ Route::get('/', [PostController::class, 'index'])->name('Posts');
 Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::post('posts/{post:slug}', [CommentaryPostController::class, 'store']);
 Route::delete('comments/{id}', [CommentaryPostController::class, 'destroy']);
+Route::post('posts/{post:slug}/participation', [ParticipationPostController::class, 'store']);
 Route::get('posts/', [PostController::class, 'redirect']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
