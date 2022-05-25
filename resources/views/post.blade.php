@@ -63,13 +63,13 @@
         <a href="/">Go Back</a>
         <div id="map"></div>
         <script>
-            var map = L.map('map').setView([51.505, -0.09], 15);
+            var map = L.map('map').setView([<?= json_encode($post->latitude); ?>, <?= json_encode($post->longitude); ?>], 4);
 
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(map);
 
-            L.marker([51.5, -0.09]).addTo(map)
+            L.marker([<?= json_encode($post->latitude); ?>, <?= json_encode($post->longitude); ?>]).addTo(map)
                 .bindPopup('<?= json_encode($post->title); ?>')
                 .openPopup();
         </script>

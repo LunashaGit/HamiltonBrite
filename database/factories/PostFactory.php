@@ -25,7 +25,9 @@ class PostFactory extends Factory
             'slug' => $this->faker->slug,
             'date' => $this->faker->dateTimeBetween('-8 week', '+80 week'),
             'excerpt' => $this->faker->sentence,
-            'body' => $this->faker->paragraph
+            'body' => $this->faker->paragraph,
+            'latitude' => $this->faker->latitude,
+            'longitude' => $this->faker->longitude
         ];
     }
 }

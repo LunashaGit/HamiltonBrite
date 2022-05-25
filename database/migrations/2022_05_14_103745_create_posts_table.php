@@ -22,6 +22,8 @@ return new class extends Migration
             $table->text('excerpt');
             $table->text('body');
             $table->dateTime('date');
+            $table->float('latitude');
+            $table->float('longitude');
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
         });
