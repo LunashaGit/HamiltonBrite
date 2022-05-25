@@ -1,1 +1,1 @@
-require('/resources/js/app')
+require('/ressources/js/app')

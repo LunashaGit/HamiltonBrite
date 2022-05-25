@@ -22,7 +22,7 @@ class SessionsController extends Controller
         if(auth()->attempt($attributes)){
             session()->regenerate();
             session(['email' => $attributes['email']]);
-            return redirect('/')->with('success', 'Welcome Back!');
+            return redirect('/')->with('success', 'Welcome Back' );
         }
 
         throw ValidationException::withMessages([

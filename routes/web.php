@@ -33,10 +33,10 @@ Route::post('register', [RegisterController::class, 'store'])->middleware('guest
 Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
+
+
 Route::get('profile', [ProfileController::class, 'show'])->middleware('auth');
-
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
-
 Route::get('event', [EventController::class, 'create'])->middleware('auth');
 Route::post('event', [EventController::class, 'store'])->middleware('auth');
 /*Route::get('categories/{category:slug}', [PostController::class, 'getPostsByCategories'])->name('category');

@@ -8,7 +8,7 @@
         "hot": "mix watch --hot",
         "prod": "npm run production",
         "production": "mix --production",
-        "tw" : "npx tailwindcss -i ./public/ressources/css/style.css -o ./public/ressources/css/tailwind.css --watch"
+        "tw": "npx tailwindcss -i ./public/ressources/css/style.css -o ./public/ressources/css/tailwind.css --watch"
     },
     "devDependencies": {
         "@tailwindcss/line-clamp": "^0.4.0",
@@ -16,7 +16,7 @@
         "axios": "^0.25",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^8.4.13",
+        "postcss": "^8.4.14",
         "tailwindcss": "^3.0.24"
     },
     "dependencies": {
