@@ -4,6 +4,9 @@
         {{$post->title}}
     </x-slot>
     <x-slot name="content">
+        <style>
+            #map { height: 20rem; width: 20rem; }
+        </style>
         <h2>{{$post->title}} </h2>
         <p>
             By <a href="/?author={{$post->author->username}}">{{$post->author->username}}</a> in <a href="/?category={{$post->category->slug}}">{{ $post->category->name }}</a>
@@ -58,6 +61,19 @@
             </ul>
         @endif
         <a href="/">Go Back</a>
+        <div id="map"></div>
+        <script>
+            var map = L.map('map').setView([51.505, -0.09], 15);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+
+            L.marker([51.5, -0.09]).addTo(map)
+                .bindPopup('<?= json_encode($post->title); ?>')
+                .openPopup();
+        </script>
     </x-slot>
+
 </x-layout>
 
