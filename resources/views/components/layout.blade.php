@@ -7,7 +7,7 @@
             {{$title}}
         @else
             Error404
-        @endif</title>
+            @endif</title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="/ressources/css/tailwind.css" rel="stylesheet">
@@ -20,15 +20,15 @@
 <body class="antialiased text-white dark:text-black ">
 
 <nav class="p-5 bg-white shadow md:flex md:items-center md:justify-between">
-    <div class="flex justify-between items-center ">
+    <div class="flex items-center justify-between ">
       <span class="text-2xl font-[Poppins] cursor-pointer">
-        <img class="h-10 inline"
+        <img class="inline h-10"
              src="https://tailwindcss.com/_next/static/media/social-square.b622e290e82093c36cca57092ffe494f.jpg">
-        tailwind
+    hamilton brite
       </span>
 
-         <span class="text-3xl cursor-pointer mx-2 md:hidden block">
-                <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu" fill="none"
+         <span class="block mx-2 text-3xl cursor-pointer md:hidden">
+                <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 menu" fill="none"
                      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -37,34 +37,35 @@
     <ul class="burger-links md:flex md:items-center z-[500] md:static absolute bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
         @auth()
             <li class="mx-4 my-6 md:my-0">
-                <a href="/" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
+                <a href="/" class="text-xl duration-500 hover:text-cyan-500">HOME</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="/event" class="text-xl hover:text-cyan-500 duration-500">EVENT</a>
+                <a href="/event" class="text-xl duration-500 hover:text-cyan-500">EVENTS</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-xl hover:text-cyan-500 duration-500">ABOUT</a>
+                <a href="/event" class="text-xl duration-500 hover:text-cyan-500">CREATE</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="/profile" class="text-xl hover:text-cyan-500 duration-500">PROFILE</a>
+                <a href="/profile" class="text-xl duration-500 hover:text-cyan-500">PROFILE</a>
             </li>
             @if(request()->user()->is_admin == 1)
                 <a href="{{route('admin.view')}}">Admin View</a>
             @endif
-            <form method="POST" action="/logout">
+            <form class="mx-4 my-6 md:my-0" method="POST" action="/logout">
                 @csrf
-                <input type="submit" value="Log Out">
+                <input class="text-xl duration-500 hover:text-cyan-500" type="submit" value="LOG OUT">
             </form>
 
         @else
+
         <li class="mx-4 my-6 md:my-0">
-            <a href="/" class="text-xl hover:text-cyan-500 duration-500">HOME</a>
+            <a href="/" class="text-xl duration-500 hover:text-cyan-500">HOME</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-            <a href="#" class="text-xl hover:text-cyan-500 duration-500">ABOUT</a>
+            <a href="/event" class="text-xl duration-500 hover:text-cyan-500">CREATE</a>
         </li>
         <li class="mx-4 my-6 md:my-0">
-            <a href="/login" class="text-xl hover:text-cyan-500 duration-500">LOGIN</a>
+            <a href="/login" class="text-xl duration-500 hover:text-cyan-500">LOGIN</a>
         </li>
         <button class="bg-cyan-400 text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-cyan-500 rounded">
             <a href="/register">REGISTER</a>
@@ -72,8 +73,8 @@
         @endauth
     </ul>
 </nav>
-<div class="flex justify-center min-h-screen bg-white dark:bg-gray-700 sm:items-center py-4 ">
-    <div class="mt-8 overflow-hidden text-center place-content-center">
+<div class="min-h-screen bg-gray-700 rounded-lg sm:items-center ">
+    <div class="overflow-hidden text-center place-content-center">
         {{$content}}
     </div>
 </div>

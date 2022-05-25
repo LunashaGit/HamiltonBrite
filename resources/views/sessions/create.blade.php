@@ -3,18 +3,18 @@
         Login Page
     </x-slot>
     <x-slot name="content">
-        <section class="h-full w-full bg-green-700">
+        <section class="p-4 m4">
         <div>
             <h1>Login Page</h1>
-            <form method="POST" action="/login">
+            <form class="p-4 m-4" method="POST" action="/login">
                 @csrf
-                <div>
+                <div class="p-4 m-4">
                     <input autocomplete="off" type="email" name="email" id="email" placeholder="email" required>
                     @error('email')
                     <p>{{$message}}</p>
                     @enderror
                 </div>
-                <div>
+                <div class="p-4 m-4">
                     <input autocomplete="off" type="password" name="password" id="password" placeholder="password" required>
                     @error('password')
                     <p>{{$message}}</p>

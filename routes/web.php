@@ -40,7 +40,6 @@ Route::put('profile/update/{id}', [ProfileController::class, 'change'])->middlew
 Route::delete('profile/delete/{id}', [ProfileController::class, 'destroy'])->middleware('auth');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
-
 Route::get('event', [EventController::class, 'create'])->middleware('auth');
 Route::post('event', [EventController::class, 'store'])->middleware('auth');
 
