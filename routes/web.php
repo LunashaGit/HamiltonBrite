@@ -41,6 +41,7 @@ Route::delete('profile/delete/{id}', [ProfileController::class, 'destroy'])->mid
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 Route::get('event', [EventController::class, 'create'])->middleware('auth');
+Route::get('event', [EventController::class, 'redirection'])->middleware('guest');
 Route::post('event', [EventController::class, 'store'])->middleware('auth');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {

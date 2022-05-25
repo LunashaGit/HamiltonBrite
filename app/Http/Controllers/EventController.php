@@ -41,4 +41,9 @@ class EventController extends Controller
 
         return redirect('/')->with('success', 'Your Event has been created.');
     }
+
+    public function redirection()
+    {
+        return redirect('/login')->with('error', 'You need to login !');
+    }
 }
