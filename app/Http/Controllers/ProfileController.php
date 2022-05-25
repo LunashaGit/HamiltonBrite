@@ -24,4 +24,28 @@ class ProfileController extends Controller
 
         return redirect('/')->with('success', 'Account deleted...');
     }
+
+    public function redirect()
+    {
+        return redirect('/');
+    }
+
+    public function change(Request $request, $id)
+    {
+        $user = User::where('id', $id)->first();
+        $user->username = $request->username;
+        $user->name = $request->name;
+        $user->email = $request->email;
+
+        if($request->password != $request->passwordconfirm){
+            return "No";
+        }
+
+        $user->password = $request->password;
+
+        bcrypt($user->password);
+        $user->save();
+
+        return $this->redirect('/');
+    }
 }

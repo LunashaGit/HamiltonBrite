@@ -10,6 +10,7 @@
         "forxer/laravel-gravatar": "^1.8",
         "guzzlehttp/guzzle": "^7.2",
         "itsgoingd/clockwork": "*",
+        "kolirt/laravel-openstreetmap": "^1.0",
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",

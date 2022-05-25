@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
+
+
     public function index()
     {
         return view('posts', [
@@ -46,4 +48,21 @@ class PostController extends Controller
     {
         return redirect('/');
     }
+
+    public function change(Request $request, $id)
+    {
+        $post = Post::where('id', $id)->first();
+        $post->title = $request->title;
+        $post->excerpt = $request->excerpt;
+        $post->body = $request->body;
+        $post->date = $request->date;
+        $post->slug = $post->title;
+        $post->slug = str_replace(" ", "-", $post->slug);
+        $post->save();
+
+        return $this->redirect('/');
+    }
+
+
+
 }

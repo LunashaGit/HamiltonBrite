@@ -11,6 +11,7 @@ class ParticipationPostController extends Controller
 {
     public function store(Post $post)
     {
+
         $post->participation()->create([
             'user_id' => request()->user()->id,
         ]);

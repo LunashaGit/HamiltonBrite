@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CommentaryPostController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ParticipationPostController;
@@ -26,6 +27,7 @@ Route::get('posts/{post:slug}', [PostController::class, 'show']);
 Route::post('posts/{post:slug}', [CommentaryPostController::class, 'store']);
 Route::delete('comments/{id}', [CommentaryPostController::class, 'destroy']);
 Route::post('posts/{post:slug}/participation', [ParticipationPostController::class, 'store']);
+Route::put('posts/{id}/update', [PostController::class, 'change']);
 Route::get('posts/', [PostController::class, 'redirect']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
@@ -34,11 +36,16 @@ Route::get('login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('login', [SessionsController::class, 'store'])->middleware('guest');
 
 Route::get('profile', [ProfileController::class, 'show'])->middleware('auth');
+Route::put('profile/update/{id}', [ProfileController::class, 'change'])->middleware('auth');
 Route::delete('profile/delete/{id}', [ProfileController::class, 'destroy'])->middleware('auth');
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
 Route::get('event', [EventController::class, 'create'])->middleware('auth');
 Route::post('event', [EventController::class, 'store'])->middleware('auth');
+
+Route::group(['middleware' => ['auth', 'admin']], function () {
+    Route::get('admin-view', [AdminController::class, 'adminView'])->name('admin.view');
+});
 /*Route::get('categories/{category:slug}', [PostController::class, 'getPostsByCategories'])->name('category');
 Route::get('authors/{author:username}', [PostController::class, 'getPostsByAuthor']);*/

@@ -48,10 +48,14 @@
             <li class="mx-4 my-6 md:my-0">
                 <a href="/profile" class="text-xl hover:text-cyan-500 duration-500">PROFILE</a>
             </li>
+            @if(request()->user()->is_admin == 1)
+                <a href="{{route('admin.view')}}">Admin View</a>
+            @endif
             <form method="POST" action="/logout">
                 @csrf
                 <input type="submit" value="Log Out">
             </form>
+
         @else
         <li class="mx-4 my-6 md:my-0">
             <a href="/" class="text-xl hover:text-cyan-500 duration-500">HOME</a>

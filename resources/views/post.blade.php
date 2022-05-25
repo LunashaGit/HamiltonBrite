@@ -6,7 +6,7 @@
     <x-slot name="content">
         <h2>{{$post->title}} </h2>
         <p>
-            By <a href="/?author={{$post->author->username}}">{{$post->author->username}}</a><a href="/?category={{$post->category->slug}}">{{ $post->category->name }}</a>
+            By <a href="/?author={{$post->author->username}}">{{$post->author->username}}</a> in <a href="/?category={{$post->category->slug}}">{{ $post->category->name }}</a>
         </p>
         <h6>{{$post->date}}</h6>
         <p>{{$post->body}}</p>
@@ -19,6 +19,17 @@
             @else
                 <p>Already Participate</p>
             @endif
+                @if(request()->user()->username == $post->author->username && request()->user()->id == $post->author->id)
+                    <form method="POST" action="/posts/{{ $post->id }}/update ">
+                        @method('put')
+                        @csrf
+                        <input autocomplete="off" type="text" name="title" id="title" placeholder="Title of post" value="{{$post->title}}" required>
+                        <input autocomplete="off" type="text" name="excerpt" id="excerpt" placeholder="excerpt" value="{{$post->excerpt}}" required>
+                        <input autocomplete="off" type="text" name="body" id="body" placeholder="body" value="{{$post->body}}" required>
+                        <input type="date" id="date" name="date" min="2022-01-01" value="{{$post->date}}" required>
+                        <input type="submit" value="send">
+                    </form>
+                @endif
             <form method="POST" action="/posts/{{ $post->slug }}">
                 @csrf
                 <div>
