@@ -3,29 +3,33 @@
         Login Page
     </x-slot>
     <x-slot name="content">
-        <section class="mx-auto my-12 flex justify-center">
-            <div class="card md:mx-2 lg:mx-6 sm:flex bg-black text-white ">
+        <section class="mx-auto my-12 flex justify-center  ">
+            <div class="card mx-4 md:mx-6 lg:mx-8 md:flex bg-black text-white rounded-t-xl md:rounded-t-none md:rounded-l ">
                 <div
-                    class="sm:h-64 md:h-[20em] lg:h-[24em] lg:w-auto flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
+                    class="sm:h-64 md:h-[18em] lg:h-[22em] lg:w-auto flex-none bg-cover text-center overflow-hidden">
                     <img class="object-cover h-full w-auto" src="/assets/bridge.jpg" alt="a picture of a bridge">
                 </div>
                 <div class="p-4 flex justify-between">
                     <form class="w-full mx-auto flex justify-center flex-col" method="POST" action="/login">
                         @csrf
 
-                        <div class="flex flex-col justify-center py-4 items-center">
-                            <h1 class=" ">Login</h1>
+                        <div class="flex flex-col justify-left py-4 items-start">
+                            <h1 class="mx-auto ">Login</h1>
 
-                            <input class="w-64 my-2 px-4 rounded-md" autocomplete="off" type="email" name="email" id="email" placeholder="email" required>
+                            <label class="pb-2 pt-4">E-mail :</label>
+
+                            <input class="w-64  px-4 rounded-md" autocomplete="off" type="email" name="email" id="email" placeholder="email" required>
                             @error('email')
                                 <p>{{ $message }}</p>
                             @enderror
-                            <input class="w-64 my-2 px-4 rounded-md" autocomplete="off" type="password" name="password" id="password"
+                            <label class="pb-2 pt-4">Password :</label>
+
+                            <input class="w-64 px-4 rounded-md" autocomplete="off" type="password" name="password" id="password"
                                 placeholder="password" required>
                             @error('password')
                                 <p>{{ $message }}</p>
                             @enderror
-                            <input class="my-2 px-4 cursor-pointer hover:transition hover:duration-200 hover:text-green-700" autocomplete="off" type="submit" value="Go">
+                            <input class="my-4 px-4 cursor-pointer hover:transition hover:duration-200 hover:text-green-700" autocomplete="off" type="submit" value="Go">
                         </div>
                     </form>
                 </div>
