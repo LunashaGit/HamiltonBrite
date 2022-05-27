@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.top{
+    height:60vh;
+    background-image: url("../../assets/concert.jpg");
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+    margin-bottom:5vh; 
+}
+.top::before {
+    opacity: 0.3;
+  }
+.top {
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+  
+.profile{
+    background-image:url(../../assets/street.jpg);
+    filter:opacity(0.8);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card{
+
+    background-color: hsl(0 0% 100% / 0.9);
+    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
+    backdrop-filter: blur(14px);
+    background-color: rgba(255, 255, 255, 0.2);
+
+    
+}

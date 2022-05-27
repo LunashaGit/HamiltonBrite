@@ -5,7 +5,11 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            backgroundImage: {
+                'concert': "url('/assets/concert.jpg')",
+              }
+        },
     },
     plugins: [
         require('@tailwindcss/line-clamp'),
