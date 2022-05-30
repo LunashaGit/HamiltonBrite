@@ -1,10 +1,10 @@
 <x-layout>
     <x-slot name="title">
-        Create Event Page
+        Create Event
     </x-slot>
     <x-slot name="content">
         <div>
-            <h1>Create Event Page</h1>
+            <h1>Create Event</h1>
             <form method="POST" action="/event">
                 @csrf
                 <div>

@@ -8,7 +8,7 @@
 
             <div class="flex justify-center pb-2 pt-8 font-bold">
                 <div
-                    class=" card justify-center align-center text-left flex flex-col rounded-lg duration-100 ease-in-out hover:duration-500">
+                    class=" card px-8 md:px-24 justify-center align-center text-left flex flex-col rounded-lg duration-100 ease-in-out hover:duration-500">
                     <div class="flex justify-center">
                         <h1 class="justify-center py-4 text-3xl font-semibold ">
                             Your Profile
@@ -43,11 +43,14 @@
                             <label class="pb-2 pt-6">Password Confirmation :</label>
                             <input class="mx-2 px-2 rounded-md" type="password" name="passwordconfirm" id="passwordconfirm"
                                 value="">
-
+                                <label class="pb-2 pt-4">My bio :</label>
+                                <textarea placeholder="About me"class="mx-2 px-2 py-12 rounded-md resize-none box-border flex justify-start">
+                                </textarea>
+                                                               
                             {{-- <h6 class="py-2 max-w-[10ch]">Account created the {{ request()->user()->created_at }} </h6> // Problème de display on voit date + heures sans séparations ni rien// --}}
-                            <div class="py-2 my-2 mx-auto relative flex justify-around">
+                            <div class="py-2 my-2relative flex ">
                                 <div
-                                    class="absolute flex text-lg justify-around mx-auto ">
+                                    class="absolute flex text-lg">
                                     <a class="">
                                         <input class="font-black my-2 py-1 px-2 hover:transition hover:duration-200 hover:text-green-700 hover:cursor-pointer " type="submit" value="Update"></a>
                                 </div>

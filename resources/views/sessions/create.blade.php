@@ -3,14 +3,13 @@
         Login Page
     </x-slot>
     <x-slot name="content">
-        <section class="mx-auto my-12 flex justify-center  ">
-            <div class="card mx-4 md:mx-6 lg:mx-8 md:flex bg-black text-white rounded-t-xl md:rounded-t-none md:rounded-l ">
+        <section class="h-screen">
+            <div class="h-full text-white rounded-t-xl md:rounded-t-none md:rounded-l ">
                 <div
-                    class="sm:h-64 md:h-[18em] lg:h-[22em] lg:w-auto flex-none bg-cover text-center overflow-hidden">
-                    <img class="object-cover h-full w-auto" src="/assets/bridge.jpg" alt="a picture of a bridge">
+                    class="flex max-w-[50%] float-left bg-cover text-center overflow-hidden bg-bridge">
                 </div>
-                <div class="p-4 flex justify-between">
-                    <form class="w-full mx-auto flex justify-center flex-col" method="POST" action="/login">
+                <div class="flex justify-between mx-auto">
+                    <form class="flex flex-col" method="POST" action="/login">
                         @csrf
 
                         <div class="flex flex-col justify-left py-4 items-start">

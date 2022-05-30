@@ -21,7 +21,10 @@ return new class extends Migration
             $table->string('title');
             $table->text('excerpt');
             $table->text('body');
-            $table->dateTime('date');
+            $table->date('date_start');
+            $table->date('date_end');
+            $table->Time('start_hour');
+            $table->Time('end_hour');
             $table->float('latitude');
             $table->float('longitude');
             $table->timestamps();
