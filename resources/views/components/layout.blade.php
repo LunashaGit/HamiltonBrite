@@ -76,8 +76,8 @@
         @endauth
     </ul>
 </nav>
-<div class=" bg-whitesmoke text-black lg:text-xl font-nunito ">
-    <div class="overflow-hidden text-center place-content-center">
+<div class="min-h-screen bg-whitesmoke text-black lg:text-xl font-nunito ">
+    <div class="overflow-hidden text-center place-content-center min-h-screen">
         {{$content}}
     </div>
 </div>
