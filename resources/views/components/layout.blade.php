@@ -76,13 +76,13 @@
         @endauth
     </ul>
 </nav>
-<div class="min-h-screen bg-whitesmoke text-black lg:text-xl font-nunito ">
+<div class=" bg-whitesmoke text-black lg:text-xl font-nunito ">
     <div class="overflow-hidden text-center place-content-center">
         {{$content}}
     </div>
 </div>
 <script src="ressources/js/nav.js"></script>
-{{-- <script src="ressources/js/parallax.js"></script> --}}
+<script src="ressources/js/parallax.js"></script>
 
 </body>
 </html>

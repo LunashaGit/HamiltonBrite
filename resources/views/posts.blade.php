@@ -6,10 +6,9 @@
      <x-slot name="content">
 
          <section class="h-64 sm:h-80 md:h-[30rem]">
-             <div id="parallax" class="bg-concert mx-auto parallax bg-cover h-full  bg-center  ">
-                 <div class="bg-concert"></div>
+             <div id="parallax" class="parallax bg-concert mx-auto parallax bg-cover h-full  bg-center  ">
+                 <div class=""></div>
              </div>
-
          </section>
 
          <section class="main">
@@ -37,9 +36,9 @@
                  @endif
              @endauth
              @if ($posts->count())
-                 <div class="bg-silver-blue pb-32 mr-6 sm:mr-16 rounded-tr-lg rounded-br-lg flex flex-col">
+                 <div class="bg-lightblue pb-24 mr-6 sm:mr-12 rounded-tr-lg rounded-br-lg flex flex-col">
                      <div class="flex text-left pl-8 pt-4">
-                         <h2 class="text-4xl font-bold pl-2 md:pl-6 pt-8 pb-4 text-white ">Happening Soon</h2>
+                         <h2 class="text-4xl font-bold pl-2 md:pl-4 pt-8 pb-4 text-white ">Happening Soon</h2>
                      </div>
                      <div
                          class="text-white gap-4 sm:gap-8 md:gap-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-8 ">
@@ -60,11 +59,11 @@
                                          {{ $post->body }}
                                      </p>
                                      <div class="flex justify-between pb-4">
-                                         <div class=" pl-2 md:pl-6 text-sm md:text-md">
+                                         <div class=" pl-2 md:pl-4 text-sm md:text-md">
                                              <h6 class=" ">31/08/22</h6>
                                              <h6 class="">à 17h22</h6>
                                          </div>
-                                         <div class="pr-2 md:pr-6 text-sm md:text-md">
+                                         <div class="pr-2 md:pr-4 text-sm md:text-md">
                                              <h6 class="">Liège</h6>
                                              <h6 class="">Le carré</h6>
                                          </div>
@@ -80,8 +79,8 @@
              </div>
             </section>
     <section>            
-    <div class="bg-pourpre ml-6 sm:ml-16 rounded-tl-lg rounded-bl-lg mb-16 pb-8">
-                 <div class="text-left pr-8 mt-[-4em] pt-4  flex flex-col">
+    <div class="bg-silver-blue ml-6 sm:ml-16 rounded-tl-lg rounded-bl-lg mb-16 pb-8">
+                 <div class="text-left pr-8 mt-[-3em] pt-4  flex flex-col">
                      <h2 class="text-4xl font-bold pr-6 md:pr-12 text-white pt-8 pb-4 text-right ">Art</h2>
                  </div>
 
@@ -105,11 +104,11 @@
                                      {{ $post->body }}
                                  </p>
                                  <div class="flex justify-between pb-4">
-                                     <div class=" pl-2 md:pl-6 text-sm md:text-md">
+                                     <div class=" pl-2 md:pl-4 text-sm md:text-md">
                                          <h6 class=" ">31/08/22</h6>
                                          <h6 class="">à 17h22</h6>
                                      </div>
-                                     <div class="pr-2 md:pr-6 text-sm md:text-md">
+                                     <div class="pr-2 md:pr-4 text-sm md:text-md">
                                          <h6 class="">Liège</h6>
                                          <h6 class="">Le carré</h6>
                                      </div>
