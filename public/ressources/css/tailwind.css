@@ -574,6 +574,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1.5rem;
 }
 
+.mx-\[-1em\] {
+  margin-left: -1em;
+  margin-right: -1em;
+}
+
+.my-\[-1em\] {
+  margin-top: -1em;
+  margin-bottom: -1em;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -668,6 +678,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-32 {
   margin-bottom: 8rem;
+}
+
+.mb-\[-1em\] {
+  margin-bottom: -1em;
+}
+
+.mt-\[-1em\] {
+  margin-top: -1em;
 }
 
 .box-border {
@@ -820,6 +838,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-\[40\%\] {
   width: 40%;
+}
+
+.w-\[60\%\] {
+  width: 60%;
 }
 
 .max-w-6xl {
@@ -1224,6 +1246,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.625rem;
 }
 
+.py-\[-1em\] {
+  padding-top: -1em;
+  padding-bottom: -1em;
+}
+
 .pt-8 {
   padding-top: 2rem;
 }
@@ -1322,6 +1349,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-32 {
   padding-top: 8rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .text-left {
@@ -1999,6 +2030,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:w-\[80\%\] {
     width: 80%;
+  }
+
+  .md\:w-\[90\%\] {
+    width: 90%;
   }
 
   .md\:max-w-xl {
