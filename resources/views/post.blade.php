@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-
+                @auth()
                 @if (request()->user()->username == $post->author->username && request()->user()->id == $post->author->id)
                     <form method="POST" action="/posts/{{ $post->id }}/update ">
                         @method('put')
@@ -51,6 +51,7 @@
                         <input type="submit" value="send">
                     </form>
                 @endif
+                @endauth
                 <div class="bottom">
                     <div class="bottom__left flex float-left" id="map"></div>
                     <div class="bottom__right flex flex-col justify-between float-right">
