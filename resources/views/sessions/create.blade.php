@@ -56,7 +56,7 @@
                     <a href="#"
                         class=" bg-white rounded-lg md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                         <img class="object-cover h-full rounded-t-lg  md:rounded-none md:rounded-l-lg"
-                            src="/assets/street.jpg" alt="">
+                            src="/assets/london.jpg" alt="">
                 </div>
                 <form class="space-y-6 p-4 md:p-8" action="/login" method="POST">
                     @csrf

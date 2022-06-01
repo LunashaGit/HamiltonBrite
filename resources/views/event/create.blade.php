@@ -11,7 +11,7 @@
                         <div
                             class=" bg-white rounded-lg flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <img class="object-cover h-full rounded-t-lg  md:rounded-none md:rounded-l-lg"
-                                src="/assets/manathan.jpg" alt="">
+                                src="/assets/grill.jpg" alt="">
                         </div>
                     </div>
                     <form class="p-4 md:p-8 flex flex-col justify-around" action="/event" method="POST">
