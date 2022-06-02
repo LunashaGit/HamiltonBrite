@@ -12,23 +12,23 @@
                     <form class="flex flex-col" method="POST" action="/login">
                         @csrf
 
-                        <div class="flex flex-col justify-left py-4 items-start">
+                        <div class="flex flex-col items-start py-4 justify-left">
                             <h1 class="mx-auto ">Login</h1>
 
-                            <label class="pb-2 pt-4">E-mail :</label>
+                            <label class="pt-4 pb-2">E-mail :</label>
 
-                            <input class="w-64  px-4 rounded-md" autocomplete="off" type="email" name="email" id="email" placeholder="email" required>
+                            <input class="w-64 px-4 rounded-md" autocomplete="off" type="email" name="email" id="email" placeholder="email" required>
                             @error('email')
                                 <p>{{ $message }}</p>
                             @enderror
-                            <label class="pb-2 pt-4">Password :</label>
+                            <label class="pt-4 pb-2">Password :</label>
 
                             <input class="w-64 px-4 rounded-md" autocomplete="off" type="password" name="password" id="password"
                                 placeholder="password" required>
                             @error('password')
                                 <p>{{ $message }}</p>
                             @enderror
-                            <input class="my-4 px-4 cursor-pointer hover:transition hover:duration-200 hover:text-green-700" autocomplete="off" type="submit" value="Go">
+                            <input class="px-4 my-4 cursor-pointer hover:transition hover:duration-200 hover:text-green-700" autocomplete="off" type="submit" value="Go">
                         </div>
                     </form>
                 </div>
@@ -54,13 +54,13 @@
                 class="flex flex-col md:flex-row mx-auto p-4 max-w-[70vw] xl:w-[60vw] bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-left ">
                     <a href="#"
-                        class=" bg-white rounded-lg md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        <img class="object-cover h-full rounded-t-lg  md:rounded-none md:rounded-l-lg"
+                        class="bg-white rounded-lg  md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                             src="/assets/street.jpg" alt="">
                 </div>
-                <form class="space-y-6 p-4 md:p-8" action="/login" method="POST">
+                <form class="p-4 space-y-6 md:p-8" action="/login" method="POST">
                     @csrf
-                    <h5 class="text-xl pb-4 font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
+                    <h5 class="pb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-900 dark:text-gray-300">Your
                             email</label>
@@ -85,7 +85,7 @@
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
                                 <input id="remember" type="checkbox" value=""
-                                    class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+                                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
                             </div>
                             <label for="remember"
                                 class="ml-1 text-sm font-medium text-gray-900 dark:text-gray-300">Remember

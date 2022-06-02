@@ -32,7 +32,7 @@ class RegisterController extends Controller
             ->cc($attributes['email'])
             ->bcc($attributes['email'])
             ->send(new EmailVerification());
-        return redirect('/')->with('success', 'Your account has been created.');
+        return redirect('/')->with('Success', 'Your account has been created, welcome to Hamilton Brite !');
     }
 
 }

@@ -26,12 +26,12 @@
 <nav class="p-5 bg-whitesmoke text-black shadow md:flex md:items-center md:justify-between">
     <div class="flex my-auto justify-between ">
       <span class="text-3xl cursor-pointer">
-        <img class="inline h-6 mb-[.35em]"
+        <img class="inline mb-[.42em]"
              src="assets/logo.svg">
         <a href="/">Hamilton Brite</a>
-      </span>
+      </span>   
 
-         <span class="menu block mx-2 text-3xl cursor-pointer md:hidden">
+         <span class="menu block mx-1 mt-[.15em] text-3xl cursor-pointer md:hidden">
                 <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 menu" fill="none"
                      viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
