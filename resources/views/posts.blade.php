@@ -34,9 +34,9 @@
                      </div>
                  @endif
              @endauth
-             <section id="select-container">
+             <section id="select-container" class="mb-4 p-4 flex flex-wrap justify-center">
                  @foreach($categories as $category)
-                     <a href="/?category={{ $category->slug }}">{{ $category->name }}</a>
+                     <a class="bg-lightblue py-1 px-4 rounded-xl mx-2 my-2" href="/?category={{ $category->slug }}">{{ $category->name }}</a>
                  @endforeach
              </section>
              @if ($posts->count())
