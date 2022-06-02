@@ -33,7 +33,7 @@
                     <input type="password" name="password" id="password" placeholder="••••••••"
                         class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         required="">
-                    <label for="password_confirm" class="block pt-2 mt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password verification
+                    <label for="password_confirm" class="block pt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password verification
                         <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" autocomplete="off" type="password" name="password_confirm" id="password_confirm" placeholder="password confirmation" required>
                     </label>
                     </div>
