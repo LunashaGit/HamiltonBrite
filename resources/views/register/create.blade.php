@@ -37,13 +37,12 @@
                 @endif
             </div>
     </x-slot>
+<<<<<<< HEAD
 </x-layout>
  --}}
-
-
 <x-layout>
     <x-slot name="title">
-        Login Page
+        Register Page
     </x-slot>
     <x-slot name="content">
         <section class="pt-12 pb-24 bg-lightblue flex flex-col">

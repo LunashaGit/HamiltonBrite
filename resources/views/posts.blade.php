@@ -34,9 +34,9 @@
                      </div>
                  @endif
              @endauth
-             <section id="select-container">
+             <section id="select-container" class="mb-4 p-4 flex flex-wrap justify-center">
                  @foreach($categories as $category)
-                     <a href="/?category={{ $category->slug }}">{{ $category->name }}</a>
+                     <a class="bg-lightblue py-1 px-4 rounded-xl mx-2 my-2" href="/?category={{ $category->slug }}">{{ $category->name }}</a>
                  @endforeach
              </section>
              @if ($posts->count())
@@ -125,10 +125,18 @@
              </div>
             </section>
 
-             {{-- <div class="bg-pourpre ml-6 sm:ml-16 rounded-tl-lg rounded-bl-lg">
-                <div class="text-left pr-8 mt-[-3em] pt-4  flex flex-col">
-                    <h2 class="text-4xl font-bold pl-2 md:pl-6 pb-8 text-black text-right ">Comedy</h2>
-                </div>
-             </div> --}}
+      
+             <footer class="w-full bg-gray-800 h-64 text-white text-center">
+                <div class="mx-auto my-auto py-4 "> 
+                <ul class="float-left pl-8">
+                    <li>Github Luna</li>
+                    <li>Linked-in Luna</li>
+                </ul>
+                <ul class="float-right pr-8">
+                    <li>Github Jerry</li>
+                    <li>Linked-in Jerry</li>
+                </ul>
+            </div>
+             </footer>
      </x-slot>
  </x-layout>

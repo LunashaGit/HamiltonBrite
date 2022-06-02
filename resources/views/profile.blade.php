@@ -3,19 +3,19 @@
         Profile page
     </x-slot>
     <x-slot name="content">
-        <section class="profile flex flex-col">
+        <section class="flex flex-col profile">
 
 
-            <div class="flex justify-center pb-2 pt-8 font-bold">
+            <div class="flex justify-center pt-8 pb-2 font-bold ">
                 <div
-                    class=" card px-8 md:px-24 justify-center align-center text-left flex flex-col rounded-lg duration-100 ease-in-out hover:duration-500">
+                    class="flex flex-col justify-center px-8 text-left duration-100 ease-in-out rounded-lg card md:px-24 align-center hover:duration-500">
                     <div class="flex justify-center">
-                        <h1 class="justify-center py-4 text-3xl font-semibold ">
-                            Your Profile
+                        <h1 class="justify-center py-4 text-3xl font-semibold text-whitesmoke">
+                            My profile
                         </h1>
                     </div>
-                    <div class="my-2 flex">
-                        <form class="profile__form py-4 mx-4 flex flex-col" method="post"
+                    <div class="flex my-2">
+                        <form class="flex flex-col py-4 mx-4 profile__form" method="post"
                             action="/profile/update/{{ request()->user()->id }}">
                             @csrf
                             @method('PUT')
@@ -24,35 +24,35 @@
                                     src="{{ gravatar(request()->user()->email) }}">
                             </div>
 
-                            <label class="pb-2 pt-4">Username :</label>
-                            <input class="mx-2 px-2 rounded-md" type="text" name="username" id="username"
+                            <label class="pt-4 pb-2 text-whitesmoke">Username :</label>
+                            <input class="px-2 mx-2 rounded-md" type="text" name="username" id="username"
                                 placeholder="username" value="{{ request()->user()->username }}">
 
-                            <label class="pb-2 pt-6">Name :</label>
-                            <input class="mx-2 px-2 rounded-md" type="text" name="name" id="name" placeholder="name"
+                            <label class="pt-6 pb-2 text-whitesmoke">Name :</label>
+                            <input class="px-2 mx-2 rounded-md" type="text" name="name" id="name" placeholder="name"
                                 value="{{ request()->user()->name }}">
 
-                                <label class="pb-2 pt-6">Email :</label>
-                            <input class="mx-2 px-2 rounded-md" type="email" name="email" id="email" placeholder="email"
+                                <label class="pt-6 pb-2 text-whitesmoke">Email :</label>
+                            <input class="px-2 mx-2 rounded-md" type="email" name="email" id="email" placeholder="email"
                                 value="{{ request()->user()->email }}">
 
-                            <label class="pb-2 pt-6">Password :</label>
-                            <input class="mx-2 px-2 rounded-md" type="password" name="password" id="password"
+                            <label class="pt-6 pb-2 text-whitesmoke">Password :</label>
+                            <input class="px-2 mx-2 rounded-md" type="password" name="password" id="password"
                                 value="***********">
 
-                            <label class="pb-2 pt-6">Password Confirmation :</label>
-                            <input class="mx-2 px-2 rounded-md" type="password" name="passwordconfirm" id="passwordconfirm"
+                            <label class="pt-6 pb-2 text-whitesmoke">Password Confirmation :</label>
+                            <input class="px-2 mx-2 rounded-md" type="password" name="passwordconfirm" id="passwordconfirm"
                                 value="">
-                                <label class="pb-2 pt-4">My bio :</label>
-                                <textarea placeholder="About me"class="mx-2 px-2 py-12 rounded-md resize-none box-border flex justify-start">
+                                <label class="pt-4 pb-2 text-whitesmoke">My bio :</label>
+                                <textarea placeholder="About me"class="box-border flex justify-start px-2 py-12 mx-2 rounded-md resize-none">
                                 </textarea>
                                                                
                             {{-- <h6 class="py-2 max-w-[10ch]">Account created the {{ request()->user()->created_at }} </h6> // Problème de display on voit date + heures sans séparations ni rien// --}}
-                            <div class="py-2 my-2relative flex ">
+                            <div class="flex py-2 my-2relative ">
                                 <div
-                                    class="absolute flex text-lg">
+                                    class="absolute flex text-xl text-whitesmoke">
                                     <a class="">
-                                        <input class="font-black my-2 py-1 px-2 hover:transition hover:duration-200 hover:text-green-700 hover:cursor-pointer " type="submit" value="Update"></a>
+                                        <input class="px-2 py-1 my-2 font-black hover:transition hover:duration-200 hover:text-green-600 hover:cursor-pointer " type="submit" value="Update"></a>
                                 </div>
                             </div>
                         </form>
@@ -66,7 +66,7 @@
                             action="/profile/delete/{{ request()->user()->id }}">
                             @csrf
                             @method('DELETE')
-                            <a class="hover:transition text-sm hover:duration-200 hover:text-red-700 hover:cursor-pointer">
+                            <a class="text-sm hover:transition hover:duration-200 text-whitesmoke hover:text-red-600 hover:cursor-pointer">
                             <input class="" type="submit" value="delete">
                         </a>
                         </form>
