@@ -4,7 +4,6 @@
 
      </x-slot>
      <x-slot name="content">
-
          <section class="h-64 sm:h-80 md:h-[30rem]">
              <div id="parallax" class="parallax bg-concert mx-auto parallax bg-cover h-full  bg-center  ">
                  <div class=""></div>
@@ -35,6 +34,11 @@
                      </div>
                  @endif
              @endauth
+             <section id="select-container">
+                 @foreach($categories as $category)
+                     <a href="/?category={{ $category->slug }}">{{ $category->name }}</a>
+                 @endforeach
+             </section>
              @if ($posts->count())
                  <div class="bg-lightblue pb-24 mr-6 sm:mr-12 rounded-tr-lg rounded-br-lg flex flex-col">
                      <div class="flex text-left pl-8 pt-4">
@@ -42,7 +46,6 @@
                      </div>
                      <div
                          class="text-white gap-4 sm:gap-8 md:gap-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-8 ">
-
                          @foreach ($posts as $post)
                              <div
                                  class="max-h-sm card rounded-lg mx-auto max-w-sm transition text-black hover:bg-black hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
@@ -78,7 +81,7 @@
 
              </div>
             </section>
-    <section>            
+    <section>
     <div class="bg-silver-blue ml-6 sm:ml-16 rounded-tl-lg rounded-bl-lg mb-16 pb-8">
                  <div class="text-left pr-8 mt-[-3em] pt-4  flex flex-col">
                      <h2 class="text-4xl font-bold pr-6 md:pr-12 text-white pt-8 pb-4 text-right ">Art</h2>

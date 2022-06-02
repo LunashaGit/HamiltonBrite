@@ -35,8 +35,7 @@
                         <h5>{{ $post->end_hour }}</h5>
                     </div>
                 </div>
-
-                
+                @auth()
                 @if (request()->user()->username == $post->author->username && request()->user()->id == $post->author->id)
                     <form method="POST" action="/posts/{{ $post->id }}/update ">
                         @method('put')
@@ -51,6 +50,7 @@
                         <input type="submit" value="send">
                     </form>
                 @endif
+                @endauth
                 <div class="bottom">
                     <div class="flex float-left bottom__left" id="map"></div>
                     <div class="flex flex-col justify-between float-right bottom__right">
