@@ -11,11 +11,11 @@
 
         </style>
 
-        <section class="h-full w-auto bg-paris bg-cover pt-8 pb-16 bg-silver-blue">
+        <section class="w-auto h-full pt-8 pb-16 bg-cover bg-paris bg-silver-blue">
             <div class="card flex flex-col gap-2 p-8 text-black md:w-[50vw] mx-auto">
                 <div class="post__top">
 
-                    <h1 class="text-4xl font-bolder pb-8">{{ $post->title }} </h1>
+                    <h1 class="pb-8 text-4xl font-bolder">{{ $post->title }} </h1>
                     <p>
                         By <a href="/?author={{ $post->author->username }}">{{ $post->author->username }}</a> in <a
                             href="/?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
 
-
+                
                 @if (request()->user()->username == $post->author->username && request()->user()->id == $post->author->id)
                     <form method="POST" action="/posts/{{ $post->id }}/update ">
                         @method('put')
@@ -52,8 +52,8 @@
                     </form>
                 @endif
                 <div class="bottom">
-                    <div class="bottom__left flex float-left" id="map"></div>
-                    <div class="bottom__right flex flex-col justify-between float-right">
+                    <div class="flex float-left bottom__left" id="map"></div>
+                    <div class="flex flex-col justify-between float-right bottom__right">
                         @auth()
                             @if ($post->participation->where('user_id', request()->user()->id) == '[]')
                                 <form method="POST" action="/posts/{{ $post->slug }}/participation/">
@@ -66,7 +66,7 @@
                                     participate</button>
                             @endif
 
-                            <a class="flex float-right justify-center align-center" href="/">Go Back</a>
+                            <a class="flex justify-center float-right align-center" href="/">Go Back</a>
                         </div>
                         <div class="comment__section">
                             <form method="POST" action="/posts/{{ $post->slug }}">

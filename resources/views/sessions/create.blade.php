@@ -1,49 +1,3 @@
-{{-- <x-layout>
-    <x-slot name="title">
-        Login Page
-    </x-slot>
-    <x-slot name="content">
-        <section class="h-screen">
-            <div class="h-full text-white rounded-t-xl md:rounded-t-none md:rounded-l ">
-                <div
-                    class="flex max-w-[50%] float-left bg-cover text-center overflow-hidden bg-bridge">
-                </div>
-                <div class="flex justify-between mx-auto">
-                    <form class="flex flex-col" method="POST" action="/login">
-                        @csrf
-
-                        <div class="flex flex-col items-start py-4 justify-left">
-                            <h1 class="mx-auto ">Login</h1>
-
-                            <label class="pt-4 pb-2">E-mail :</label>
-
-                            <input class="w-64 px-4 rounded-md" autocomplete="off" type="email" name="email" id="email" placeholder="email" required>
-                            @error('email')
-                                <p>{{ $message }}</p>
-                            @enderror
-                            <label class="pt-4 pb-2">Password :</label>
-
-                            <input class="w-64 px-4 rounded-md" autocomplete="off" type="password" name="password" id="password"
-                                placeholder="password" required>
-                            @error('password')
-                                <p>{{ $message }}</p>
-                            @enderror
-                            <input class="px-4 my-4 cursor-pointer hover:transition hover:duration-200 hover:text-green-700" autocomplete="off" type="submit" value="Go">
-                        </div>
-                    </form>
-                </div>
-            </div>
-            @if ($errors->any())
-                <ul>
-                    @foreach ($errors->all as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            @endif
-        </section>
-
-    </x-slot>
-</x-layout> --}}
 <x-layout>
     <x-slot name="title">
         Login Page
@@ -56,7 +10,7 @@
                     <a href="#"
                         class="bg-white rounded-lg  md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                         <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
-                            src="/assets/street.jpg" alt="">
+                            src="/assets/london.jpg" alt="">
                 </div>
                 <form class="p-4 space-y-6 md:p-8" action="/login" method="POST">
                     @csrf

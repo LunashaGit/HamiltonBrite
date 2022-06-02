@@ -24,7 +24,7 @@ class EventController extends Controller
             'title' => 'required|min:8|max:50',
             'excerpt' => 'required|max:50',
             'body' => 'required|max:500',
-            'date' => 'required'
+            'date' => 'required',
         ]);
 
         $attributes['user_id'] = auth()->id();
