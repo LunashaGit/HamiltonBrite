@@ -1,11 +1,10 @@
  <x-layout>
      <x-slot name="title">
-         Posts
-
+         Home
      </x-slot>
      <x-slot name="content">
-         <section class="h-64 sm:h-80 md:h-[30rem]">
-             <div id="parallax" class="parallax bg-concert mx-auto parallax bg-cover h-full  bg-center  ">
+         <section class="h-[20rem] sm:h-80 md:h-[40rem]">
+             <div id="parallax" class="parallax bg-concert mx-auto parallax bg-cover h-full bg-center">
                  <div class=""></div>
              </div>
          </section>
@@ -15,9 +14,16 @@
                  <h1 class="para__text text-4xl mt-8 mb-2 text-lightblue ">Hamilton Brite</h1>
                  <h2 class="para__text text-2xl ">THE ONLY EVENT PLANNER YOU NEED</h2>
              </div>
+             @auth()
+             @if (session()->has('success'))
+                 <div>
+                     <p class="text-3xl pt-8 pb-4">{{ session('success') . ' ' . request()->user()->name }}</p>
+                 </div>
+             @endif
+         @endauth
              <div class="mx-auto my-5 flex px-8 md:px-16 justify-left items-center">
 
-
+             
                  <form class="" method="GET" action="/">
 
                      <div class="form-group">
@@ -27,16 +33,11 @@
                      </div>
                  </form>
              </div>
-             @auth()
-                 @if (session()->has('success'))
-                     <div>
-                         <p class="text-3xl">{{ session('success') . ' ' . request()->user()->name }}</p>
-                     </div>
-                 @endif
-             @endauth
+            
              <section id="select-container" class="mb-4 p-4 flex flex-wrap justify-center">
                  @foreach($categories as $category)
-                     <a class="bg-lightblue py-1 px-4 rounded-xl mx-2 my-2" href="/?category={{ $category->slug }}">{{ $category->name }}</a>
+                     <a class="bg-lightblue hover:bg-gray-800 hover:text-lightblue py-1 px-4 rounded-xl mx-2 my-2 duration-100 ease-in-out hover:duration-500 cursor-pointer" 
+                     href="/?category={{ $category->slug }}">{{ $category->name }}</a>
                  @endforeach
              </section>
              @if ($posts->count())
@@ -48,7 +49,7 @@
                          class="text-white gap-4 sm:gap-8 md:gap-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-8 ">
                          @foreach ($posts as $post)
                              <div
-                                 class="max-h-sm card rounded-lg mx-auto max-w-sm transition text-black hover:bg-black hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
+                                 class="max-h-sm card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
 
                                  <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                      <div class=" ">
@@ -63,7 +64,7 @@
                                      </p>
                                      <div class="flex justify-between pb-4">
                                          <div class=" pl-2 md:pl-4 text-sm md:text-md">
-                                             <h6 class=" ">31/08/22</h6>
+                                             <h6 class="">31/08/22</h6>
                                              <h6 class="">à 17h22</h6>
                                          </div>
                                          <div class="pr-2 md:pr-4 text-sm md:text-md">
@@ -93,7 +94,7 @@
 
                      @foreach ($posts as $post)
                          <div
-                         class="max-h-sm card rounded-lg mx-auto max-w-sm transition text-black hover:bg-black hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
+                         class="max-h-sm card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
 
                              <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                  <div class="max-h-48 ">

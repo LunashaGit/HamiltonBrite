@@ -13,7 +13,8 @@
                             src="/assets/osaka.jpg" alt="">
                 </div>
             </div>
-                <form class="space-y-6 p-4 md:p-8" action="/register" method="POST">
+            <article class="space-y-6 p-4 md:p-8">
+                <form class="" action="/register" method="POST">
                     @csrf
                     <h2 class="text-xl pb-4 font-medium text-gray-900 dark:text-white">Register to our platform</h2>
                     <div>
@@ -32,12 +33,12 @@
                     <input type="password" name="password" id="password" placeholder="••••••••"
                         class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                         required="">
-                    <label for="password_confirm" class="block pt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password verification
+                    <label for="password_confirm" class="block pt-2 mt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password verification
                         <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" autocomplete="off" type="password" name="password_confirm" id="password_confirm" placeholder="password confirmation" required>
                     </label>
                     </div>
 
-                    <input type="submit" value="Create an account" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <input type="submit" value="Create an account" class="w-full mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 </form>
                 <div class="flex items-start">
                     <div class="flex items-start">
@@ -65,7 +66,7 @@
                     @endforeach
                 </ul>
             @endif
-            </section>
+        </section>
 
     </x-slot>
 </x-layout>
