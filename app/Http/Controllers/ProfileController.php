@@ -48,6 +48,6 @@ class ProfileController extends Controller
         bcrypt($user->password);
         $user->save();
 
-        return $this->redirect('/');
+        return $this->redirect('/')->with('Success', 'Profile has been changed !');
     }
 }

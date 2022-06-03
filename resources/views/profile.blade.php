@@ -21,7 +21,7 @@
                     <div class="">
                         <img class="mx-auto my-2 rounded-[50px]"
                             src="{{ gravatar(request()->user()->email) }}">
-                    </div>                        
+                    </div>
                         <h2 class="text-xl flex justify-center pb-4 font-medium text-gray-800 dark:text-white">My profile</h2>
                         <div>
 
@@ -65,10 +65,10 @@
                                     placeholder="password confirmation">
 
                             <label class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">My bio :</label>
-                            <textarea placeholder="About me" value="{{request()->user()->bio }}" 
+                            <textarea name="bio" placeholder="About me"
                             class="p-2 box-border resize-none bg-gray-50 border border-gray-300 text-gray-800 text-sm h-40 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                        </textarea>
-
+                                {{ request()->user()->bio  }}
+                            </textarea>
                         </div>
 
                         <input type="submit" value="Update informations"
@@ -88,7 +88,7 @@
                 </div>
                     @if ($errors->any())
                         <ul>
-                            @foreach ($errors->all as $error)
+                            @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
                             @endforeach
                         </ul>
