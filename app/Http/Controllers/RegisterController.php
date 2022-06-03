@@ -15,9 +15,10 @@ class RegisterController extends Controller
     }
 
     public function store()
-    {
+    { 
         $attributes = request()->validate([
-            'name' => 'required|max:255',
+            'firstname'=>'required|min:2|max:42',
+            'lastname'=>'required|min:2|max:100',
             'username'=> 'required|unique:users,username|max:255|min:3', // [Rule::unique('users','username')]
             'email' => 'required|unique:users,email|email|max:255',
             'password' => 'required_with:password_confirm|same:password_confirm|min:8|max:255',

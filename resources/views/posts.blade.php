@@ -3,7 +3,7 @@
          Home
      </x-slot>
      <x-slot name="content">
-         <section class="h-[20rem] sm:h-80 md:h-[40rem]">
+         <section class="h-[25rem] sm:h-[30rem] md:h-[35rem]">
              <div id="parallax" class="parallax bg-concert mx-auto parallax bg-cover h-full bg-center">
                  <div class=""></div>
              </div>
@@ -15,29 +15,30 @@
                  <h2 class="para__text text-2xl ">THE ONLY EVENT PLANNER YOU NEED</h2>
              </div>
              @auth()
-             @if (session()->has('success'))
-                 <div>
-                     <p class="text-3xl pt-8 pb-4">{{ session('success') . ' ' . request()->user()->name }}</p>
-                 </div>
-             @endif
-         @endauth
+                 @if (session()->has('success'))
+                     <div>
+                         <p class="text-3xl pt-8 pb-4">{{ session('success') . ' ' . request()->user()->name }}</p>
+                     </div>
+                 @endif
+             @endauth
              <div class="mx-auto my-5 flex px-8 md:px-16 justify-left items-center">
 
-             
+
                  <form class="" method="GET" action="/">
 
                      <div class="form-group">
-                         <input type="text" class="justify-center m-3 md:p-1 md:w-64 border-solid border-2 border-lightblue text-center rounded-lg"
+                         <input type="text"
+                             class="justify-center m-3 md:p-1 md:w-64 border-solid border-2 border-lightblue text-center rounded-lg"
                              autocomplete="off" name="search" placeholder="Find Something"
                              value="{{ request('search') }}">
                      </div>
                  </form>
              </div>
-            
+
              <section id="select-container" class="mb-4 p-4 flex flex-wrap justify-center">
-                 @foreach($categories as $category)
-                     <a class="bg-lightblue hover:bg-gray-800 hover:text-lightblue py-1 px-4 rounded-xl mx-2 my-2 duration-100 ease-in-out hover:duration-500 cursor-pointer" 
-                     href="/?category={{ $category->slug }}">{{ $category->name }}</a>
+                 @foreach ($categories as $category)
+                     <a class="bg-lightblue hover:bg-gray-800 hover:text-lightblue py-1 px-4 rounded-xl mx-2 my-2 duration-100 ease-in-out hover:duration-500 cursor-pointer"
+                         href="/?category={{ $category->slug }}">{{ $category->name }}</a>
                  @endforeach
              </section>
              @if ($posts->count())
@@ -49,12 +50,12 @@
                          class="text-white gap-4 sm:gap-8 md:gap-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-8 ">
                          @foreach ($posts as $post)
                              <div
-                                 class="max-h-sm card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
+                                 class="card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
 
                                  <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                      <div class=" ">
-                                         <img class="w-full object-cover bg-center rounded-t-lg" src="/assets/buildings.jpg"
-                                             alt="Picture of a bridge">
+                                         <img class="w-full object-cover bg-center rounded-t-lg"
+                                             src="/assets/buildings.jpg" alt="Picture of a bridge">
                                      </div>
                                      <h2 class=" text-lg lg:text-xl justify-center font-bold m-2 md:m-4 line-clamp-2">
                                          {{ $post->title }}
@@ -81,9 +82,9 @@
              @endif
 
              </div>
-            </section>
-    <section>
-    <div class="bg-silver-blue ml-6 sm:ml-16 rounded-tl-lg rounded-bl-lg mb-16 pb-8">
+         </section>
+         <section>
+             <div class="bg-silver-blue ml-6 sm:ml-16 rounded-tl-lg rounded-bl-lg mb-16 pb-8">
                  <div class="text-left pr-8 mt-[-3em] pt-4  flex flex-col">
                      <h2 class="text-4xl font-bold pr-6 md:pr-12 text-white pt-8 pb-4 text-right ">Art</h2>
                  </div>
@@ -94,50 +95,48 @@
 
                      @foreach ($posts as $post)
                          <div
-                         class="max-h-sm card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
+                             class="card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
 
                              <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
-                                 <div class="max-h-48 ">
-                                     <img class="w-full max-h-48 object-cover bg-center rounded-t-lg" src="/assets/manathan.jpg"
-                                         alt="Picture of a bridge">
+                                 <div class="">
+                                     <img class="w-full max-h-48  object-cover bg-center rounded-t-lg"
+                                         src="/assets/manathan.jpg" alt="Picture of a bridge">
                                  </div>
-                                 <div class="flex flex-col">
-                                 <h2 class=" text-lg lg:text-xl justify-center font-bold m-2 md:m-4 line-clamp-2">
-                                     {{ $post->title }}
-                                 </h2>
-                                 <p class=" overflow-hidden text-sm lg:text-md line-clamp-3 m-4">
-                                     {{ $post->body }}
-                                 </p>
-                                 <div class="flex justify-between pb-4">
-                                     <div class=" pl-2 md:pl-4 text-sm md:text-md">
-                                         <h6 class=" ">31/08/22</h6>
-                                         <h6 class="">à 17h22</h6>
+                                     <h2 class=" text-lg lg:text-xl justify-center font-bold m-2 md:m-4 line-clamp-2">
+                                         {{ $post->title }}
+                                     </h2>
+                                     <p class=" overflow-hidden text-sm lg:text-md line-clamp-3 m-4">
+                                         {{ $post->body }}
+                                     </p>
+                                     <div class="flex justify-between pb-4">
+                                         <div class=" pl-2 md:pl-4 text-sm md:text-md">
+                                             <h6 class=" ">31/08/22</h6>
+                                             <h6 class="">à 17h22</h6>
+                                         </div>
+                                         <div class="pr-2 md:pr-4 text-sm md:text-md">
+                                             <h6 class="">Liège</h6>
+                                             <h6 class="">Le carré</h6>
+                                         </div>
                                      </div>
-                                     <div class="pr-2 md:pr-4 text-sm md:text-md">
-                                         <h6 class="">Liège</h6>
-                                         <h6 class="">Le carré</h6>
-                                     </div>
-                                 </div>
-                                </div>
                              </a>
                          </div>
                      @endforeach
                  </div>
              </div>
-            </section>
+         </section>
 
-      
-             <footer class="w-full bg-gray-800 h-64 text-white text-center">
-                <div class="mx-auto my-auto py-4 "> 
-                <ul class="float-left pl-8">
-                    <li>Github Luna</li>
-                    <li>Linked-in Luna</li>
-                </ul>
-                <ul class="float-right pr-8">
-                    <li>Github Jerry</li>
-                    <li>Linked-in Jerry</li>
-                </ul>
-            </div>
-             </footer>
+
+         <footer class="w-full bg-gray-800 h-64 text-white text-center">
+             <div class="mx-auto my-auto py-4 ">
+                 <ul class="float-left pl-8">
+                     <li>Github Luna</li>
+                     <li>Linked-in Luna</li>
+                 </ul>
+                 <ul class="float-right pr-8">
+                     <li>Github Jerry</li>
+                     <li>Linked-in Jerry</li>
+                 </ul>
+             </div>
+         </footer>
      </x-slot>
  </x-layout>

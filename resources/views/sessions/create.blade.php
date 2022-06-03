@@ -1,18 +1,18 @@
 <x-layout>
     <x-slot name="title">
-        Login Page
+        Login
     </x-slot>
     <x-slot name="content">
         <section class="pt-12 pb-24 bg-lightblue">
             <div
-                class="flex flex-col md:flex-row mx-auto p-4 max-w-[70vw] xl:w-[60vw] bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+                class="flex flex-col md:flex-row mx-auto p-4 xl:max-w-[60rem] bg-white my-auto rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-left ">
                     <a href="#"
-                        class="bg-white rounded-lg  md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        class="bg-white rounded-lg md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                         <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                             src="/assets/london.jpg" alt="">
                 </div>
-                <form class="p-4 space-y-6 md:p-8" action="/login" method="POST">
+                <form class="p-4 space-y-6 md:p-8 md:mt-[5rem]" action="/login" method="POST">
                     @csrf
                     <h5 class="pb-4 text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
                     <div>
@@ -42,7 +42,7 @@
                                     class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
                             </div>
                             <label for="remember"
-                                class="ml-1 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                                class="ml-1 pr-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
                                 me</label>
                         </div>
                         <a href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost

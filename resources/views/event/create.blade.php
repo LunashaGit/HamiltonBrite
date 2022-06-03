@@ -6,12 +6,12 @@
         <section class="pt-12 pb-24 bg-lightblue flex flex-col text-left">
             <div>
                 <div
-                    class="flex flex-col md:flex-row mx-auto w-[80vw] xl:max-w-[70vw] bg-white rounded-lg border border-gray-200 shadow-md p-2 sm:p-4 md:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 ">
+                    class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md p-2 sm:p-4 md:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 ">
                     <div class="flex float-left ">
                         <div
                             class=" bg-white rounded-lg flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                            <img class="object-cover h-full rounded-t-lg  md:rounded-none md:rounded-l-lg"
-                                src="/assets/grill.jpg" alt="">
+                            <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
+                                src="/assets/ticket.jpg" alt="">
                         </div>
                     </div>
                     <form class="p-4 md:p-8 flex flex-col justify-around" action="/event" method="POST">
