@@ -34,7 +34,9 @@ class ProfileController extends Controller
     {
         $user = User::where('id', $id)->first();
         $user->username = $request->username;
-        $user->name = $request->name;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->bio = $request->bio;
         $user->email = $request->email;
 
         if($request->password != $request->passwordconfirm){

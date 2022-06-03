@@ -22,21 +22,21 @@
                                 class="block pt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Username</label>
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="username" id="firstname" placeholder=""
+                                autocomplete="off" type="text" name="username" id="username" placeholder="user name"
                                 value="" required>
 
                             <label for="lastname"
                                 class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">Last name</label>
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="lastname" id="lastname" placeholder="name" value=""
+                                autocomplete="off" type="text" name="lastname" id="lastname" placeholder="last name" value=""
                                 required>
 
                             <label for="firstname"
                                 class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">First Name</label>
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="firstname" id="name" placeholder="name" value=""
+                                autocomplete="off" type="text" name="firstname" id="firstname" placeholder="first name" value=""
                                 required>
 
                             <label for="email"
