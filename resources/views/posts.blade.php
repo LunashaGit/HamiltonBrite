@@ -5,7 +5,6 @@
      <x-slot name="content">
          <section class="h-[25rem] sm:h-[30rem] md:h-[35rem]">
              <div id="parallax" class="parallax bg-concert mx-auto parallax bg-cover h-full bg-center">
-                 <div class=""></div>
              </div>
          </section>
 
@@ -15,9 +14,9 @@
                  <h2 class="para__text text-2xl ">THE ONLY EVENT PLANNER YOU NEED</h2>
              </div>
              @auth()
-                 @if (session()->has('success'))
+                 @if (session()->has('Success'))
                      <div>
-                         <p class="text-3xl pt-8 pb-4">{{ session('success') . ' ' . request()->user()->name }}</p>
+                         <p class="text-3xl pt-8 pb-4">{{ session('Success') . ' ' . request()->user()->name }}</p>
                      </div>
                  @endif
              @endauth
