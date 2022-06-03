@@ -31,7 +31,8 @@ class PostFactory extends Factory
             'body' => $this->faker->paragraph,
             'address' => $this->faker->address,
             'latitude' => $this->faker->latitude,
-            'longitude' => $this->faker->longitude
+            'longitude' => $this->faker->longitude,
+            'image' => $this->faker->imageUrl(360, 360, 'animals', true, 'dogs', true, 'jpg')
         ];
     }
 }

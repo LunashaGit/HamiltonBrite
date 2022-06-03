@@ -14,7 +14,7 @@
                                 src="/assets/ticket.jpg" alt="">
                         </div>
                     </div>
-                    <form class="p-4 md:p-8 flex flex-col justify-around" action="/event" method="POST">
+                    <form class="p-4 md:p-8 flex flex-col justify-around" action="/event" method="POST" enctype="multipart/form-data">
                         @csrf
                         <h2 class="text-2xl pb-6 mx-auto font-medium text-gray-900 dark:text-white">Create a new event</h2>
                         <label for="title" class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300 ">Name
@@ -78,10 +78,10 @@
                             <input
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 type="text" name="address" value="" id="address" placeholder="Address" autocomplete="off" onchange="mapUp()">
-                            {{--<label for="image"
+                            <label for="image"
                             class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Image</label>
                             <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            type="file" name="image" value="upload image" placeholder="Choose an image">--}}
+                            type="file" id="image" name="image" value="upload image" placeholder="Choose an image" >
                             <input
                                 class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="hidden" name="latitude" id="latitude"

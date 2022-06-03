@@ -17,8 +17,9 @@ class EventController extends Controller
         ]);
     }
 
-    public function store()
+    public function store(Request $request)
     {
+
         $attributes = request()->validate([
             'title' => 'required|min:8|max:50',
             'category_id' => 'required',
@@ -31,11 +32,14 @@ class EventController extends Controller
             'address' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
+            'image' => 'required'
         ]);
-
+        $file = $request->file('image');
+        $imageName = time().'.'.$request->image->extension();
+        $attributes['image'] = $imageName;
+        $file->storeAs('public/images', $imageName);
         $attributes['user_id'] = auth()->id();
         $attributes['slug'] = $attributes['title'];
-
         $attributes['slug'] = str_replace(" ", "-", $attributes['slug']);
 
         Post::create($attributes);
