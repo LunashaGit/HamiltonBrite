@@ -77,7 +77,7 @@
                                 <label for="image" 
                                 class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Image</label>
                                 <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                type="file" value="upload image" placeholder="Choose an image">
+                                type="file" name="image" value="upload image" placeholder="Choose an image">
 
 
                             <button type="submit" value="Create Post"

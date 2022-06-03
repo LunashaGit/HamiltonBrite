@@ -57,7 +57,10 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->excerpt = $request->excerpt;
         $post->body = $request->body;
-        $post->date = $request->date;
+        $post->date_start = $request->date_start;
+        $post->date_start = $request->date_end;
+        $post->start_hour = $request->start_hour;
+        $post->end_hour = $request->end_hour;
         $post->slug = $post->title;
         $post->slug = str_replace(" ", "-", $post->slug);
         $post->save();

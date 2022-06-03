@@ -20,11 +20,15 @@ class EventController extends Controller
     public function store()
     {
         $attributes = request()->validate([
-            'category_id' => 'required',
             'title' => 'required|min:8|max:50',
+            'category_id' => 'required',
+            'date_start' => 'required',
+            'date_end' => 'required',
+            'start_hour' => 'required',
+            'end_hour' => 'required',
             'excerpt' => 'required|max:50',
             'body' => 'required|max:500',
-            'date' => 'required',
+
         ]);
 
         $attributes['user_id'] = auth()->id();
