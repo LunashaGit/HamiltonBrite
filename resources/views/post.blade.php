@@ -8,9 +8,7 @@
                 height: 15rem;
                 width: 15rem;
             }
-
         </style>
-
         <section class="w-auto h-full pt-8 pb-16 bg-cover bg-paris bg-silver-blue">
             <div class="card flex flex-col gap-2 p-8 text-black md:w-[50vw] mx-auto">
                 <div class="post__top">
@@ -65,7 +63,6 @@
                                 <button class="border-2 border-white " type="submit" value="Participate">I
                                     participate</button>
                             @endif
-
                             <a class="flex justify-center float-right align-center" href="/">Go Back</a>
                         </div>
                         <div class="comment__section">

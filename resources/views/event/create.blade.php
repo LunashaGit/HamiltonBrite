@@ -3,9 +3,7 @@
         Create Event
     </x-slot>
     <x-slot name="content">
-
-
-        <section class="pt-12 pb-24 bg-lightblue flex flex-col text-left">
+         <section class="pt-12 pb-24 bg-lightblue flex flex-col text-left">
             <div>
                 <div
                     class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md p-2 sm:p-4 md:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 ">
@@ -75,22 +73,22 @@
                             <textarea
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-12 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="body" id="body" placeholder="Description" required></textarea>
-
-                                <label for="image"
-                                class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Image</label>
-                                <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                type="file" name="image" value="upload image" placeholder="Choose an image">
-                            <label for="latitude"
-                                   class="block pt-4 pb-2 text-md font-medium text-gray-900 dark:text-gray-300">Latitude :</label>
+                            <label for="address"
+                                   class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Address</label>
+                            <input
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                type="text" name="address" value="" id="address" placeholder="Address" autocomplete="off" onchange="mapUp()">
+                            {{--<label for="image"
+                            class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Image</label>
+                            <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            type="file" name="image" value="upload image" placeholder="Choose an image">--}}
                             <input
                                 class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="latitude" id="latitude"
+                                autocomplete="off" type="hidden" name="latitude" id="latitude"
                                 placeholder="latitude" required>
-                            <label for="longitude"
-                                   class="block pt-4 pb-2 text-md font-medium text-gray-900 dark:text-gray-300">Longitude :</label>
                             <input
                                 class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="longitude" id="longitude"
+                                autocomplete="off" type="hidden" name="longitude" id="longitude"
                                 placeholder="longitude" required>
 
                             <button type="submit" value="Create Post"
@@ -98,6 +96,7 @@
                         </div>
 
                     </form>
+                    <div id="here"></div>
 
                     <style>
                         #map {
@@ -106,7 +105,7 @@
                         }
 
                     </style>
-
+                    <p id="errormap"></p>
                     @if ($errors->any())
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -116,13 +115,9 @@
                     @endif
                 </div>
         </section>
-        <input autocomplete="off" type="text" id="mapinput">
-        <input type="submit" id="submitmap">
-        <p id="pipoupi"></p>
-        <div id="here"></div>
         <script>
             const mapUp = () => {
-                let city = document.getElementById('mapinput').value
+                let city = document.getElementById('address').value
                 var requestOptions = {
                     method: 'GET',
                 };
@@ -147,10 +142,7 @@
                         console.log('error', error)
                         document.getElementById('pipoupi').innerText = "Street not found"
                     });
-
-
             }
-            document.getElementById('submitmap').addEventListener('click', mapUp)
         </script>
     </x-slot>
 </x-layout>

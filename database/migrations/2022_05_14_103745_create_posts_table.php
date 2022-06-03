@@ -25,6 +25,7 @@ return new class extends Migration
             $table->date('date_end');
             $table->Time('start_hour');
             $table->Time('end_hour');
+            $table->string('address');
             $table->float('latitude');
             $table->float('longitude');
             $table->timestamps();

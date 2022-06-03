@@ -28,7 +28,9 @@ class EventController extends Controller
             'end_hour' => 'required',
             'excerpt' => 'required|max:50',
             'body' => 'required|max:500',
-
+            'address' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
         ]);
 
         $attributes['user_id'] = auth()->id();
