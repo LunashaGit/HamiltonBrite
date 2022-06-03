@@ -3,6 +3,8 @@
         Create Event
     </x-slot>
     <x-slot name="content">
+
+
         <section class="pt-12 pb-24 bg-lightblue flex flex-col text-left">
             <div>
                 <div
@@ -21,7 +23,7 @@
                             of the
                             event :</label>
 
-                            
+
                         <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                             autocomplete="off" type="text" name="title" id="title" placeholder="Title of post" required>
@@ -64,7 +66,7 @@
                                 class="block pt-4 pb-2 text-md font-medium text-gray-900 dark:text-gray-300">Short
                                 description :</label>
                             <input
-                                class="bg-gray-c50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="excerpt" id="excerpt"
                                 placeholder="Short description" required>
 
@@ -74,17 +76,72 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-12 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="body" id="body" placeholder="Description" required></textarea>
 
-                                <label for="image" 
+                                <label for="image"
                                 class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Image</label>
                                 <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 type="file" name="image" value="upload image" placeholder="Choose an image">
-
+                            <label for="latitude"
+                                   class="block pt-4 pb-2 text-md font-medium text-gray-900 dark:text-gray-300">Latitude :</label>
+                            <input
+                                class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                autocomplete="off" type="text" name="latitude" id="latitude"
+                                placeholder="latitude" required>
+                            <label for="longitude"
+                                   class="block pt-4 pb-2 text-md font-medium text-gray-900 dark:text-gray-300">Longitude :</label>
+                            <input
+                                class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                autocomplete="off" type="text" name="longitude" id="longitude"
+                                placeholder="longitude" required>
 
                             <button type="submit" value="Create Post"
                                 class="w-full mt-8 text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create</button>
                         </div>
-                  
+
                     </form>
+                    <input type="text" id="mapinput">
+                    <input type="submit" id="submitmap">
+                    <p id="pipoupi"></p>
+                    <style>
+                        #map {
+                            height: 15rem;
+                            width: 15rem;
+                        }
+
+                    </style>
+                    <script>
+                        const mapUp = () => {
+                            let city = document.getElementById('mapinput').value
+                            var requestOptions = {
+                                method: 'GET',
+                            };
+                            console.log(city)
+
+                            fetch(`https://api.geoapify.com/v1/geocode/search?text=${city}&apiKey=a203d55a7a1f46cda1aef5ce6655c14c`, requestOptions)
+                                .then(response => response.json())
+                                .then(result => {
+                                    console.log(result.features[0].geometry.coordinates[0])
+                                    console.log(result.features[0].geometry.coordinates[1])
+                                    document.getElementById('latitude').value = result.features[0].geometry.coordinates[1]
+                                    document.getElementById('longitude').value = result.features[0].geometry.coordinates[0]
+
+                                    let map = L.map('map').setView([result.features[0].geometry.coordinates[1], result.features[0].geometry.coordinates[0]], 12);
+                                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                                    }).addTo(map);
+
+                                    L.marker([result.features[0].geometry.coordinates[1], result.features[0].geometry.coordinates[0]]).addTo(map)
+                                        .bindPopup('The search :')
+                                        .openPopup();
+                                })
+                                .catch(error => {
+                                    console.log('error', error)
+                                    document.getElementById('pipoupi').innerText = "Street not found"
+                                });
+
+
+                        }
+                        document.getElementById('submitmap').addEventListener('click', mapUp)
+                    </script>
                     @if ($errors->any())
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -94,5 +151,7 @@
                     @endif
                 </div>
         </section>
+        <div id="map"></div>
+
     </x-slot>
 </x-layout>
