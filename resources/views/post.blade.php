@@ -32,6 +32,15 @@
                         <label>At :</label>
                         <h5>{{ $post->end_hour }}</h5>
                     </div>
+                    @auth()
+                        @if ($post->author->id == auth()->id())
+                            <form method="POST" action="/posts/{{ $post->id }}/delete">
+                                @csrf
+                                @method('DELETE')
+                                <input autocomplete="off" type="submit" value="Delete">
+                            </form>
+                        @endif
+                    @endauth
                 </div>
                 @auth()
                 @if (request()->user()->username == $post->author->username && request()->user()->id == $post->author->id)

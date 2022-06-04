@@ -28,6 +28,7 @@ Route::post('posts/{post:slug}', [CommentaryPostController::class, 'store']);
 Route::delete('comments/{id}', [CommentaryPostController::class, 'destroy']);
 Route::post('posts/{post:slug}/participation', [ParticipationPostController::class, 'store']);
 Route::put('posts/{id}/update', [PostController::class, 'change']);
+Route::delete('posts/{id}/delete', [PostController::class, 'destroy']);
 Route::get('posts/', [PostController::class, 'redirect']);
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
@@ -46,6 +47,7 @@ Route::post('event', [EventController::class, 'store'])->middleware('auth');
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('admin-view', [AdminController::class, 'adminView'])->name('admin.view');
+    Route::delete('admin-view/posts/{id}/delete', [AdminController::class, 'destroy']);
 });
 /*Route::get('categories/{category:slug}', [PostController::class, 'getPostsByCategories'])->name('category');
 Route::get('authors/{author:username}', [PostController::class, 'getPostsByAuthor']);*/

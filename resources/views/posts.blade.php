@@ -21,10 +21,7 @@
                  @endif
              @endauth
              <div class="mx-auto my-5 flex px-8 md:px-16 justify-left items-center">
-
-
                  <form class="" method="GET" action="/">
-
                      <div class="form-group">
                          <input type="text"
                              class="justify-center m-3 md:p-1 md:w-64 border-solid border-2 border-lightblue text-center rounded-lg"
