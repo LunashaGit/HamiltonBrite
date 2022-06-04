@@ -64,12 +64,11 @@
                                      </p>
                                      <div class="flex justify-between pb-4">
                                          <div class=" pl-2 md:pl-4 text-sm md:text-md">
-                                             <h6 class="">31/08/22</h6>
-                                             <h6 class="">à 17h22</h6>
+                                             <h6 class=" ">{{ $post->date_start }}</h6>
+                                             <h6 class="">{{ $post->start_hour }}</h6>
                                          </div>
                                          <div class="pr-2 md:pr-4 text-sm md:text-md">
-                                             <h6 class="">Liège</h6>
-                                             <h6 class="">Le carré</h6>
+                                             <h6 class="">{{ $post->address }}</h6>
                                          </div>
                                      </div>
                                  </a>
@@ -109,12 +108,11 @@
                                      </p>
                                      <div class="flex justify-between pb-4">
                                          <div class=" pl-2 md:pl-4 text-sm md:text-md">
-                                             <h6 class=" ">31/08/22</h6>
-                                             <h6 class="">à 17h22</h6>
+                                             <h6 class=" ">{{ $post->date_start }}</h6>
+                                             <h6 class="">{{ $post->start_hour }}</h6>
                                          </div>
                                          <div class="pr-2 md:pr-4 text-sm md:text-md">
-                                             <h6 class="">Liège</h6>
-                                             <h6 class="">Le carré</h6>
+                                             <h6 class="">{{ $post->address }}</h6>
                                          </div>
                                      </div>
                              </a>
