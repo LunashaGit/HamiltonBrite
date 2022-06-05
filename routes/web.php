@@ -51,3 +51,4 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
 });
 /*Route::get('categories/{category:slug}', [PostController::class, 'getPostsByCategories'])->name('category');
 Route::get('authors/{author:username}', [PostController::class, 'getPostsByAuthor']);*/
+// Config test
