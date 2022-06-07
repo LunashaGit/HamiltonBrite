@@ -13,14 +13,17 @@
                             src="/assets/osaka.jpg" alt="">
                     </div>
                 </div>
-                <article class="space-y-6 p-4 md:p-8 text-left text-md md:w-[30 rem]">
+                <article class="space-y-6 p-4 md:p-8 text-left text-md md:w-[30rem]">
                     <form class="" method="POST"
                     action="/profile/update/{{ request()->user()->id }}">
                     @csrf
                     @method('PUT')
-                    <div class="">
+                    <div class="img-preview">
                         <img class="mx-auto my-2 rounded-[50px]"
                             src="{{ gravatar(request()->user()->email) }}">
+                        <input type="file" accept="image/*" id="choose file" name="choose file">
+                        <label for="choose-file">Choose File</label>
+ 
                     </div>
                         <h2 class="text-xl flex justify-center pb-4 font-medium text-gray-800 dark:text-white">My profile</h2>
                         <div>
@@ -64,11 +67,9 @@
                                     autocomplete="off" type="password" name="password_confirm" id="password_confirm"
                                     placeholder="password confirmation">
 
-                            <label class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">My bio :</label>
-                            <textarea placeholder="About me" name="bio" id="bio" value="{{request()->user()->bio }}" 
-                            class="p-2 box-border resize-none bg-gray-50 border border-gray-300 text-gray-800 text-sm h-40 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
-                                {{ request()->user()->bio  }}
-                            </textarea>
+                            <label class="pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">My bio :</label>
+                            <textarea placeholder="About me" rows="5" cols="40" name="bio" id="bio" value="{{request()->user()->bio }}" 
+                            class="p-2 box-border resize-none bg-gray-50 border border-gray-300 text-gray-800 text-sm h-40 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">{{ request()->user()->bio  }}</textarea>
                         </div>
 
                         <input type="submit" value="Update informations"
@@ -96,5 +97,6 @@
                 </article>
         </section>
 
+        <script src="ressources/js/preview-image.js"></script>
     </x-slot>
 </x-layout>

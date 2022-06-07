@@ -42,6 +42,16 @@
     background-color: hsl(0 0% 100% / 0.9);
     box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
     background-color: rgba(255, 255, 255, 0.2);
-
-    
 }
+
+#img-preview {
+    display: none; 
+    width: 155px;   
+    border: 2px dashed #333;  
+    margin-bottom: 20px;
+  }
+  #img-preview img {  
+    width: 100%;
+    height: auto; 
+    display: block;   
+  }
