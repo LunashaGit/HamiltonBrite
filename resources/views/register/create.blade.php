@@ -3,40 +3,40 @@
         Register
     </x-slot>
     <x-slot name="content">
-        <section class="pt-12 pb-24 bg-lightblue flex flex-col">
+        <section class="flex flex-col pt-12 pb-24 bg-lightblue">
             <div
                 class="flex flex-col md:flex-row mx-auto w-[90vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-right ">
                     <div
-                        class=" bg-white rounded-lg flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-                        <img class="object-cover h-full rounded-t-lg  md:rounded-none md:rounded-l-lg"
+                        class="flex-row bg-white rounded-lg md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                             src="/assets/osaka.jpg" alt="">
                     </div>
                 </div>
-                <article class="space-y-6 p-4 text-md md:p-8 text-left">
+                <article class="p-4 space-y-6 text-left text-md md:p-8">
                     <form class="" action="/register" method="POST">
                         @csrf
-                        <h2 class="text-2xl flex justify-center pb-8 font-medium text-gray-900 dark:text-white">Register to our platform</h2>
+                        <h2 class="flex justify-center pb-8 text-2xl font-medium text-gray-900 dark:text-white">Register to our platform</h2>
                         <div>
                             <label for="username"
                                 class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300">Username</label>
                             <input
                                 class="text-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="username" id="username" placeholder="username"
+                                autocomplete="off" type="text" name="username" id="username" placeholder="Username"
                                 value="" required>
 
                             <label for="lastname"
                                 class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">Last name</label>
                             <input
                                 class="text-sm bg-gray-50 border border-gray-300 text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="lastname" id="lastname" placeholder="lastname" value=""
+                                autocomplete="off" type="text" name="lastname" id="lastname" placeholder="Last Name" value=""
                                 required>
 
                             <label for="firstname"
                                 class="block pt-4 pb-2 text-gray-800 dark:text-gray-300">First Name</label>
                             <input
                                 class="text-sm bg-gray-50 border border-gray-300 text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                autocomplete="off" type="text" name="firstname" id="firstname" placeholder="firstname" value=""
+                                autocomplete="off" type="text" name="firstname" id="firstname" placeholder="First Name" value=""
                                 required>
                             <label for="email"
                                 class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300">Email</label>
@@ -45,7 +45,7 @@
                                 placeholder="name@company.com" required="">
                             <label for="password"
                                 class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300">Password</label>
-                            <input type="password" name="password" id="password" placeholder=""
+                            <input type="password" name="password" id="password" placeholder="Password"
                                 class="text-sm bg-gray-50 border  border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 required="">
                             <label for="password_confirm"
@@ -55,7 +55,7 @@
                             <input
                                 class="text-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="password" name="password_confirm" id="password_confirm"
-                                placeholder="password confirmation" required>
+                                placeholder="Password confirmation" required>
                         </div>
 
                         <input type="submit" value="Create an account"
@@ -72,7 +72,7 @@
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
                                 <input id="remember" type="checkbox" value=""
-                                    class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+                                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
                             </div>
                             <label for="remember"
                                 class="ml-1 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
