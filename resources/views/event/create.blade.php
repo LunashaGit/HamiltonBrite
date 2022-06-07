@@ -20,11 +20,14 @@
                         <label for="title" class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300 ">Name
                             of the
                             event :</label>
-
-
                         <input
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                             autocomplete="off" type="text" name="title" id="title" placeholder="Title of post" required>
+                            <label for="address"
+                            class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Address</label>
+                     <input
+                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                         type="text" name="address" value="" id="address" placeholder="Address" autocomplete="off" onchange="mapUp()">
 
                             <label for="title" class="block pb-2 pt-4 font-medium text-gray-900 dark:text-gray-300 ">Type of event :</label>
                             <select  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -73,11 +76,7 @@
                             <textarea
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-12 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="body" id="body" placeholder="Description" required></textarea>
-                            <label for="address"
-                                   class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Address</label>
-                            <input
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                type="text" name="address" value="" id="address" placeholder="Address" autocomplete="off" onchange="mapUp()">
+                          
                             <label for="image"
                             class="block pt-4 pb-2  text-md font-medium text-gray-900 dark:text-gray-300">Image</label>
                             <input class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"

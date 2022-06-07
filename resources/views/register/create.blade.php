@@ -13,49 +13,49 @@
                             src="/assets/osaka.jpg" alt="">
                     </div>
                 </div>
-                <article class="space-y-6 p-4 md:p-8 text-left">
+                <article class="space-y-6 p-4 text-md md:p-8 text-left">
                     <form class="" action="/register" method="POST">
                         @csrf
-                        <h2 class="text-xl pb-4 font-medium text-gray-900 dark:text-white">Register to our platform</h2>
+                        <h2 class="text-2xl flex justify-center pb-8 font-medium text-gray-900 dark:text-white">Register to our platform</h2>
                         <div>
                             <label for="username"
-                                class="block pt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Username</label>
+                                class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300">Username</label>
                             <input
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="text-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="username" id="username" placeholder="username"
                                 value="" required>
 
                             <label for="lastname"
                                 class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">Last name</label>
                             <input
-                                class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="text-sm bg-gray-50 border border-gray-300 text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="lastname" id="lastname" placeholder="lastname" value=""
                                 required>
 
                             <label for="firstname"
-                                class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">First Name</label>
+                                class="block pt-4 pb-2 text-gray-800 dark:text-gray-300">First Name</label>
                             <input
-                                class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="text-sm bg-gray-50 border border-gray-300 text-gray-800 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="firstname" id="firstname" placeholder="firstname" value=""
                                 required>
                             <label for="email"
-                                class="block pt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email</label>
+                                class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300">Email</label>
                             <input type="email" name="email" id="email"
-                                class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="text-sm bg-gray-50 border  border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 placeholder="name@company.com" required="">
                             <label for="password"
-                                class="block pt-2 mt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password</label>
+                                class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300">Password</label>
                             <input type="password" name="password" id="password" placeholder=""
-                                class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="text-sm bg-gray-50 border  border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 required="">
                             <label for="password_confirm"
-                                class="block pt-2 text-sm font-medium text-gray-900 dark:text-gray-300">Password
+                                class="block pt-4 pb-2 font-medium text-gray-900 dark:text-gray-300">Password
                                 verification
-                                <input
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                    autocomplete="off" type="password" name="password_confirm" id="password_confirm"
-                                    placeholder="password confirmation" required>
                             </label>
+                            <input
+                                class="text-sm bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                autocomplete="off" type="password" name="password_confirm" id="password_confirm"
+                                placeholder="password confirmation" required>
                         </div>
 
                         <input type="submit" value="Create an account"
