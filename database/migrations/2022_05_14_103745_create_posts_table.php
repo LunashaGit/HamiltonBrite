@@ -28,7 +28,7 @@ return new class extends Migration
             $table->string('address');
             $table->float('latitude');
             $table->float('longitude');
-            $table->string('image');
+            $table->string('image')->default('post_default.png');
             $table->timestamps();
             $table->timestamp('published_at')->nullable();
         });

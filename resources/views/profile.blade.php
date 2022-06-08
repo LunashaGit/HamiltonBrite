@@ -18,7 +18,8 @@
                     <h2 class="flex justify-center pb-4 text-2xl font-medium text-gray-800 dark:text-white">My profile</h2>
 
                     <form class="" method="POST"
-                    action="/profile/update/{{ request()->user()->id }}">
+                    action="/profile/update/{{ request()->user()->id }}"
+                          enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     {{-- <div class="img-preview">
@@ -26,10 +27,11 @@
                             src="{{ gravatar(request()->user()->email) }}">
                         <input type="file" accept="image/*" id="choose file" name="choose file">
                         <label for="choose-file">Choose File</label>
- 
+
                     </div> --}}
-                    <h2 class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Image :</h2>
-                    <label class="bg-gray-50 border border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 text-gray-400" 
+                        <img src="storage/images/{{request()->user()->profile_picture}}">
+                        <h2 class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Image :</h2>
+                    <label class="bg-gray-50 border border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 text-gray-400"
                         for="image">
                         <input
                         class="hidden"
@@ -79,7 +81,7 @@
                                     placeholder="Password confirmation">
 
                             <label class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">My bio :</label>
-                            <textarea placeholder="About me" rows="5" cols="40" name="bio" id="bio" value="{{request()->user()->bio }}" 
+                            <textarea placeholder="About me" rows="5" cols="40" name="bio" id="bio" value="{{request()->user()->bio }}"
                             class="box-border block w-full h-40 text-sm text-gray-800 border border-gray-300 rounded-lg resize-none bg-gray-50 focus:ring-blue-500 p-2.5 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">{{ request()->user()->bio  }}</textarea>
                         </div>
 

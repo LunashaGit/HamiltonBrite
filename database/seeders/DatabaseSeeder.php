@@ -32,7 +32,15 @@ class DatabaseSeeder extends Seeder
         Post::factory(5)->create();
         CommentaryPost::factory(5)->create();
         ParticipationPost::factory(5)->create();
-
+        User::factory()->create([
+            'username' => 'jerk',
+            'bio' => 'JeSuisJerk',
+            'is_admin' => 1,
+            'firstname' => 'jerk',
+            'lastname' => 'jerk',
+            'email' => 'jerk@jerk.jerk',
+            'password' => 'jerkjerk',
+        ]);
 
         /*$user = User::factory()->create();
 
