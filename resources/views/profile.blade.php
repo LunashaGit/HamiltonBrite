@@ -3,29 +3,42 @@
         My profile
     </x-slot>
     <x-slot name="content">
-        <section class="pt-12 pb-24 bg-lightblue flex flex-col">
+        <section class="flex flex-col pt-12 pb-24 bg-lightblue">
             <div
                 class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-right ">
                     <div
-                        class=" bg-white rounded-lg flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        class="flex-row bg-white rounded-lg md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                         <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                             src="/assets/osaka.jpg" alt="">
                     </div>
                 </div>
+
                 <article class="space-y-6 p-4 md:p-8 text-left text-md md:w-[30rem]">
+                    <h2 class="flex justify-center pb-4 text-2xl font-medium text-gray-800 dark:text-white">My profile</h2>
+
                     <form class="" method="POST"
-                    action="/profile/update/{{ request()->user()->id }}">
+                    action="/profile/update/{{ request()->user()->id }}"
+                          enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    <div class="img-preview">
+                    {{-- <div class="img-preview">
                         <img class="mx-auto my-2 rounded-[50px]"
                             src="{{ gravatar(request()->user()->email) }}">
                         <input type="file" accept="image/*" id="choose file" name="choose file">
                         <label for="choose-file">Choose File</label>
- 
-                    </div>
-                        <h2 class="text-xl flex justify-center pb-4 font-medium text-gray-800 dark:text-white">My profile</h2>
+
+                    </div> --}}
+                        <img src="storage/images/{{request()->user()->profile_picture}}">
+                        <h2 class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Image :</h2>
+                    <label class="bg-gray-50 border border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 text-gray-400"
+                        for="image">
+                        <input
+                        class="hidden"
+                        type="file" id="image" onchange="showPreview(event)" name="image" value="upload image"
+                        placeholder="">Choose an image <svg xmlns="http://www.w3.org/2000/svg" class="flex float-right mr-1 w-[1.2rem] h-[1.2rem]" viewBox="0 0 20 20" fill="black">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                          </svg></label>
                         <div>
 
                             <label for="username"
@@ -54,7 +67,7 @@
                                 placeholder="name@company.com" value="{{ request()->user()->email }}">
 
                             <label for="password"
-                                class="block pt-4 pb-2 mt-2 font-medium text-gray-800 dark:text-gray-300">Password</label>
+                                class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">Password</label>
                             <input type="password" name="password" id="password" placeholder="••••••••"
                                 class="bg-gray-50 border  border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
 
@@ -65,11 +78,11 @@
                                 <input
                                     class="bg-gray-50 border border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                     autocomplete="off" type="password" name="password_confirm" id="password_confirm"
-                                    placeholder="password confirmation">
+                                    placeholder="Password confirmation">
 
-                            <label class="pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">My bio :</label>
-                            <textarea placeholder="About me" rows="5" cols="40" name="bio" id="bio" value="{{request()->user()->bio }}" 
-                            class="p-2 box-border resize-none bg-gray-50 border border-gray-300 text-gray-800 text-sm h-40 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">{{ request()->user()->bio  }}</textarea>
+                            <label class="block pt-4 pb-2 font-medium text-gray-800 dark:text-gray-300">My bio :</label>
+                            <textarea placeholder="About me" rows="5" cols="40" name="bio" id="bio" value="{{request()->user()->bio }}"
+                            class="box-border block w-full h-40 text-sm text-gray-800 border border-gray-300 rounded-lg resize-none bg-gray-50 focus:ring-blue-500 p-2.5 focus:border-blue-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">{{ request()->user()->bio  }}</textarea>
                         </div>
 
                         <input type="submit" value="Update informations"

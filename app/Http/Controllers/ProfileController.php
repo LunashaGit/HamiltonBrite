@@ -43,6 +43,11 @@ class ProfileController extends Controller
             return "No";
         }
 
+        $file = $request->file('image');
+        $imageName = time().'.'.$request->image->extension();
+        $user->profile_picture = $imageName;
+        $file->storeAs('public/images', $imageName);
+
         $user->password = $request->password;
 
         bcrypt($user->password);

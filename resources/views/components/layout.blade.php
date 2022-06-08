@@ -21,10 +21,10 @@
             integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
             crossorigin=""></script>
 </head>
-<body class="antialiased  ">
+<body class="antialiased ">
 
-<nav class="p-5 bg-whitesmoke text-black shadow md:flex md:items-center md:justify-between">
-    <div class="flex my-auto justify-between ">
+<nav class="p-5 text-black shadow bg-whitesmoke md:flex md:items-center md:justify-between">
+    <div class="flex justify-between my-auto ">
       <span class="text-3xl cursor-pointer">
         <img class="inline mb-[.42em]"
              src="assets/logo.svg">
@@ -76,11 +76,12 @@
         @endauth
     </ul>
 </nav>
-<div class="min-h-screen bg-whitesmoke text-black lg:text-xl font-nunito ">
-    <div class="overflow-hidden text-center place-content-center min-h-screen">
+<div class="min-h-screen text-black bg-whitesmoke lg:text-xl font-nunito ">
+    <div class="min-h-screen overflow-hidden text-center place-content-center">
         {{$content}}
     </div>
 </div>
+
 <script src="ressources/js/nav.js"></script>
 <script src="ressources/js/parallax.js"></script>
 

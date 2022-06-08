@@ -4,67 +4,67 @@
      </x-slot>
      <x-slot name="content">
          <section class="h-[25rem] sm:h-[30rem] md:h-[35rem]">
-             <div id="parallax" class="parallax bg-concert mx-auto parallax bg-cover h-full bg-center">
+             <div id="parallax" class="h-full mx-auto bg-center bg-cover parallax bg-concert">
              </div>
          </section>
 
          <section class="main">
              <div class="font-black tracking-wider ">
-                 <h1 class="para__text text-4xl mt-8 mb-2 text-lightblue ">Hamilton Brite</h1>
-                 <h2 class="para__text text-2xl ">THE ONLY EVENT PLANNER YOU NEED</h2>
+                 <h1 class="mt-8 mb-2 text-4xl para__text text-lightblue ">Hamilton Brite</h1>
+                 <h2 class="text-2xl para__text ">THE ONLY EVENT PLANNER YOU NEED</h2>
              </div>
              @auth()
                  @if (session()->has('Success'))
                      <div>
-                         <p class="text-3xl pt-8 pb-4">{{ session('Success') . ' ' . request()->user()->name }}</p>
+                         <p class="pt-8 pb-4 text-3xl">{{ session('Success') . ' ' . request()->user()->name }}</p>
                      </div>
                  @endif
              @endauth
-             <div class="mx-auto my-5 flex px-8 md:px-16 justify-left items-center">
+             <div class="flex items-center px-8 mx-auto my-5 md:px-16 justify-left">
                  <form class="" method="GET" action="/">
                      <div class="form-group">
                          <input type="text"
-                             class="justify-center m-3 md:p-1 md:w-64 border-solid border-2 border-lightblue text-center rounded-lg"
+                             class="justify-center m-3 text-center border-2 border-solid rounded-lg md:p-1 md:w-64 border-lightblue"
                              autocomplete="off" name="search" placeholder="Find Something"
                              value="{{ request('search') }}">
                      </div>
                  </form>
              </div>
 
-             <section id="select-container" class="mb-4 p-4 flex flex-wrap justify-center">
+             <section id="select-container" class="flex flex-wrap justify-center p-4 mb-4">
                  @foreach ($categories as $category)
-                     <a class="bg-lightblue hover:bg-gray-800 hover:text-lightblue py-1 px-4 rounded-xl mx-2 my-2 duration-100 ease-in-out hover:duration-500 cursor-pointer"
+                     <a class="px-4 py-1 mx-2 my-2 duration-100 ease-in-out cursor-pointer bg-lightblue hover:bg-gray-800 hover:text-lightblue rounded-xl hover:duration-500"
                          href="/?category={{ $category->slug }}">{{ $category->name }}</a>
                  @endforeach
              </section>
              @if ($posts->count())
-                 <div class="bg-lightblue pb-24 mr-6 sm:mr-12 rounded-tr-lg rounded-br-lg flex flex-col">
-                     <div class="flex text-left pl-8 pt-4">
-                         <h2 class="text-4xl font-bold pl-2 md:pl-4 pt-8 pb-4 text-white ">Happening Soon</h2>
+                 <div class="flex flex-col pb-24 mr-6 rounded-tr-lg rounded-br-lg bg-lightblue sm:mr-12">
+                     <div class="flex pt-4 pl-8 text-left">
+                         <h2 class="pt-8 pb-4 pl-2 text-4xl font-bold text-white md:pl-4 ">Happening Soon</h2>
                      </div>
                      <div
-                         class="text-white gap-4 sm:gap-8 md:gap-12 px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-8 ">
+                         class="grid grid-cols-1 gap-4 px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                          @foreach ($posts as $post)
                              <div
-                                 class="card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
+                                 class="justify-between xl:max-w-[1280px]  w-64 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer sm:w-56 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
 
                                  <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
-                                     <div class=" ">
-                                         <img class="w-full max-h-48  object-cover bg-center rounded-t-lg"
+                                     <div class="">
+                                         <img class="object-cover w-full h-48 rounded-t-lg"
                                              src="/storage/images/{{ $post->image }}" alt="Picture of a bridge">
                                      </div>
-                                     <h2 class=" text-lg lg:text-xl justify-center font-bold m-2 md:m-4 line-clamp-2">
+                                     <h2 class="justify-center m-2 text-lg font-bold lg:text-xl md:m-4 line-clamp-2">
                                          {{ $post->title }}
                                      </h2>
-                                     <p class=" overflow-hidden text-sm lg:text-md line-clamp-3 m-4">
+                                     <p class="m-4 overflow-hidden text-sm lg:text-md line-clamp-3">
                                          {{ $post->body }}
                                      </p>
                                      <div class="flex justify-between pb-4">
-                                         <div class=" pl-2 md:pl-4 text-sm md:text-md">
-                                             <h6 class=" ">{{ $post->date_start }}</h6>
+                                         <div class="pl-2 text-sm md:pl-4 md:text-md">
+                                             <h6 class="">{{ $post->date_start }}</h6>
                                              <h6 class="">{{ $post->start_hour }}</h6>
                                          </div>
-                                         <div class="pr-2 md:pr-4 text-sm md:text-md">
+                                         <div class="pr-2 text-sm md:pr-4 md:text-md">
                                              <h6 class="">{{ $post->address }}</h6>
                                          </div>
                                      </div>
@@ -79,36 +79,36 @@
              </div>
          </section>
          <section>
-             <div class="bg-silver-blue ml-6 sm:ml-16 rounded-tl-lg rounded-bl-lg mb-16 pb-8">
+             <div class="pb-8 mb-16 ml-6 rounded-tl-lg rounded-bl-lg bg-silver-blue sm:ml-16">
                  <div class="text-left pr-8 mt-[-3em] pt-4  flex flex-col">
-                     <h2 class="text-4xl font-bold pr-6 md:pr-12 text-white pt-8 pb-4 text-right ">Art</h2>
+                     <h2 class="pt-8 pb-4 pr-6 text-4xl font-bold text-right text-white md:pr-12 ">Art</h2>
                  </div>
 
                  <div
-                     class="text-white gap-4 sm:gap-8 md:gap-12 px-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+                     class="grid grid-cols-1 gap-4 px-16 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 ">
 
 
                      @foreach ($posts as $post)
                          <div
-                             class="card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
+                             class="justify-between w-56 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer 2xl:w-[17rem] md:w-64 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
 
                              <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                  <div class="">
-                                     <img class="w-full max-h-48  object-cover bg-center rounded-t-lg"
+                                     <img class="object-cover w-full h-48 bg-center rounded-t-lg"
                                          src="/storage/images/{{ $post->image }}" alt="Picture of a bridge">
                                  </div>
-                                     <h2 class=" text-lg lg:text-xl justify-center font-bold m-2 md:m-4 line-clamp-2">
+                                     <h2 class="justify-center m-2 text-lg font-bold lg:text-xl md:m-4 line-clamp-2">
                                          {{ $post->title }}
                                      </h2>
-                                     <p class=" overflow-hidden text-sm lg:text-md line-clamp-3 m-4">
+                                     <p class="m-4 overflow-hidden text-sm lg:text-md line-clamp-3">
                                          {{ $post->body }}
                                      </p>
                                      <div class="flex justify-between pb-4">
-                                         <div class=" pl-2 md:pl-4 text-sm md:text-md">
-                                             <h6 class=" ">{{ $post->date_start }}</h6>
+                                         <div class="pl-2 text-sm md:pl-4 md:text-md">
+                                             <h6 class="">{{ $post->date_start }}</h6>
                                              <h6 class="">{{ $post->start_hour }}</h6>
                                          </div>
-                                         <div class="pr-2 md:pr-4 text-sm md:text-md">
+                                         <div class="pr-2 text-sm md:pr-4 md:text-md">
                                              <h6 class="">{{ $post->address }}</h6>
                                          </div>
                                      </div>
@@ -120,8 +120,8 @@
          </section>
 
 
-         <footer class="w-full bg-gray-800 h-64 text-white text-center">
-             <div class="mx-auto my-auto py-4 ">
+         <footer class="w-full h-64 text-center text-white bg-gray-800">
+             <div class="py-4 mx-auto my-auto ">
                  <ul class="float-left pl-8">
                      <li>Github Luna</li>
                      <li>Linked-in Luna</li>
