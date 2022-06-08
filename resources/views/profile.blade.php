@@ -13,19 +13,30 @@
                             src="/assets/osaka.jpg" alt="">
                     </div>
                 </div>
+
                 <article class="space-y-6 p-4 md:p-8 text-left text-md md:w-[30rem]">
+                    <h2 class="flex justify-center pb-4 text-2xl font-medium text-gray-800 dark:text-white">My profile</h2>
+
                     <form class="" method="POST"
                     action="/profile/update/{{ request()->user()->id }}">
                     @csrf
                     @method('PUT')
-                    <div class="img-preview">
+                    {{-- <div class="img-preview">
                         <img class="mx-auto my-2 rounded-[50px]"
                             src="{{ gravatar(request()->user()->email) }}">
                         <input type="file" accept="image/*" id="choose file" name="choose file">
                         <label for="choose-file">Choose File</label>
  
-                    </div>
-                        <h2 class="flex justify-center pb-4 text-xl font-medium text-gray-800 dark:text-white">My profile</h2>
+                    </div> --}}
+                    <h2 class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Image :</h2>
+                    <label class="bg-gray-50 border border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 text-gray-400" 
+                        for="image">
+                        <input
+                        class="hidden"
+                        type="file" id="image" onchange="showPreview(event)" name="image" value="upload image"
+                        placeholder="">Choose an image <svg xmlns="http://www.w3.org/2000/svg" class="flex float-right mr-1 w-[1.2rem] h-[1.2rem]" viewBox="0 0 20 20" fill="black">
+                            <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                          </svg></label>
                         <div>
 
                             <label for="username"

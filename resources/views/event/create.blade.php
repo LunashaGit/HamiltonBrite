@@ -88,14 +88,21 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-12 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="body" id="body" placeholder="Description" required></textarea>
 
-                            <div id="container" class="hidden pt-4 mx-auto"><img placeholder="Your image" class="hidden mx-auto rounded-lg" id="img-preview"></div>
-                            <label for="image"
-                                class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Image</label>
+                            <div id="container" class="hidden pt-4 mx-auto"><img placeholder="Your image"
+                                    class="hidden mx-auto rounded-lg" id="img-preview"></div>
+                            <h2 class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Image :</h2>
+                            <label class="bg-gray-50 border border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 text-gray-400" 
+                                for="image">
+                           
+                                <input
+                                class="hidden"
+                                type="file" id="image" onchange="showPreview(event)" name="image" value="upload image"
+                                placeholder="">Choose an image <svg xmlns="http://www.w3.org/2000/svg" class="flex float-right mr-1 w-[1.15rem] h-[1.15rem]" viewBox="0 0 20 20" fill="black">
+                                    <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                  </svg></label>
+                                  <h4 class="text-[10px] italic text-white ">Accept only .png, .jpg, .svg,  </h4>
                             <input
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                                type="file" id="image" onchange="showPreview(event)" name="image" value="upload image" placeholder="Choose an image">
-                            <input
-                                class="bg-gray-50 border  border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="bg-gray-50 border text-gray-400 border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 "
                                 autocomplete="off" type="hidden" name="latitude" id="latitude" placeholder="latitude"
                                 required>
                             <input
@@ -127,61 +134,12 @@
                     @endif
                 </div>
         </section>
-
+        <script src="/ressources/js/preload-image.js"></script>
+        <script src="/ressources/js/map.js"></script>
 
         <script>
-           function showPreview(event){
-  if(event.target.files.length > 0){
-    var src = URL.createObjectURL(event.target.files[0]);
-    var preview = document.getElementById("img-preview");
-    var container = document.getElementById("container");
-
-    preview.classList.remove("hidden");
-    container.classList.remove("hidden");
-    preview.style.display = "block";
-    container.style.display = "block";
-    container.style.marginBottom = "-40px"
-    preview.src = src;
-
-
-  }
-}
-
-
-
-
-            const mapUp = () => {
-                let city = document.getElementById('address').value
-                var requestOptions = {
-                    method: 'GET',
-                };
-                fetch(`https://api.geoapify.com/v1/geocode/search?text=${city}&apiKey=a203d55a7a1f46cda1aef5ce6655c14c`,
-                        requestOptions)
-                    .then(response => response.json())
-                    .then(result => {
-
-                        document.getElementById('latitude').value = result.features[0].geometry.coordinates[1]
-                        document.getElementById('longitude').value = result.features[0].geometry.coordinates[0]
-                        document.getElementById('here').innerHTML = `<div id="map"></div>`
-                        let here = document.getElementById('here');
-                        here.classList.remove("hidden")
-
-                        var map = L.map('map').setView([result.features[0].geometry.coordinates[1], result.features[0]
-                            .geometry.coordinates[0]
-                        ], 12);
-                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        }).addTo(map);
-                        L.marker([result.features[0].geometry.coordinates[1], result.features[0].geometry.coordinates[
-                                0]]).addTo(map)
-                            .bindPopup('The search :')
-                            .openPopup();
-                    })
-                    .catch(error => {
-                        console.log('error', error)
-                        document.getElementById('pipoupi').innerText = "Street not found"
-                    });
-            }
+      
+           
         </script>
     </x-slot>
 </x-layout>

@@ -1,22 +1,16 @@
-const chooseFile = document.getElementById("choose-file");
-const imgPreview = document.getElementById("img-preview");
+function showPreview(event) {
+  if (event.target.files.length > 0) {
+      var src = URL.createObjectURL(event.target.files[0]);
+      var preview = document.getElementById("img-preview");
+      var container = document.getElementById("container");
 
-[type="file"] {
-    height: 0;  
-    width: 0;
-    overflow: hidden;
+      preview.classList.remove("hidden");
+      container.classList.remove("hidden");
+      preview.style.display = "block";
+      container.style.display = "block";
+      container.style.marginBottom = "-40px"
+      preview.src = src;
+
+
   }
-  [type="file"] + label {
-    font-family: sans-serif;
-    background: #f44336;
-    padding: 10px 30px;
-    border: 2px solid #f44336;
-    border-radius: 3px;
-    color: #fff;
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  [type="file"] + label:hover {
-    background-color: #fff;
-    color: #f44336;
-  }
+}

@@ -5,7 +5,7 @@
     <x-slot name="content">
         <section class="flex flex-col pt-12 pb-24 bg-lightblue">
             <div
-                class="flex flex-col md:flex-row mx-auto w-[90vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+                class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-right ">
                     <div
                         class="flex-row bg-white rounded-lg md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">

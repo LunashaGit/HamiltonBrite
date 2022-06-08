@@ -43,14 +43,14 @@
                          <h2 class="pt-8 pb-4 pl-2 text-4xl font-bold text-white md:pl-4 ">Happening Soon</h2>
                      </div>
                      <div
-                         class="grid grid-cols-1 gap-4 px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 ">
+                         class="grid grid-cols-1 gap-4 px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                          @foreach ($posts as $post)
                              <div
-                                 class="justify-between w-56 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer md:w-64 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
+                                 class="justify-between xl:max-w-[1280px]  w-64 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer sm:w-56 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
 
                                  <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                      <div class="">
-                                         <img class="object-cover w-full h-48 bg-center rounded-t-lg"
+                                         <img class="object-cover w-full h-48 rounded-t-lg"
                                              src="/storage/images/{{ $post->image }}" alt="Picture of a bridge">
                                      </div>
                                      <h2 class="justify-center m-2 text-lg font-bold lg:text-xl md:m-4 line-clamp-2">
