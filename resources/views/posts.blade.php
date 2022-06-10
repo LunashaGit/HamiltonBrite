@@ -3,13 +3,13 @@
          Home
      </x-slot>
      <x-slot name="content">
-         <section class="h-[25rem] sm:h-[30rem] md:h-[35rem]">
+         <section class="h-[35rem] sm:h-[40rem] md:h-[45rem]">
              <div id="parallax" class="h-full mx-auto bg-center bg-cover parallax bg-concert">
              </div>
          </section>
 
          <section class="main">
-             <div class="font-black tracking-wider ">
+             <div class="font-black tracking-wider  a">
                  <h1 class="mt-8 mb-2 text-4xl para__text text-lightblue ">Hamilton Brite</h1>
                  <h2 class="text-2xl para__text ">THE ONLY EVENT PLANNER YOU NEED</h2>
              </div>
@@ -46,7 +46,7 @@
                          class="grid grid-cols-1 gap-4 px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                          @foreach ($posts as $post)
                              <div
-                                 class="justify-between xl:max-w-[1280px]  w-64 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer sm:w-56 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
+                                 class="justify-between xl:max-w-[1280px] text-sm pb-6 w-64 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer sm:w-56 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
 
                                  <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                      <div class="">
@@ -59,15 +59,20 @@
                                      <p class="m-4 overflow-hidden text-sm lg:text-md line-clamp-3">
                                          {{ $post->body }}
                                      </p>
-                                     <div class="flex justify-between pb-4">
-                                         <div class="pl-2 text-sm md:pl-4 md:text-md">
-                                             <h6 class="">{{ $post->date_start }}</h6>
-                                             <h6 class="">{{ $post->start_hour }}</h6>
-                                         </div>
-                                         <div class="pr-2 text-sm md:pr-4 md:text-md">
-                                             <h6 class="">{{ $post->address }}</h6>
-                                         </div>
-                                     </div>
+                                     <div class="flex pl-4 pb-1 text-left justify-items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                                      </svg>
+                                      <h6 class=" pl-2">{{ $post->start_hour }}</h6></div>
+     
+                                      <div class="flex pl-4 pb-1 text-left justify-items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                       </svg> 
+                                       <h6 class="pl-2">{{ $post->date_start }}</h6></div> 
+     
+                                      <div class="flex pl-4 text-left justify-items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                         <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                       </svg>
+                                       <h6 class="line-clamp-1 pl-2 max-w-address">{{ $post->address }}</h6></div>
                                  </a>
                              </div>
                          @endforeach
@@ -85,52 +90,44 @@
                  </div>
 
                  <div
-                     class="grid grid-cols-1 gap-4 px-16 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 ">
+                     class="grid grid-cols-1 gap-4 px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
 
 
                      @foreach ($posts as $post)
                          <div
-                             class="justify-between w-56 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer 2xl:w-[17rem] md:w-64 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
+                             class="justify-between xl:max-w-[1280px] pb-6 text-sm w-64 mx-auto text-black transition duration-100 ease-in-out rounded-lg cursor-pointer sm:w-56 card hover:bg-gray-800 hover:text-white hover:duration-500 bg-whitesmoke">
 
                              <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                  <div class="">
                                      <img class="object-cover w-full h-48 bg-center rounded-t-lg"
                                          src="/storage/images/{{ $post->image }}" alt="Picture of a bridge">
                                  </div>
-                                     <h2 class="justify-center m-2 text-lg font-bold lg:text-xl md:m-4 line-clamp-2">
-                                         {{ $post->title }}
-                                     </h2>
-                                     <p class="m-4 overflow-hidden text-sm lg:text-md line-clamp-3">
-                                         {{ $post->body }}
-                                     </p>
-                                     <div class="flex justify-between pb-4">
-                                         <div class="pl-2 text-sm md:pl-4 md:text-md">
-                                             <h6 class="">{{ $post->date_start }}</h6>
-                                             <h6 class="">{{ $post->start_hour }}</h6>
-                                         </div>
-                                         <div class="pr-2 text-sm md:pr-4 md:text-md">
-                                             <h6 class="">{{ $post->address }}</h6>
-                                         </div>
-                                     </div>
-                             </a>
+                                 <h2 class="justify-center m-2 text-lg font-bold lg:text-xl md:m-4 line-clamp-2">
+                                     {{ $post->title }}
+                                 </h2>
+                                 <p class="m-4 overflow-hidden lg:text-md line-clamp-3">
+                                     {{ $post->body }}
+                                 </p>
+                                 <div class="flex pl-4 pb-1 text-left justify-items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
+                                 </svg>
+                                 <h6 class=" pl-2">{{ $post->start_hour }}</h6></div>
+
+                                 <div class="flex pl-4 pb-1 text-left justify-items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+                                  </svg> 
+                                  <h6 class="pl-2">{{ $post->date_start }}</h6></div> 
+
+                                 <div class="flex pl-4 text-left justify-items-start"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                  </svg>
+                                  <h6 class="line-clamp-1 pl-2 max-w-address">{{ $post->address }}</h6></div>
+                                </a>
                          </div>
                      @endforeach
                  </div>
              </div>
          </section>
 
-
-         <footer class="w-full h-64 text-center text-white bg-gray-800">
-             <div class="py-4 mx-auto my-auto ">
-                 <ul class="float-left pl-8">
-                     <li>Github Luna</li>
-                     <li>Linked-in Luna</li>
-                 </ul>
-                 <ul class="float-right pr-8">
-                     <li>Github Jerry</li>
-                     <li>Linked-in Jerry</li>
-                 </ul>
-             </div>
-         </footer>
      </x-slot>
  </x-layout>

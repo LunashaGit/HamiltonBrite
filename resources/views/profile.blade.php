@@ -5,10 +5,10 @@
     <x-slot name="content">
         <section class="flex flex-col pt-12 pb-24 bg-lightblue">
             <div
-                class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+                class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 text-gray-800 bg-whitesmoke dark:text-whitesmoke dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-right ">
                     <div
-                        class="flex-row bg-white rounded-lg md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        class="flex-row bg-whitesmoke rounded-lg md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                         <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                             src="/assets/osaka.jpg" alt="">
                     </div>
@@ -22,16 +22,9 @@
                           enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
-                    {{-- <div class="img-preview">
-                        <img class="mx-auto my-2 rounded-[50px]"
-                            src="{{ gravatar(request()->user()->email) }}">
-                        <input type="file" accept="image/*" id="choose file" name="choose file">
-                        <label for="choose-file">Choose File</label>
-
-                    </div> --}}
-                        <img src="storage/images/{{request()->user()->profile_picture}}">
+                        <img class="w-32 h-32 rounded-lg mx-auto" src="storage/images/{{request()->user()->profile_picture}}">
                         <h2 class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Image :</h2>
-                    <label class="bg-gray-50 border border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 text-gray-400"
+                    <label class="bg-gray-50 border cursor-pointer border-gray-300 text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 text-gray-400"
                         for="image">
                         <input
                         class="hidden"
@@ -86,10 +79,19 @@
                         </div>
 
                         <input type="submit" value="Update informations"
-                            class="w-full mt-8 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                            class="w-full mt-8 cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     </form>
-                    <div
-                    class="p-4">
+                    
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </article>
+                <div
+                    class="p-2 mt-4 flex items-end">
                     <form class="flex float-right"
                     method="post"
                         action="/profile/delete/{{ request()->user()->id }}">
@@ -100,16 +102,8 @@
                     </a>
                     </form>
                 </div>
-                    @if ($errors->any())
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
-                </article>
         </section>
-
+        <script src="/ressources/js/preload-image.js"></script>
         <script src="ressources/js/preview-image.js"></script>
     </x-slot>
 </x-layout>

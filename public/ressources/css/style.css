@@ -55,3 +55,14 @@
     height: auto; 
     display: block;   
   }
+
+  :root{
+    --bs-dark: #212529;
+  }
+  .theme-container {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+  }

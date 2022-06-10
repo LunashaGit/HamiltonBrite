@@ -6,10 +6,10 @@
         <section class="flex flex-col pt-12 pb-24 text-left bg-lightblue">
             <div>
                 <div
-                    class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-white rounded-lg border border-gray-200 shadow-md p-2 sm:p-4 md:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 ">
+                    class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-whitesmoke rounded-lg border border-gray-200 shadow-md p-2 sm:p-4 md:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 ">
                     <div class="flex float-left ">
                         <div
-                            class="flex-row bg-white rounded-lg md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            class="flex-row bg-whitesmoke rounded-lg md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                                 src="/assets/ticket.jpg" alt="">
                         </div>
@@ -85,7 +85,7 @@
                                 class="block pt-4 pb-2 font-medium text-gray-900 text-md dark:text-gray-300">Description
                                 :</label>
                             <textarea
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-12 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                                class="bg-gray-50 border resize-none border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-12 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                                 autocomplete="off" type="text" name="body" id="body" placeholder="Description" required></textarea>
 
                             <div id="container" class="hidden pt-4 mx-auto"><img placeholder="Your image"
@@ -134,7 +134,6 @@
                     @endif
                 </div>
         </section>
-        <script src="/ressources/js/preload-image.js"></script>
         <script src="/ressources/js/map.js"></script>
 
         <script>

@@ -5,10 +5,10 @@
     <x-slot name="content">
         <section class="pt-12 pb-24 bg-lightblue">
             <div
-                class="flex flex-col md:flex-row mx-auto p-4 w-[90vw] xl:max-w-[60rem] bg-white my-auto rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
+                class="flex flex-col md:flex-row mx-auto p-4 w-[90vw] xl:max-w-[60rem] bg-whitesmoke my-auto rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-left ">
                     <a href="#"
-                        class="bg-white rounded-lg md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        class="bg-whitesmoke rounded-lg md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-800">
                         <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
                             src="/assets/london.jpg" alt="">
                 </div>
@@ -39,7 +39,7 @@
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
                                 <input id="remember" type="checkbox" value=""
-                                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800">
+                                    class="w-4 h-4 border border-gray-300 rounded focus:ring-3 focus:ring-blue-300  dark:focus:ring-blue-600 dark:ring-offset-gray-800">
                             </div>
                             <label for="remember"
                                 class="pr-2 ml-1 text-sm font-medium text-gray-900 dark:text-gray-300">Remember

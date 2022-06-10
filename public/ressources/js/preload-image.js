@@ -10,7 +10,5 @@ function showPreview(event) {
       container.style.display = "block";
       container.style.marginBottom = "-40px"
       preview.src = src;
-
-
   }
 }
