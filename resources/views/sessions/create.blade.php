@@ -3,7 +3,7 @@
         Login
     </x-slot>
     <x-slot name="content">
-        <section class="pt-12 pb-24 bg-lightblue">
+        <section class="pt-36 pb-24 bg-lightblue">
             <div
                 class="flex flex-col md:flex-row mx-auto p-4 w-[90vw] xl:max-w-[60rem] bg-whitesmoke my-auto rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
                 <div class="flex float-left ">

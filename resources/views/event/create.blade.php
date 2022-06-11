@@ -3,7 +3,7 @@
         Create Event
     </x-slot>
     <x-slot name="content">
-        <section class="flex flex-col pt-12 pb-24 text-left bg-lightblue">
+        <section class="flex flex-col pt-36 pb-24 text-left bg-lightblue">
             <div>
                 <div
                     class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] bg-whitesmoke rounded-lg border border-gray-200 shadow-md p-2 sm:p-4 md:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700 ">

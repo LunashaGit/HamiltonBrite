@@ -22,73 +22,73 @@
             crossorigin=""></script>
 </head>
 <body class="antialiased body">
-
-<nav class="navbar md:justify-between p-5 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-whitesmoke md:flex md:items-center transition-all ease-in duration-500">
-    <div class="flex  my-auto ">
-      <span class="text-2xl md:text-3xl cursor-pointer">
-        <img class="inline mb-[.42em]"
-             src="assets/logo.svg">
-        <a href="/">Hamilton Brite</a>
-      
-      </span>   
-      <div class="theme-container shadow-dark pl-4">
-        <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+    <nav id="navbar" class="fixed top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-whitesmoke md:flex md:items-center transition-all ease-in duration-500">
+        <div class="flex  my-auto ">
+          <span class="text-2xl md:text-3xl cursor-pointer">
+            <img class="inline mb-[.42em]"
+                 src="assets/logo.svg">
+            <a href="/">Hamilton Brite</a>
+          
+          </span>   
+          <div class="theme-container shadow-dark pl-4">
+            <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
+            </div>
+             <span class="menu flex mx-1 mt-[.15em] text-3xl cursor-pointer md:hidden absolute right-[5%]">
+                    <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 menu" fill="none"
+                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+             </span>
         </div>
-         <span class="menu flex mx-1 mt-[.15em] text-3xl cursor-pointer md:hidden absolute right-[5%]">
-                <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 menu" fill="none"
-                     viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-         </span>
-    </div>
-  
-    
-    <ul class="burger-links md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center z-[500] md:static absolute bg-whitesmoke w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+      
         
-        @auth()
+        <ul class="burger-links md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center z-[500] md:static absolute bg-whitesmoke w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            
+            @auth()
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="/" class="text-xl duration-500 hover:text-lightblue">HOME</a>
+                </li>
+               
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="/new" class="text-xl duration-500 hover:text-lightblue">CREATE</a>
+                </li>
+                <li class="mx-4 my-6 md:my-0">
+                    <a href="/profile" class="text-xl duration-500 hover:text-lightblue">PROFILE</a>
+                </li>
+                @if(request()->user()->is_admin == 1)
+                    <a href="{{route('admin.view')}}">Admin View</a>
+                @endif
+                <form class="mx-4 my-6 md:my-0" method="POST" action="/logout">
+                    @csrf
+                    <input class="text-xl duration-500 hover:text-lightblue" type="submit" value="LOG OUT">
+                </form>
+    
+            @else
+    
             <li class="mx-4 my-6 md:my-0">
                 <a href="/" class="text-xl duration-500 hover:text-lightblue">HOME</a>
             </li>
-           
             <li class="mx-4 my-6 md:my-0">
-                <a href="/new" class="text-xl duration-500 hover:text-lightblue">CREATE</a>
+                <a href="/event" class="text-xl duration-500 hover:text-lightblue">CREATE</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="/profile" class="text-xl duration-500 hover:text-lightblue">PROFILE</a>
+                <a href="/login" class="text-xl duration-500 hover:text-lightblue">LOGIN</a>
             </li>
-            @if(request()->user()->is_admin == 1)
-                <a href="{{route('admin.view')}}">Admin View</a>
-            @endif
-            <form class="mx-4 my-6 md:my-0" method="POST" action="/logout">
-                @csrf
-                <input class="text-xl duration-500 hover:text-lightblue" type="submit" value="LOG OUT">
-            </form>
+            <button class="bg-lightblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-lightblue rounded">
+                <a href="/register">REGISTER</a>
+            </button>
+            @endauth
+        </ul>
+    </nav>
+    
 
-        @else
-
-        <li class="mx-4 my-6 md:my-0">
-            <a href="/" class="text-xl duration-500 hover:text-lightblue">HOME</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-            <a href="/event" class="text-xl duration-500 hover:text-lightblue">CREATE</a>
-        </li>
-        <li class="mx-4 my-6 md:my-0">
-            <a href="/login" class="text-xl duration-500 hover:text-lightblue">LOGIN</a>
-        </li>
-        <button class="bg-lightblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-lightblue rounded">
-            <a href="/register">REGISTER</a>
-        </button>
-        @endauth
-    </ul>
-</nav>
-
-<div class="min-h-screen text-gray-800 bg-whitesmoke dark:text-whitesmoke dark:bg-gray-800 lg:text-xl document font-nunito ">
+<div class="min-h-screen text-gray-700 bg-whitesmoke dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito transition-all ease-in duration-500">
     <div class="min-h-screen overflow-hidden text-center place-content-center">
         {{$content}}
     </div>
     
 </div>
-<footer class="w-full h-64 text-center dark:text-white dark:bg-black bg-silver text-black">
+<footer class="w-full h-48 text-center dark:text-white dark:bg-gray-800 bg-silver-blue text-black">
     <div class="py-4 mx-auto my-auto ">
         <ul class="float-left pl-8">
             <li>Github Luna</li>

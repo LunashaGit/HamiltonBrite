@@ -9,7 +9,8 @@
          </section>
 
          <section class="main">
-             <div class="font-black tracking-wider  a">
+             <article class="bg-silver dark:bg-gray-600 pt-6">
+             <div class="font-black tracking-wider">
                  <h1 class="mt-8 mb-2 text-4xl para__text text-lightblue ">Hamilton Brite</h1>
                  <h2 class="text-2xl para__text ">THE ONLY EVENT PLANNER YOU NEED</h2>
              </div>
@@ -20,7 +21,13 @@
                      </div>
                  @endif
              @endauth
-             <div class="flex items-center px-8 mx-auto my-5 md:px-16 justify-left">
+             <div id="select-container" class="flex flex-wrap justify-center p-2 mt-4">
+                 @foreach ($categories as $category)
+                     <a class="px-4 py-1 mx-2 my-2 duration-100 ease-in-out cursor-pointer bg-lightblue hover:bg-gray-800 hover:text-lightblue rounded-xl hover:duration-500"
+                         href="/?category={{ $category->slug }}">{{ $category->name }}</a>
+                 @endforeach
+             </div>
+             <div class="flex items-center px-8 mx-auto mb-4 md:px-16 justify-left">
                  <form class="" method="GET" action="/">
                      <div class="form-group">
                          <input type="text"
@@ -31,12 +38,7 @@
                  </form>
              </div>
 
-             <section id="select-container" class="flex flex-wrap justify-center p-4 mb-4">
-                 @foreach ($categories as $category)
-                     <a class="px-4 py-1 mx-2 my-2 duration-100 ease-in-out cursor-pointer bg-lightblue hover:bg-gray-800 hover:text-lightblue rounded-xl hover:duration-500"
-                         href="/?category={{ $category->slug }}">{{ $category->name }}</a>
-                 @endforeach
-             </section>
+            </article>
              @if ($posts->count())
                  <div class="flex flex-col pb-24 mr-6 rounded-tr-lg rounded-br-lg bg-lightblue sm:mr-12">
                      <div class="flex pt-4 pl-8 text-left">
