@@ -20,7 +20,7 @@
                     </p>
 
                     <p>{{ $post->body }}</p>
-                    <div class="flex flex-col float-left text-left">
+                    <div class="">
                         <label>Starting :</label>
                         <h6>{{ $post->date_start }}</h6>
                         <label>At :</label>

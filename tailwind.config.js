@@ -1,4 +1,6 @@
 module.exports = {
+    darkMode: 'class',
+
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
@@ -11,6 +13,9 @@ module.exports = {
 
         },
         extend: {
+            maxWidth: {
+                'address': '22ch',
+              },
             backgroundImage: {
                 'concert': "url('/assets/livephoto.jpg')",
                 'manathan': "url('/assets/manathan.jpg')",

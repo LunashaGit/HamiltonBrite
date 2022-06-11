@@ -1,30 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Get all "navbar-burger" elements
-//     let $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-//     // Check if there are any navbar burgers
-//     if ($navbarBurgers.length > 0) {
-//         // Add a click event on each of them
-//         $navbarBurgers.forEach(function ($el) {
-//             $el.addEventListener('click', function () {
-//                 // Get the "main-nav" element
-//                 let $target = document.getElementById('main-nav');
-//                 // Toggle the class on "main-nav"
-//                 $target.classList.toggle('hidden');
-//             });
-//         });
-//     }
-// });
-//
-// function Menu(e) {
-//     let list = document.querySelectorAll('.burger-links');
-//     e.name === 'menu' ? (e.name = "close", list.classList.add('top-[80px]')list.classList.add('opacity-100')
-// ) :
-//     (e.name = "menu" , list.classList.remove('top-[80px]')
-//         , list.classList.remove('opacity-100'))
-// }
-//
-// let list = document.querySelectorAll('.burger-links');
-
 const burger = document.getElementById("burger");
 let ul = document.querySelector('.burger-links')
 
@@ -51,3 +24,16 @@ function menu(e) {
         ul.classList.remove('opacity-100')
     }
 }
+
+var lastScrollTop;
+navbar = document.getElementById('navbar');
+window.addEventListener('scroll',function(){
+var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+if(scrollTop > lastScrollTop){
+navbar.style.top='-80px';
+}
+else{
+navbar.style.top='0';
+}
+lastScrollTop = scrollTop;
+});
