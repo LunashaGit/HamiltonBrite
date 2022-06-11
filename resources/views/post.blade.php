@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout-otherpage>
     <x-slot name="title">
         {{ $post->title }}
     </x-slot>
@@ -121,4 +121,4 @@
         </script>
     </x-slot>
 
-</x-layout>
+</x-layout-otherpage>
