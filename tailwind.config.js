@@ -1,5 +1,5 @@
 module.exports = {
-    darkMode: 'class',
+    darkMode: "class",
 
     content: [
         "./resources/**/*.blade.php",
@@ -8,31 +8,33 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            poppins : ['poppins', 'nunito'],
-            nunito : ['nunito', 'poppins'],
-
+            poppins: ["poppins", "nunito"],
+            nunito: ["nunito", "poppins"],
         },
         extend: {
             maxWidth: {
-                'address': '22ch',
-              },
+                address: "22ch",
+            },
             backgroundImage: {
-                'concert': "url('/assets/livephoto.jpg')",
-                'manathan': "url('/assets/manathan.jpg')",
-                'paris': "url('/assets/paris.jpg')",
-                'bridge': "url('/assets/bridge.jpg')",
-              },
-              colors:{
-                  'silver':'#E5E4E2',
-                  'dark-silver':'#7F8CA1',
-                  'silver-blue':'#506587',
-                  'lightblue':'#91B2C7',
-                  'pourpre':'#A0366F',
-                  'whitesmoke':'#f5f5f5',
-              }
+                concert: "url('/assets/livephoto.jpg')",
+                manathan: "url('/assets/manathan.jpg')",
+                paris: "url('/assets/paris.jpg')",
+                bridge: "url('/assets/bridge.jpg')",
+            },
+            colors: {
+                "dark-silver": "#E5E4E2",
+                "silver": "#7F8CA1",
+                "silver-blue": "#506587",
+                lightblue: "#91B2C7",
+                pourpre: "#A0366F",
+                whitesmoke: "#f5f5f5",
+                slate: "#262626",
+                secondgray : "#3f3f3f",
+                whiteish: "#f5f5f5",
+                lightgrey: "#dcdcdc",
+                newgrey : "#4B586E",
+            },
         },
     },
-    plugins: [
-        require('@tailwindcss/line-clamp'),
-    ],
-}
+    plugins: [require("@tailwindcss/line-clamp")],
+};

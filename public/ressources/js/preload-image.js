@@ -8,7 +8,6 @@ function showPreview(event) {
       container.classList.remove("hidden");
       preview.style.display = "block";
       container.style.display = "block";
-      container.style.marginBottom = "-40px"
       preview.src = src;
   }
 }

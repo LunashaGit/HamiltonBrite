@@ -9,8 +9,8 @@
                 width: 15rem;
             }
         </style>
-        <section class="w-auto h-full pt-8 pb-16 bg-cover bg-paris bg-silver-blue">
-            <div class="card flex flex-col gap-2 p-8 text-black md:w-[50vw] mx-auto">
+        <section class="w-auto h-full pt-36 pb-24 bg-cover bg-paris bg-silver dark:bg-silver-blue">
+            <div class="card flex flex-col gap-2 p-8 md:w-[50vw] mx-auto max-w-[90vw] xl:max-w-[70rem] rounded-lg border border-none shadow-md sm:p-6 lg:p-8 text-whitesmoke bg-gray-700 dark:bg-gray-800">
                 <div class="post__top">
 
                     <h1 class="pb-8 text-4xl font-bolder">{{ $post->title }} </h1>
