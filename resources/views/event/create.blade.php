@@ -5,7 +5,7 @@
     <x-slot name="content">
         <section class="flex flex-col pt-36 pb-24 text-left bg-silver dark:bg-silver-blue">
             <div
-                class="flex flex-col md:flex-row mx-auto max-w-[90vw] xl:max-w-[60rem] rounded-lg shadow-md p-2 sm:p-4 md:p-6 lg:p-8 text-whitesmoke bg-gray-700 dark:bg-gray-800">
+                class="flex flex-col md:flex-row mx-auto max-w-[90vw] xl:max-w-[70rem] rounded-lg shadow-md p-2 sm:p-4 md:p-6 lg:p-8 text-whitesmoke bg-gray-700 dark:bg-gray-800">
                 <div class="flex float-left ">
                     <div class="flex-row rounded-lg md:max-w-xl">
                         <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
@@ -17,13 +17,33 @@
                     @csrf
                     <h2 class="pb-6 mx-auto text-2xl font-medium  text-white">Create a new event
                     </h2>
+                    <div class="flex items-end max-h-48 pt-4">
+                        <div class="flex flex-col float-left ">
+                            <h2 class="block font-medium text-md text-gray-300">Image :</h2>
+                            <label
+                                class="border flex items-center justify-between cursor-pointer text-[12px] md:text-sm choose-file h-10 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-2.5 bg-gray-600 border-gray-500 text-gray-400"
+                                for="image">Upload
+
+                                <input class="hidden relative" type="file" id="image" onchange="showPreview(event)"
+                                    name="image" value="upload image" placeholder="">
+                                    <i class="fa-solid fa-upload"></i>
+                            </label>
+                            <h4 class="text-[10px] italic text-white ">Accept only .png, .jpg, .svg, </h4>
+                        </div>
+                        <div id="container"
+                            class="flex justify-center w-36 h-36 rounded-lg mx-auto sm:mr-0">
+                            <img
+                                placeholder="Your image" class="hidden w-full h-full rounded-lg" id="img-preview">
+                        </div>
+                    </div>
                     <label for="title" class="block pt-4 pb-2 font-medium  text-gray-300 ">Name
                         of the
-                        event :</label>
+                        event :
+                    </label>
                     <input
-                        class=" border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
+                        class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
                         autocomplete="off" type="text" name="title" id="title" placeholder="Title of post" required>
-                    <label for="address" class="block pt-4 pb-2 font-medium  text-md dtext-gray-300">Address</label>
+                    <label for="address" class="block pt-4 pb-2 font-medium  text-md dtext-gray-300">Address :</label>
                     <input
                         class=" border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 
                             type="
@@ -35,7 +55,7 @@
                     <label for="title" class="block pt-4 pb-2 font-medium  text-gray-300 ">Type of
                         event :</label>
                     <select
-                        class=" bordertext-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500"
+                        class=" border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500"
                         name="category_id">
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}"> {{ $category->id }} {{ $category->name }}
@@ -67,7 +87,7 @@
                     </div>
 
                     <div class="">
-                        <label for="excerpt" class="block pt-4 pb-2 font-medium  text-md text-gray-300">Short
+                        <label for="excerpt" class="block pt-4 pb-2 font-medium text-md text-gray-300">Short
                             description :</label>
                         <input
                             class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
@@ -78,29 +98,9 @@
                             :</label>
                         <textarea
                             class="border resize-none text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 py-12 bg-gray-600 border-gray-500 placeholder-gray-400 text-white"
-                            autocomplete="off" type="text" name="body" id="body" placeholder="Description" required></textarea>
-                            <div class="flex items-center">
-                                <div class="flex flex-col float-left">
-                                <h2 class="block pt-4 pb-2  font-medium text-md text-gray-300">Image :</h2>
-                                <label
-                                    class="border text-sm choose-file h-10 rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 bg-gray-600 border-gray-500 text-gray-400"
-                                    for="image">
-
-                                    <input class="hidden" type="file" id="image" onchange="showPreview(event)"
-                                        name="image" value="upload image" placeholder="">Choose an image <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="flex float-right mr-1 w-[1.15rem] h-[1.15rem]" viewBox="0 0 20 20"
-                                        fill="black">
-                                        <path fill-rule="evenodd"
-                                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
-                                        clip-rule="evenodd" />
-                                    </svg></label>
-                                    <h4 class="text-[10px] italic text-white ">Accept only .png, .jpg, .svg, </h4>
-                            </div>
-                            <div id="container" class="flex float-right w-24 h-24 rounded-lg mx-auto sm:ml-auto sm:mr-0"><img placeholder="Your image"
-                                    class="hidden rounded-lg" id="img-preview">
-                            </div>
-                        </div>
+                            autocomplete="off" type="text" name="body" id="body" placeholder="Description" required>
+                        </textarea>
+                       
                         <input
                             class="border text-gray-400 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 +bg-gray-600 border-gray-500 "
                             autocomplete="off" type="hidden" name="latitude" id="latitude" placeholder="latitude"
@@ -114,9 +114,7 @@
                             class="w-full mt-8 text-white  bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md px-5 py-2.5 text-center dark:bg-blue-700 dark:hover:bg-blue-800 dark:focus:ring-blue-900">
                             Create Event</button>
                     </div>
-
                 </form>
-
 
                 <style>
                     #map {
@@ -135,6 +133,5 @@
         </section>
         <script src="/ressources/js/map.js"></script>
 
-        <script></script>
     </x-slot>
 </x-layout>

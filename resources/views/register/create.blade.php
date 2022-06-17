@@ -5,7 +5,7 @@
     <x-slot name="content">
         <section class="flex flex-col pt-36 pb-24 bg-silver dark:bg-silver-blue">
             <div
-                class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] rounded-lg border shadow-md sm:p-6 lg:p-8 bg-gray-700 dark:bg-gray-800 border-gray-700">
+                class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] rounded-lg border shadow-md sm:p-6 lg:p-8 bg-gray-800 border-gray-700">
                 <div class="flex float-right ">
                     <div
                         class="flex-rowrounded-lg md:max-w-xl  ">
@@ -13,7 +13,7 @@
                             src="/assets/osaka.jpg" alt="">
                     </div>
                 </div>
-                <article class="p-4 space-y-6 text-left text-md md:p-8">
+                <article class="p-4 space-y-6 text-left text-base md:p-8">
                     <form class="" action="/register" method="POST">
                         @csrf
                         <h2 class="flex justify-center pb-8 text-2xl text-white">Register to our platform</h2>
@@ -59,7 +59,7 @@
                         </div>
 
                         <input type="submit" value="Create an account"
-                            class="w-full mt-8 text-white focus:ring-4 focus:outline-none rounded-lg text-sm px-5 py-2.5 text-center  bg-blue-600  hover:bg-blue-700  focus:ring-blue-800">
+                            class="w-full mt-8 cursor-pointer text-white focus:ring-4 focus:outline-none rounded-lg px-5 py-2.5 text-center  bg-blue-600  hover:bg-blue-700  focus:ring-blue-800">
                     </form>
                     @if ($errors->any())
                         <ul>
@@ -72,7 +72,7 @@
                         <div class="flex items-start">
                             <div class="flex items-center h-5">
                                 <input id="remember" type="checkbox" value=""
-                                    class="w-4 h-4 border rounded focus:ring-3 bg-gray-700  border-gray-600  focus:ring-blue-600  ring-offset-gray-800">
+                                    class="w-4 h-4 cursor-pointer border rounded focus:ring-3 bg-gray-700  border-gray-600  focus:ring-blue-600  ring-offset-gray-800">
                             </div>
                             <label for="remember"
                                 class="ml-1 text-sm text-gray-300">Remember
@@ -82,9 +82,9 @@
                             Password?</a>
                     </div>
 
-                    <div class="text-sm    text-gray-300">
+                    <div class="text-sm text-gray-300">
                         Already have an account? <a href="/login"
-                            class="pr-2 hover:underline text-blue-500">Sign in to your account</a>
+                            class="pr-2 hover:underline text-blue-500 cursor-pointer">Sign in to your account</a>
                     </div>
         </section>
 

@@ -12,6 +12,7 @@
         @endif
     </title>
     <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
@@ -31,7 +32,7 @@
 
 <body class="antialiased body transition duration-300 ease-in-out">
     <nav id="navbar"
-        class="fixed top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-whitesmoke md:flex md:items-center transition-all ease-in duration-500">
+        class="fixed z-[500] top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-lightgrey md:flex md:items-center transition-all ease-in duration-500">
         <div class="flex my-auto ">
             <span class="text-xl md:text-2xl cursor-pointer">
                 <img class="inline mb-[.40em]" src="assets/logo.svg">
@@ -52,7 +53,7 @@
 
 
         <ul
-            class="burger-links text-base md:text-lg md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center z-[500] md:static absolute bg-whitesmoke w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            class="burger-links text-base md:text-lg md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center md:static absolute bg-lightgrey w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
 
             @auth()
                 <li class="mx-2 md:mx-4 my-6 md:my-0">
@@ -86,14 +87,14 @@
                     <a href="/login" class="duration-500 hover:text-lightblue">LOGIN</a>
                 </li>
                 <button
-                    class="bg-lightblue text-white font-[Poppins] duration-500 px-6 py-2 mx-4 hover:bg-lightblue rounded">
+                    class="bg-lightblue text-white font-[Poppins] duration-500 px-6 py-2 mx-2 hover:bg-lightblue rounded">
                     <a href="/register">REGISTER</a>
                 </button>
             @endauth
         </ul>
     </nav>
     <div
-        class="min-h-screen text-gray-700 bg-whitesmoke dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito transition ease-in duration-500">
+        class="min-h-screen text-gray-700 bg-lightgrey dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito transition ease-in duration-500">
         <div class="min-h-screen overflow-hidden text-center place-content-center">
             {{ $content }}
         </div>
@@ -101,7 +102,7 @@
     </div>
 
     <footer
-        class="w-full h-36  dark:text-white dark:bg-gray-800 bg-silver-blue text-black text-sm md:text-base lg:text-lg text-center">
+        class="w-full h-36 text-white dark:bg-gray-800 bg-silver-blue text-sm md:text-base lg:text-lg text-center">
         <div class="px-4 md:px-12 pt-8">
             <div class="h-full">
                 <div class="flex float-left">
@@ -187,5 +188,4 @@
     <script src="ressources/js/dark-mode.js"></script>
 
 </body>
-
 </html>

@@ -5,7 +5,7 @@
     <x-slot name="content">
         <section class="flex flex-col pt-36 pb-24 bg-silver dark:bg-silver-blue">
             <div
-                class="flex flex-col md:flex-row mx-auto max-w-[90vw] xl:max-w-[70rem] rounded-lg border border-none shadow-md sm:p-6 lg:p-8 text-whitesmoke bg-gray-700 dark:bg-gray-800">
+                class="flex flex-col md:flex-row mx-auto w-[90vw] xl:max-w-[70rem] rounded-lg border border-none shadow-md sm:p-6 lg:p-8 text-whitesmoke bg-gray-700 dark:bg-gray-800">
                 <div class="flex float-right ">
                     <div class="flex-row rounded-lg md:max-w-xl ">
                         <img class="object-cover h-full rounded-t-lg md:rounded-none md:rounded-l-lg"
@@ -16,26 +16,31 @@
                 <article class="space-y-6 p-4 md:p-8 text-left text-md md:w-[40rem]">
                     <h2 class="flex justify-center pb-4 text-2xl font-medium text-white">My profile</h2>
 
-                    <form class="" method="UPDATE" action="/profile/update/{{ request()->user()->id }}"
+                    <form class="" method="POST" action="/profile/update/{{ request()->user()->id }}"
                         enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <h2 class="block pt-4 mb-[-3em] md:mb-[-2em] font-medium text-md text-gray-300">Image :</h2>
-                        <div class="flex items-end">
-                            <label
-                                class="flex border cursor-pointer text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 w-40 lg:w-64 p-2.5 bg-gray-600 border-gray-500 text-gray-400"
-                                for="image">
-                                <input class="hidden" type="file" id="image" onchange="showPreview(event)"
-                                    name="image" value="upload image" placeholder="">Choose an image <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    class="flex ml-auto mr-1 w-[1.2rem] h-[1.2rem]" viewBox="0 0 20 20"
-                                    fill="black">
-                                    <path fill-rule="evenodd"
-                                        d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
-                                        clip-rule="evenodd" />
-                                </svg></label>
-                                <img class="flex float-right w-24 h-24 rounded-lg mx-auto sm:ml-auto sm:mr-0"
+                        <div class="flex items-center">
+                            <div class="flex flex-col float-left">
+                                <label
+                                    class="flex border cursor-pointer text-sm choose-file rounded-lg focus:ring-blue-500 focus:border-blue-500 w-40 lg:w-64 p-2.5 bg-gray-600 border-gray-500 text-gray-400"
+                                    for="image">
+                                    <input class="hidden" type="file" id="image" onchange="showPreview(event)"
+                                        name="image" value="upload image" placeholder="">Choose an image <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="flex ml-auto mr-1 w-[1.2rem] h-[1.2rem]" viewBox="0 0 20 20"
+                                        fill="black">
+                                        <path fill-rule="evenodd"
+                                            d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z"
+                                            clip-rule="evenodd" />
+                                    </svg></label>
+
+                            </div>
+                                <div id="container">
+                                <img id="img-preview" class="flex float-right w-36 h-36 rounded-lg pt-4 pl-2  mx-auto sm:ml-auto sm:mr-0"
                                 src="storage/images/{{ request()->user()->profile_picture }}">
+                            </div>
                         </div>
                         <div>
 
