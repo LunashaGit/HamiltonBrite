@@ -186,6 +186,7 @@
     <script src="ressources/js/parallax.js"></script>
     <script src="ressources/js/preload-image.js"></script>
     <script src="ressources/js/dark-mode.js"></script>
+    <script src="/ressources/js/map.js"></script>
 
 </body>
 </html>

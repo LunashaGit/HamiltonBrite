@@ -45,11 +45,11 @@
                         autocomplete="off" type="text" name="title" id="title" placeholder="Title of post" required>
                     <label for="address" class="block pt-4 pb-2 font-medium  text-md dtext-gray-300">Address :</label>
                     <input
-                        class=" border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-500 dark:bg-gray-600 border-gray-500 
+                        class="border text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 bg-gray-500 dark:bg-gray-600 border-gray-500 
                             type="
-                        text" name="address" value="" id="address" placeholder="Address" autocomplete="off"
+                        text="" name="address" value="" id="address" placeholder="Address" autocomplete="off"
                         onchange="mapUp()">
-                    <div class="hidden pt-4 pb-2 mx-auto" id="here"></div>
+                    <div class="z-0 hidden pt-4 pb-2 mx-auto" id="here"></div>
 
 
                     <label for="title" class="block pt-4 pb-2 font-medium  text-gray-300 ">Type of
@@ -131,7 +131,6 @@
                     </ul>
                 @endif
         </section>
-        <script src="/ressources/js/map.js"></script>
 
     </x-slot>
 </x-layout>

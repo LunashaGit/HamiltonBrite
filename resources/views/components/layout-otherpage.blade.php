@@ -23,7 +23,7 @@
 </head>
 <body class="antialiased body transition duration-300 ease-in-out">
     <nav id="navbar"
-        class="fixed top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-lightgrey md:flex md:items-center transition-all ease-in duration-500">
+        class="fixed z-[500] top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-lightgrey md:flex md:items-center transition-all ease-in duration-500">
         <div class="flex my-auto ">
             <span class="text-xl md:text-2xl cursor-pointer">
                 <img class="inline mb-[.40em]" src="../assets/logo.svg">
@@ -177,6 +177,8 @@
 <script src="../ressources/js/parallax.js"></script>
 <script src="../ressources/js/preload-image.js"></script>
 <script src="../ressources/js/dark-mode.js"></script>
+<script src="/ressources/js/map.js"></script>
+
 
 </body>
 </html>
