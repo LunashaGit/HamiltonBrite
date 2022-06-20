@@ -33,19 +33,19 @@
 <body class="antialiased body transition duration-300 ease-in-out">
     <nav id="navbar"
         class="fixed z-[500] top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-lightgrey md:flex md:items-center transition-all ease-in duration-500">
-        <div class="flex my-auto ">
+        <div class="flex my-auto items-center ">
             <span class="text-xl md:text-2xl cursor-pointer">
                 <img class="inline mb-[.40em]" src="assets/logo.svg">
                 <a href="/">Hamilton Brite</a>
 
             </span>
-            <div class="theme-container shadow-dark pl-4 lg:pl-8 mb-[.40em]">
+            <div class="theme-container shadow-dark pl-4 lg:pl-6 ">
                 <img class="" id="theme-icon"
                     src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
             </div>
-            <span class="menu flex mx-1 mt-[.15em] text-3xl cursor-pointer md:hidden absolute right-[5%]">
-                <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 menu" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <span class="menu flex mx-1 text-3xl cursor-pointer md:hidden absolute right-[5%]">
+                <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 menu" fill="none"
+                    viewBox="0 0 22 22" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </span>
@@ -87,22 +87,22 @@
                     <a href="/login" class="duration-500 hover:text-lightblue">LOGIN</a>
                 </li>
                 <button
-                    class="bg-lightblue text-white font-[Poppins] duration-500 px-6 py-2 mx-2 hover:bg-lightblue rounded">
+                    class="bg-silver-blue text-white font-[Poppins] duration-500 px-4 py-1 mx-2 hover:bg-lightblue rounded">
                     <a href="/register">REGISTER</a>
                 </button>
             @endauth
         </ul>
     </nav>
     <div
-        class="min-h-screen text-gray-700 bg-lightgrey dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito transition ease-in duration-500">
-        <div class="min-h-screen overflow-hidden text-center place-content-center">
+        class="min-h-screen text-gray-700 bg-littlegrey dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito">
+        <div class="min-h-screen overflow-hidden text-center place-content-center transition ease-in duration-500">
             {{ $content }}
         </div>
 
     </div>
 
     <footer
-        class="w-full h-36 text-white dark:bg-gray-800 bg-silver-blue text-sm md:text-base lg:text-lg text-center">
+        class="w-full h-36 text-black dark:text-white dark:bg-gray-800 bg-silver text-sm md:text-base lg:text-lg text-center transition ease-in duration-500">
         <div class="px-4 md:px-12 pt-8">
             <div class="h-full">
                 <div class="flex float-left">

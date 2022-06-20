@@ -8,9 +8,7 @@
              </div>
          </section>
          <section class="main">
-             <article class=" ">
-
-                 <div class="bg-silver-blue mt-16 mb-4 mx-12 rounded-xl relative">
+             <article class="bg-silver-blue mt-16 mb-8 mx-12 rounded-xl relative">
                      <div class="custom-shape-divider-top-1655368457">
                         <div>
                             <svg class="waves " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
@@ -28,7 +26,7 @@
                     </div>
                      <div class="font-black tracking-wider">
 
-                         <h1 class="z-40 mt-8 mb-2 text-4xl para__text text-lightblue">Hamilton Brite</h1>
+                         <h1 class="z-40 mt-2 mb-2 text-4xl para__text text-lightblue">Hamilton Brite</h1>
                          <h2 class="text-2xl para__text text-whiteish px-4">THE ONLY EVENT PLANNER YOU NEED</h2>
                          @auth()
                              @if (session()->has('Success'))
@@ -45,7 +43,7 @@
                                      href="/?category={{ $category->slug }}">{{ $category->name }}</a>
                              @endforeach
                          </div>
-                         <div class="flex items-center px-8 mx-auto pb-6 mb-16 md:px-16 justify-left">
+                         <div class="flex items-center px-8 mx-auto pb-6 md:px-16 justify-left">
                              <form class="" method="GET" action="/">
                                  <div class="form-group">
                                      <input type="text"
@@ -57,7 +55,6 @@
                          </div>
                      </div>
 
-                 </div>
              </article>
              @if (empty($_GET))
                  @if ($posts->count())

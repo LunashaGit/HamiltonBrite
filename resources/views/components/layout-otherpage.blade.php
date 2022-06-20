@@ -93,7 +93,7 @@
     </div>
 
     <footer
-        class="w-full h-36 text-white dark:bg-gray-800 bg-silver-blue text-sm md:text-base lg:text-lg text-center">
+        class="w-full h-36 mt-36 text-white dark:bg-gray-800 bg-silver-blue text-sm md:text-base lg:text-lg text-center">
         <div class="px-4 md:px-12 pt-8">
             <div class="h-full">
                 <div class="flex float-left">

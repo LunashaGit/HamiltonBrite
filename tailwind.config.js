@@ -32,6 +32,8 @@ module.exports = {
                 whiteish: "#f5f5f5",
                 lightgrey: "#dcdcdc",
                 newgrey : "#4B586E",
+                littlegrey: "#8097BD",
+
             },
         },
     },

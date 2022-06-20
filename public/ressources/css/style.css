@@ -4,6 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
+body, * {
+  scroll-behavior: smooth;
+}
 
 .top{
     height:60vh;
@@ -48,7 +51,6 @@
 #img-preview {
     width: 155px;   
     border: 2px dashed #333;  
-    margin-bottom: 20px;
   }
   #img-preview img {  
     width: 100%;
@@ -62,34 +64,6 @@
 
 
   /* wave container */
-  /* .custom-shape-divider-top-1655368457 {
-    position: absolute;
-    top: 0;
-    bottom:0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
-
-.custom-shape-divider-top-1655368457 svg {
-    position: relative;
-    display: block;
-    width: calc(150% + 1.3px);
-    height: 269px;
-}
-.custom-shape-divider-top-1655368457 .shape-fill {
-  fill: url(#my-cool-gradient) #447799;
-}
-
-/* For mobile devices */
-/* @media (max-width: 767px) {
-    .custom-shape-divider-top-1655368457 svg {
-        width: calc(150% + 1.3px);
-        height: 121px;
-    }
-} */
-
 .waves {
   position:relative;
   width: 100%;
