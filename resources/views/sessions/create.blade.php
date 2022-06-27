@@ -14,7 +14,7 @@
                 </div>
                 <form class="p-4 space-y-6 md:p-8 md:mt-[5rem]" action="/login" method="POST">
                     @csrf
-                    <h5 class="pb-8 text-xl font-medium text-white">Sign in to our platform</h5>
+                    <h1 class="pb-8 text-2xl font-medium text-white">Sign in to our platform</h1>
                     <div>
                         <label for="email" class="block text-sm font-medium text-gray-300 pb-1">Your
                             email</label>

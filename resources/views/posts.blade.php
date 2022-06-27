@@ -8,10 +8,10 @@
              </div>
          </section>
          <section class="main">
-             <article class="bg-silver-blue mt-16 mb-8 mx-12 rounded-xl relative">
-                     <div class="custom-shape-divider-top-1655368457">
+             <article class="bg-silver-blue mt-16 mb-8 mx-6 md:mx-12 rounded-xl relative">
+                     <div class="custom-shape-divider-top-1655368457 rounded-xl">
                         <div>
-                            <svg class="waves " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                            <svg class="waves rounded-xl" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
                                 <defs>
                                     <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
                                 </defs>

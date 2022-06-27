@@ -46,11 +46,7 @@
                                     class="float-right h-full w-full object-cover rounded-lg mx-auto sm:ml-auto sm:mr-0"
                                     src="storage/images/{{ request()->user()->profile_picture }}">
                             </div>
-                            {{-- <div id="container">
-                                <img id="img-preview"
-                                    class="flex float-right w-36 h-36 rounded-lg mx-auto sm:ml-auto sm:mr-0"
-                                    src="storage/images/{{ request()->user()->profile_picture }}">
-                            </div> --}}
+                           
                         </div>
                         <div>
 

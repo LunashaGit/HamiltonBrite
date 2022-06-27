@@ -14,6 +14,7 @@ module.exports = {
         extend: {
             maxWidth: {
                 address: "22ch",
+                hour: "5ch",
             },
             backgroundImage: {
                 concert: "url('/assets/livephoto.jpg')",
@@ -35,7 +36,10 @@ module.exports = {
                 littlegrey: "#8097BD",
 
             },
+            
         },
     },
     plugins: [require("@tailwindcss/line-clamp")],
+    
 };
+

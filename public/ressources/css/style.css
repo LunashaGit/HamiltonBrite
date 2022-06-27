@@ -1,12 +1,27 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('./reset.css');
+
+@layer components {
+  .input{
+    @apply border-gray-600 bg
+  }
+
+  .input-dark{
+    @apply dark:border-gray-700 dark:bg-gray-800
+  }
+}
+
 
 body, * {
   scroll-behavior: smooth;
 }
+
+
 
 .top{
     height:60vh;
@@ -50,7 +65,6 @@ body, * {
 
 #img-preview {
     width: 155px;   
-    border: 2px dashed #333;  
   }
   #img-preview img {  
     width: 100%;
@@ -116,10 +130,66 @@ body, * {
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height:60px;
-    min-height:60px;
+    height:80px;
+    min-height:80px;
   }
   .content {
     height:30vh;
   }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,html input[type="button"],
+input[type="reset"],
+input[type="submit"],button[disabled],
+html input[disabled],button::-moz-focus-inner,
+input::-moz-focus-inner, input[type="checkbox"],
+input[type="radio"], input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration{
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+input {
+  border: none; /* Removes the default border */
+}
+
+input:focus {
+  outline: none /* Removes the border when the input is clicked */
+}
+
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #4B5563 inset !important;
+    box-shadow: 0 0 0 30px #4B5563 inset !important;
+    color:white !important;
+
+} */
+
+.dark-input{
+  
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #4B5563 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
