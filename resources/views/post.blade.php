@@ -68,7 +68,6 @@
                                 <button class="border-2 border-white " type="submit" value="Participate">I
                                     participate</button>
                             @endif
-                            <a class="" href="/">Go Back</a>
                         </div>
                     </div>
                     <div>
@@ -103,7 +102,7 @@
                                         <div class="mr-3 w-20 h-20">
                                             <img alt="" class="rounded-full"
                                             src="storage/images/{{ request()->user()->profile_picture }}">
-                                            
+
                                         </div>
                                         <div>
 
@@ -147,6 +146,8 @@
                         </div>
                         <input autocomplete="off" type="submit" value="send">
                     </form>
+                @else
+                    <a href="/">For the participation: Login</a>
                 @endauth
                 @foreach ($post->comments as $comment)
                     <p>{{ $comment->author->username }}</p>
@@ -168,6 +169,8 @@
                     </ul>
                 @endif
             </article>
+            <a class="" href="/">Go Back</a>
+
         </section>
         <script>
             var map = L.map('map').setView([<?= json_encode($post->latitude) ?>, <?= json_encode($post->longitude) ?>], 4);
