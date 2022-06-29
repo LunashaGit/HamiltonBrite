@@ -3,7 +3,22 @@
         My profile
     </x-slot>
     <x-slot name="content">
-        <section class="flex flex-col pt-36 pb-24 bg-littlegrey dark:bg-silver">
+        <section class="flex flex-col pt-16  pb-24">
+            <div class="custom-shape-divider-top-1655368457  pb-16">
+                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                    <defs>
+                        <path id="gentle-wave"
+                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                    </defs>
+                    <g class="parallax">
+                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.8)" />
+                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                    </g>
+                </svg>
+            </div>
             <div
                 class="flex flex-col md:flex-row mx-auto w-[90vw] xl:max-w-[70rem] rounded-lg border border-none shadow-md sm:p-6 lg:p-8 text-whitesmoke bg-gray-700 dark:bg-gray-800">
                 <div class="flex float-right ">
@@ -13,7 +28,7 @@
                     </div>
                 </div>
 
-                <article class="space-y-6 p-4 md:p-6 text-left text-md md:w-[40rem]">
+                <article class="space-y-6 p-4 md:p-6  text-left text-md md:w-[40rem]">
                     <h2 class="flex justify-center pb-4 text-2xl font-medium text-white">My profile</h2>
                     
                     

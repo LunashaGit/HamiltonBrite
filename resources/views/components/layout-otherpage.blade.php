@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@if(isset($title))
-            {{$title}}
+    <title>
+        @if (isset($title))
+            {{ $title }}
         @else
             Error404
-            @endif</title>
+        @endif
+    </title>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="../ressources/css/tailwind.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
-          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
-          crossorigin=""/>
-         <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
-            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
-            crossorigin=""></script>
+        integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+        integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+        crossorigin=""></script>
 </head>
+
 <body class="antialiased body transition duration-300 ease-in-out">
     <nav id="navbar"
-        class="fixed z-[500] top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-lightgrey md:flex md:items-center transition-all ease-in duration-500">
+        class="fixed z-[500] top-0 left-0 w-full md:justify-between p-4 text-whitesmoke dark:bg-gray-800 shadow bg-silver-blue md:flex md:items-center transition-all ease-in duration-500">
         <div class="flex my-auto ">
             <span class="text-xl md:text-2xl cursor-pointer">
                 <img class="inline mb-[.40em]" src="../assets/logo.svg">
@@ -35,8 +40,8 @@
                     src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
             </div>
             <span class="menu flex mx-1 mt-[.15em] text-3xl cursor-pointer md:hidden absolute right-[5%]">
-                <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 menu" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg id="burger" data-name="menu" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 menu"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </span>
@@ -44,7 +49,7 @@
 
 
         <ul
-            class="burger-links text-base md:text-lg md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center z-[500] md:static absolute bg-lightgrey w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            class="burger-links text-base md:text-lg md:flex text-whitesmoke md:items-center z-[500] md:static absolute w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
 
             @auth()
                 <li class="mx-2 md:mx-4 my-6 md:my-0">
@@ -85,15 +90,14 @@
         </ul>
     </nav>
     <div
-        class="min-h-screen text-gray-700 bg-lightgrey dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito transition ease-in duration-500">
+        class="min-h-screen text-gray-700 bg-gray-blue dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito">
         <div class="min-h-screen overflow-hidden text-center place-content-center">
             {{ $content }}
         </div>
 
     </div>
 
-    <footer
-        class="w-full h-36 text-white dark:bg-gray-800 bg-silver-blue text-sm md:text-base lg:text-lg text-center">
+    <footer class="w-full h-36 text-white dark:bg-gray-800 bg-silver-blue text-sm md:text-base lg:text-lg text-center">
         <div class="px-4 md:px-12 pt-8">
             <div class="h-full">
                 <div class="flex float-left">
@@ -108,8 +112,8 @@
                                     PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                                 <svg class="flex items-center mr-2" version="1.1" id="Capa_1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    x="0px" y="0px" width="16px" height="16px" viewBox="0 0 32 32" fill="currentColor"
-                                    style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                    x="0px" y="0px" width="16px" height="16px" viewBox="0 0 32 32"
+                                    fill="currentColor" style="enable-background:new 0 0 32 32;" xml:space="preserve">
                                     <>
                                         <path
                                             d="M17.303,14.365c0.012-0.015,0.023-0.031,0.031-0.048v0.048H17.303z M32,0v32H0V0H32L32,0z M9.925,12.285H5.153v14.354
@@ -135,7 +139,8 @@
 
                 <div class="flex float-right">
                     <ul class="flex flex-col">
-                        <a class="cursor-pointer" target="_blank" alt="Link to Jerry Cullmann's Linked-in profile page"
+                        <a class="cursor-pointer" target="_blank"
+                            alt="Link to Jerry Cullmann's Linked-in profile page"
                             href="https://www.linkedin.com/in/jerry-cullmann-3baa9a128/">
                             <li class="flex items-center">
                                 Jerry Cullmann
@@ -146,8 +151,9 @@
                                     PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
                                 <svg class="flex items-center ml-2" version="1.1" id="Capa_1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                    x="0px" y="0px" width="16px" height="16px" viewBox="0 0 32 32" fill="currentColor"
-                                    style="enable-background:new 0 0 32 32;" xml:space="preserve">
+                                    x="0px" y="0px" width="16px" height="16px" viewBox="0 0 32 32"
+                                    fill="currentColor" style="enable-background:new 0 0 32 32;"
+                                    xml:space="preserve">
                                     <path
                                         d="M17.303,14.365c0.012-0.015,0.023-0.031,0.031-0.048v0.048H17.303z M32,0v32H0V0H32L32,0z M9.925,12.285H5.153v14.354
                             h4.772V12.285z M10.237,7.847c-0.03-1.41-1.035-2.482-2.668-2.482c-1.631,0-2.698,1.072-2.698,2.482
@@ -173,12 +179,13 @@
         </div>
     </footer>
 
-<script src="../ressources/js/nav.js"></script>
-<script src="../ressources/js/parallax.js"></script>
-<script src="../ressources/js/preload-image.js"></script>
-<script src="../ressources/js/dark-mode.js"></script>
-<script src="../ressources/js/map.js"></script>
+    <script src="../ressources/js/nav.js"></script>
+    <script src="../ressources/js/parallax.js"></script>
+    <script src="../ressources/js/preload-image.js"></script>
+    <script src="../ressources/js/dark-mode.js"></script>
+    <script src="../ressources/js/map.js"></script>
 
 
 </body>
+
 </html>

@@ -32,7 +32,7 @@
 
 <body class="antialiased body transition duration-300 ease-in-out">
     <nav id="navbar"
-        class="fixed z-[500] top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800 shadow bg-lightgrey md:flex md:items-center transition-all ease-in duration-500">
+        class="fixed z-[500] top-0 left-0 w-full md:justify-between p-4 text-gray-800 dark:text-whitesmoke dark:bg-gray-800  bg-whiteish shadow-lg md:flex md:items-center transition-all ease-in duration-500">
         <div class="flex my-auto items-center ">
             <span class="text-xl md:text-2xl cursor-pointer">
                 <img class="inline mb-[.40em]" src="assets/logo.svg">
@@ -53,7 +53,7 @@
 
 
         <ul
-            class="burger-links text-base md:text-lg md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center md:static absolute bg-lightgrey w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
+            class="burger-links text-base md:text-lg md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center md:static absolute bg-whiteish w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
 
             @auth()
                 <li class="mx-2 md:mx-4 my-6 md:my-0">
@@ -94,7 +94,7 @@
         </ul>
     </nav>
     <div
-        class="min-h-screen text-gray-700 bg-littlegrey dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito">
+        class="min-h-screen text-gray-700 bg-gray-blue dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito">
         <div class="min-h-screen overflow-hidden text-center place-content-center transition ease-in duration-500">
             {{ $content }}
         </div>
@@ -102,7 +102,7 @@
     </div>
 
     <footer
-        class="w-full h-36 text-black dark:text-white dark:bg-gray-800 bg-silver text-sm md:text-base lg:text-lg text-center transition ease-in duration-500">
+        class="w-full h-36 text-white dark:bg-gray-800 bg-gray-700 text-sm md:text-base lg:text-lg text-center transition ease-in duration-500">
         <div class="px-4 md:px-12 pt-8">
             <div class="h-full">
                 <div class="flex float-left">

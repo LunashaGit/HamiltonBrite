@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
     darkMode: "class",
 
@@ -10,6 +12,7 @@ module.exports = {
         fontFamily: {
             poppins: ["poppins", "nunito"],
             nunito: ["nunito", "poppins"],
+            colors:colors,
         },
         extend: {
             maxWidth: {
@@ -26,6 +29,7 @@ module.exports = {
                 "dark-silver": "#87A0C7",
                 "silver": "#7F8CA1",
                 "silver-blue": "#506587",
+                "gray-blue": "#849CC2",
                 lightblue: "#91B2C7",
                 pourpre: "#A0366F",
                 whitesmoke: "#f5f5f5",
@@ -34,7 +38,7 @@ module.exports = {
                 lightgrey: "#dcdcdc",
                 newgrey : "#4B586E",
                 littlegrey: "#8097BD",
-
+                
             },
             
         },
