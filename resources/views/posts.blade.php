@@ -62,7 +62,7 @@
              </article>
              @if (empty($_GET))
                  @if ($posts->count())
-                     <div class="flex flex-col pb-24 mr-6 rounded-tr-xl rounded-br-xl bg-newgrey sm:mr-12">
+                     <div class="flex flex-col pb-24 mr-6 rounded-tr-xl rounded-br-xl bg-silver-blue sm:mr-12">
                          <div class="flex pb-4 pl-8 text-left">
                              <h2 class="pt-8 pb-4 pl-2 text-3xl font-bold text-white md:pl-4">Happening Soon :</h2>
                          </div>
@@ -206,7 +206,7 @@
          </section>
          @if (empty($_GET))
              <section>
-                 <div class="pb-8 mb-16 ml-6 rounded-tl-xl rounded-bl-xl bg-silver-blue sm:ml-16">
+                 <div class="pb-8 mb-16 ml-6 rounded-tl-xl rounded-bl-xl bg-gray-700 sm:ml-16">
                      <div class="text-left pr-8 mt-[-3em] pt-4  flex flex-col">
                          <h2 class="pt-8 pb-4 pr-6 text-3xl font-bold text-right text-white md:pr-12 ">
                              Other Sections :

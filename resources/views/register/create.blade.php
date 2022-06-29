@@ -3,7 +3,7 @@
         Register
     </x-slot>
     <x-slot name="content">
-        <section class="flex flex-col pt-36 pb-24 bg-littlegrey dark:bg-silver">
+        <section class="flex flex-col pt-36 pb-24">
             <div
                 class="flex flex-col md:flex-row mx-auto max-w-[80vw] xl:max-w-[60rem] rounded-lg border shadow-md sm:p-6 lg:p-8 bg-gray-700 dark:bg-gray-800 border-gray-700">
                 <div class="flex float-right ">

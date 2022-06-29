@@ -47,24 +47,24 @@
                                         :</label>
                                     <input autocomplete="off" type="date" name="date_start"
                                         value="{{ $post->date_start }}"
-                                        class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 bg-gray-500 dark:bg-gray-600 border-gray-500 placeholder-gray-400 text-white">
+                                        class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 dark:border-gray-500 dark:placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                     <label for="start_hour" class="flex pt-4 pb-2 font-medium text-md text-gray-300">At
                                         :</label>
                                     <input autocomplete="off" min="00:00" max="23:59" type="time"
                                         name="start_hour" value="{{ $post->start_hour }}"
-                                        class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5  bg-gray-500 dark:bg-gray-600 border-gray-500 placeholder-gray-400 text-white">
+                                        class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                 </div>
                                 <div class="flex flex-col md:float-right  md:items-end">
                                     <label for="date_start" class="pt-4 pb-2 font-medium text-md text-gray-300">Ending
                                         :</label>
                                     <input autocomplete="off" type="date" name="date_end"
                                         value="{{ $post->date_end }}"
-                                        class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 bg-gray-500 dark:bg-gray-600 border-gray-500 placeholder-gray-400 text-white">
+                                        class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                     <label for="end_hour" class="block pt-4 pb-2 font-medium text-md text-gray-300">At
                                         :</label>
                                     <input autocomplete="off" min="00:00" max="23:59" type="time"
                                         name="end_hour" value="{{ $post->end_hour }}"
-                                        class=" border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 bg-gray-500 dark:bg-gray-600 border-gray-500 placeholder-gray-400 text-white">
+                                        class=" border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                 </div>
                             </div>
                             @auth()

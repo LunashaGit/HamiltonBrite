@@ -1076,9 +1076,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
-.bg-gray-500 {
+.bg-\[\#b4aa9c\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  background-color: rgb(180 170 156 / var(--tw-bg-opacity));
 }
 
 .bg-blue-700 {
@@ -1089,6 +1089,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-lightgrey {
   --tw-bg-opacity: 1;
   background-color: rgb(220 220 220 / var(--tw-bg-opacity));
+}
+
+.bg-gray-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
 .bg-silver-blue {
@@ -1134,11 +1139,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-blue-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(37 99 235 / var(--tw-bg-opacity));
-}
-
-.bg-littlegrey {
-  --tw-bg-opacity: 1;
-  background-color: rgb(128 151 189 / var(--tw-bg-opacity));
 }
 
 .bg-concert {
@@ -1457,6 +1457,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(245 245 245 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1465,11 +1470,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-blue-500 {
   --tw-text-opacity: 1;
   color: rgb(59 130 246 / var(--tw-text-opacity));
-}
-
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 
 .text-lightblue {
@@ -1553,6 +1553,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ring-offset-gray-800 {
   --tw-ring-offset-color: #1f2937;
+}
+
+.invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition {
@@ -1891,6 +1896,11 @@ select:-webkit-autofill:focus {
   background-color: rgb(145 178 199 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-silver-blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 101 135 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-blue-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -2010,14 +2020,14 @@ select:-webkit-autofill:focus {
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-.dark .dark\:border-gray-700 {
-  --tw-border-opacity: 1;
-  border-color: rgb(55 65 81 / var(--tw-border-opacity));
-}
-
 .dark .dark\:border-gray-500 {
   --tw-border-opacity: 1;
   border-color: rgb(107 114 128 / var(--tw-border-opacity));
+}
+
+.dark .dark\:border-gray-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(55 65 81 / var(--tw-border-opacity));
 }
 
 .dark .dark\:bg-gray-900 {
@@ -2030,9 +2040,9 @@ select:-webkit-autofill:focus {
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
 }
 
-.dark .dark\:bg-gray-600 {
+.dark .dark\:bg-\[\#c8beae\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+  background-color: rgb(200 190 174 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:bg-blue-600 {
@@ -2045,6 +2055,11 @@ select:-webkit-autofill:focus {
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:bg-red-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
@@ -2055,14 +2070,14 @@ select:-webkit-autofill:focus {
   background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:bg-silver-blue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(80 101 135 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:bg-blue-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:bg-silver {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 140 161 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:text-white {
@@ -2113,6 +2128,11 @@ select:-webkit-autofill:focus {
 .dark .dark\:hover\:bg-red-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(185 28 28 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:hover\:bg-lightblue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(145 178 199 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:hover\:bg-gray-700:hover {
@@ -2431,10 +2451,6 @@ select:-webkit-autofill:focus {
     text-align: left;
   }
 
-  .md\:text-right {
-    text-align: right;
-  }
-
   .md\:text-3xl {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -2461,6 +2477,10 @@ select:-webkit-autofill:focus {
 }
 
 @media (min-width: 1024px) {
+  .lg\:float-right {
+    float: right;
+  }
+
   .lg\:grid {
     display: grid;
   }
@@ -2475,6 +2495,14 @@ select:-webkit-autofill:focus {
 
   .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:items-end {
+    align-items: flex-end;
   }
 
   .lg\:gap-6 {
@@ -2500,6 +2528,10 @@ select:-webkit-autofill:focus {
 
   .lg\:pl-6 {
     padding-left: 1.5rem;
+  }
+
+  .lg\:text-right {
+    text-align: right;
   }
 
   .lg\:text-4xl {

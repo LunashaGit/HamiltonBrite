@@ -76,30 +76,30 @@
                                 @endforeach
                             </select>
 
-                            <div class="flex flex-col md:flex-row">
+                            <div class="flex flex-col lg:flex-row">
                                 <div class="flex flex-col float-left text-left ">
                                     <label for="date_start"
                                         class="block pt-4 pb-2 font-medium text-md dark:text-gray-300">Starting
                                         :</label>
                                     <input autocomplete="off" type="date" name="date_start"
-                                        class="w-[60%] md:w-[90%] border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 bg-gray-600 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                                    class="w-[60%] md:w-[90%] border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:border-gray-500 dark:placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                     <label for="start_hour"
                                         class="block pt-2 pb-2 font-medium text-md dark:text-gray-300">At
                                         :</label>
                                     <input autocomplete="off" type="time" name="start_hour"
-                                        class="w-[60%] md:w-[90%] border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5  bg-gray-600 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                                        class="w-[60%] md:w-[90%] border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:border-gray-500 dark:placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                 </div>
-                                <div class="flex flex-col text-left md:float-right md:text-right md:items-end">
+                                <div class="flex flex-col text-left lg:float-right lg:text-right lg:items-end">
                                     <label for="date_start"
                                         class="block pt-4 pb-2 font-medium text-md dark:text-gray-300">Ending
                                         :</label>
                                     <input autocomplete="off" type="date" name="date_end"
-                                        class="w-[60%] md:w-[90%] border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 bg-gray-600 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                                        class="w-[60%] md:w-[90%] border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:border-gray-500 dark:placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                     <label for="end_hour"
                                         class="block pt-2 pb-2 font-medium text-md dark:text-gray-300">At
                                         :</label>
                                     <input autocomplete="off" type="time" name="end_hour"
-                                        class="w-[60%] md:w-[90%] border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 bg-gray-600 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                                        class="w-[60%] md:w-[90%] border-gray-300 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:border-gray-500 dark:placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                 </div>
                             </div>
 
