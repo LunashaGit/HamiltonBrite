@@ -45,54 +45,29 @@
                                     <label for="date_start"
                                         class="flex pt-4 pb-2 font-medium text-md text-gray-300">Starting
                                         :</label>
-                                    <input autocomplete="off" type="date" name="date_start"
+                                    <input autocomplete="off" disabled="disabled" type="date" name="date_start"
                                         value="{{ $post->date_start }}"
                                         class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 dark:border-gray-500 dark:placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                     <label for="start_hour" class="flex pt-4 pb-2 font-medium text-md text-gray-300">At
                                         :</label>
-                                    <input autocomplete="off" min="00:00" max="23:59" type="time"
-                                        name="start_hour" value="{{ $post->start_hour }}"
+                                    <input autocomplete="off" disabled="disabled" min="00:00" max="23:59"
+                                        type="time" name="start_hour" value="{{ $post->start_hour }}"
                                         class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                 </div>
                                 <div class="flex flex-col md:float-right  md:items-end">
                                     <label for="date_start" class="pt-4 pb-2 font-medium text-md text-gray-300">Ending
                                         :</label>
-                                    <input autocomplete="off" type="date" name="date_end"
+                                    <input autocomplete="off" disabled="disabled" type="date" name="date_end"
                                         value="{{ $post->date_end }}"
                                         class="border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                     <label for="end_hour" class="block pt-4 pb-2 font-medium text-md text-gray-300">At
                                         :</label>
-                                    <input autocomplete="off" min="00:00" max="23:59" type="time"
-                                        name="end_hour" value="{{ $post->end_hour }}"
+                                    <input autocomplete="off" disabled="disabled" min="00:00" max="23:59"
+                                        type="time" name="end_hour" value="{{ $post->end_hour }}"
                                         class=" border w-48 md:w-36 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 border-gray-500 placeholder-gray-400 bg-[#b4aa9c] dark:bg-[#c8beae] invert text-black font-bold">
                                 </div>
                             </div>
-                            @auth()
-                                <div>
-                                    @if ($post->participation->where('user_id', request()->user()->id) == '[]')
-                                        <form class="flex flex-col" method="POST"
-                                            action="/posts/{{ $post->slug }}/participation/">
-                                            @csrf
-                                            <button type="submit"value="Participate"
-                                                class="w-24 flex justify-around mx-auto hover:scale-110 mt-8 cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                Participate</button>
-                                        </form>
-                                    @else
-                                        <button class="border-2 border-white " type="submit" value="Participate">I
-                                            participate</button>
-                                    @endif
-                                </div>
-                            @else
-                                <div class="justify-between pt-8 md:pb-12">
-                                    <a class="w-24 flex justify-around mx-auto hover:scale-110 mt-8 cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                                        href="/">Login to
-                                        participate</a>
-                                </div>
 
-
-                                <h6 class="px-8">or</h6>
-                                <a class="text-sm hover:underline text-blue-500" href="/">Go Back</a>
-                            @endauth
                         </div>
                     </div>
                     <div class="grid__3">
@@ -121,7 +96,30 @@
                         </div>
                     </div>
                     <div class="grid__5">
-                        <h2 class=""><</h2>
+                        @auth()
+                            <div>
+                                @if ($post->participation->where('user_id', request()->user()->id) == '[]')
+                                    <form class="flex flex-col" method="POST"
+                                        action="/posts/{{ $post->slug }}/participation/">
+                                        @csrf
+                                        <button type="submit"value="Participate"
+                                            class="w-24 flex justify-around mx-auto hover:scale-110 mt-8 cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                            Participate</button>
+                                    </form>
+                                @else
+                                    <button class="border-2 border-white " type="submit" value="Participate">I
+                                        participate</button>
+                                @endif
+                            </div>
+                        @else
+                            <div class="justify-between pt-8 pb-2">
+                                <a class="w-24 flex justify-around mx-auto hover:scale-110 mt-8 cursor-pointer text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                    href="/">Login to
+                                    participate</a>
+                            </div>
+                            <h6 class="px-8">or</h6>
+                            <a class="text-sm hover:underline text-blue-500" href="/">Go Back</a>
+                        @endauth
                     </div>
                     <div class="grid__6">
                         <div class="">
@@ -154,28 +152,23 @@
                     </svg>
                 </div>
             </div>
-
+            <h2 class="pt-8 text-center text-4xl font-bold">Comments</h2>
             <article
                 class="comment__section flex flex-col mt-8 p-8 mx-auto max-w-[90vw] xl:max-w-[80rem] rounded-lg border border-none shadow-md sm:p-4 lg:p-6 text-whitesmoke bg-gray-700 dark:bg-gray-800">
-                <h2 class="pt-8 text-center text-2xl">Leave a comment</h2>
-                <div class="flex pt-4">
+                <div class="flex flex-col pt-4 justify-between">
                     @csrf
                     @auth
                         <div
-                            class="w-[90vw] md:w-1/2 bg-lightgrey dark:bg-gray-500 p-2 pt-4 mx-auto rounded shadow-lg text-black dark:text-white">
+                            class="mx-auto w-full md:w-2/3 bg-lightgrey dark:bg-gray-600 p-2 pt-4 rounded shadow-lg text-black dark:text-white">
                             <div class="flex ml-2">
-                                <div id="container" class="block md:flex w-16 h-16 md:w-24 md:h-24">
+                                <div id="container" class="block md:flex w-12 h-12 md:w-14 md:h-14">
                                     <img id="img-preview" class="rounded-full h-full w-full"
                                         src="../storage/images/{{ request()->user()->profile_picture }}">
-
                                 </div>
                                 <div class="px-4 my-auto">
-
                                     <h1 class="font-semibold">{{ request()->user()->username }}</h1>
                                 </div>
-
                             </div>
-
                             <div class="mt-3 p-3 w-full ">
                                 <form method="POST" action="/posts/{{ $post->slug }}">
                                     @csrf
@@ -183,73 +176,50 @@
                                         rows="3" class="border p-2 rounded w-full text-black" placeholder="Write something..."></textarea>
 
                                     <div class="flex float-right py-2">
-                                        <input type="submit" autocomplete="off" value="Submit"
-                                            class="px-3 py-1 bg-gray-500 dark:bg-blue-600 text-white rounded font-light hover:scale-110">
+                                        <input type="submit" autocomplete="off" value="Submit"g
+                                            class="px-3 py-1 bg-gray-500 dark:bg-blue-600 text-white rounded font-liht hover:scale-110">
                                     </div>
                                 </form>
-
                             </div>
-
                         </div>
+                    @endauth
+                    @foreach ($post->comments as $comment)
+                        <div class="flex flex-col w-full md:w-2/3 float-right gap-2 p-4 m-4 mx-auto bg-gray-700 rounded-lg">
+                            <div class="flex ml-2">
+                                <div id="container" class="block md:flex w-12 h-12 md:w-14 md:h-14">
+                                    <img id="img-preview" class="rounded-full h-full w-full"
+                                        src="../storage/images/{{ request()->user()->profile_picture }}">
+                                </div>
+                                <div class="px-4 my-auto">
+                                    <p>{{ $comment->author->username }}</p>
+                                    <p>Le {{ $comment->created_at }}</p>
 
-                    </div>
-                @endauth
-                <form method="POST" action="/posts/{{ $post->slug }}">
-                    @csrf
-                    <div>
-                        <input autocomplete="off" type="text" name="comment" id="comment"
-                            placeholder="comment  " value="{{ old('name') }}" required>
-                    </div>
-                    <input autocomplete="off" type="submit" value="send">
-                </form>
-
-
-
-                @foreach ($post->comments as $comment)
-                    <p>{{ $comment->author->username }}</p>
-                    <p>{{ $comment->created_at }}</p>
-                    <p>{{ $comment->comment }}</p>
-
-
-                    @if ($comment->author->id == auth()->id())
-                        <form method="POST" action="/comments/{{ $comment->id }}">
-                            @csrf
-                            @method('DELETE')
-                            <input autocomplete="off" type="submit" value="Delete">
-                        </form>
+                                </div>
+                            </div>
+                            <div class="mt-3 p-3 w-full ">
+                                <form method="POST" action="/posts/{{ $post->slug }}">
+                                    @csrf
+                                    <p>{{ $comment->comment }}</p>
+                                </form>
+                            </div>
+                            @if ($comment->author->id == auth()->id())
+                                <form method="POST" action="/comments/{{ $comment->id }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input class="float-right" autocomplete="off" type="submit" value="Delete">
+                                </form>
+                        </div>
                     @endif
-                @endforeach
-                @if ($errors->any())
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @endif
-                {{-- @foreach ($post->comments as $comment)
-                @endfor
-                <p>{{ $comment->author->username }}</p>
-                <p>{{ $comment->created_at }}</p>
-                <p>{{ $comment->comment }}</p>
-                @if ($comment->author->id == auth()->id())
-                    <form method="POST" action="/comments/{{ $comment->id }}">
-                        @csrf
-                        @method('DELETE')
-                        <input autocomplete="off" type="submit" value="Delete">
-                    </form>
-                @endif
-                @endforeach
-                @if ($errors->any())
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                @endif --}}
-
-
+                    @endforeach
+                    @if ($errors->any())
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
             </article>
-
         </section>
         <script>
             var map = L.map('map').setView([<?= json_encode($post->latitude) ?>, <?= json_encode($post->longitude) ?>], 4);

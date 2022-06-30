@@ -30,7 +30,6 @@
                      </div>
                  </div>
                  <div class="font-black tracking-wider">
-
                      <h1 class="z-40 mt-2 mb-2 text-4xl para__text text-lightblue">Hamilton Brite</h1>
                      <h2 class="text-2xl para__text text-whiteish px-4">THE ONLY EVENT PLANNER YOU NEED</h2>
                      @auth()
@@ -43,7 +42,7 @@
                      @endauth
                      <div id="select-container" class="flex flex-wrap text-sm justify-center py-4 px-2 md:px-24 mt-4">
                          @foreach ($categories as $category)
-                             <a class="px-4 py-2 mx-1 text-sm md:text-base my-1 duration-100 ease-in-out cursor-pointer text-whiteish bg-gray-700 dark:bg-gray-800 hover:scale-110 rounded-xl hover:duration-300"
+                             <a class="px-4 py-2 mx-1 text-sm md:text-base my-1 duration-100 ease-in-out cursor-pointer text-whiteish bg-gray-700 dark:bg-gray-800 hover:bg-gray-600 dark:hover:bg-gray-700 hover:scale-105 rounded-xl hover:duration-300"
                                  href="/?category={{ $category->slug }}">{{ $category->name }}</a>
                          @endforeach
                      </div>
@@ -58,19 +57,18 @@
                          </form>
                      </div>
                  </div>
-
              </article>
              @if (empty($_GET))
                  @if ($posts->count())
                      <div class="flex flex-col pb-24 mr-6 rounded-tr-xl rounded-br-xl bg-silver-blue sm:mr-12">
                          <div class="flex pb-4 pl-8 text-left">
-                             <h2 class="pt-8 pb-4 pl-2 text-3xl font-bold text-white md:pl-4">Happening Soon :</h2>
+                             <h2 class="pt-8 pb-8 pl-2 text-3xl font-bold text-white md:pl-4">Near your location :</h2>
                          </div>
                          <div
                              class="grid grid-cols-1 gap-4 md:px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                              @foreach ($posts as $post)
                                  <div
-                                     class="xl:max-w-[1280px] text-sm pb-6 w-56 mx-auto text-black rounded-xl cursor-pointer sm:w-64 overflow-hidden z-2 hover:scale-110 card hover:bg-gray-700 hover:text-whitesmoke hover:duration-300">
+                                     class="text-sm pb-6 w-72 md:w-56 mx-auto text-black rounded-xl cursor-pointer sm:w-64 overflow-hidden z-2 hover:scale-105 card hover:bg-gray-700 hover:text-whitesmoke hover:duration-300">
 
                                      <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                          <div class="max-w-xs mb-2 rounded-lg shadow-lg">
@@ -146,7 +144,7 @@
                          class="grid grid-cols-1 gap-4 md:px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                          @foreach ($posts as $post)
                              <div
-                                 class="xl:max-w-[1280px] text-sm pb-6 w-56 mx-auto text-black rounded-xl cursor-pointer sm:w-64 overflow-hidden z-2 hover:scale-110 card hover:bg-gray-700 hover:text-whitesmoke hover:duration-300    ">
+                                 class="xl:max-w-[1280px] text-sm pb-6 w-56 mx-auto text-black rounded-xl cursor-pointer sm:w-64 overflow-hidden z-2 hover:scale-105 card hover:bg-gray-700 hover:text-whitesmoke hover:duration-300    ">
 
                                  <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                      <div class="max-w-xs mb-2 rounded-lg shadow-lg">
@@ -208,8 +206,8 @@
              <section>
                  <div class="pb-8 mb-16 ml-6 rounded-tl-xl rounded-bl-xl bg-gray-700 sm:ml-16">
                      <div class="text-left pr-8 mt-[-3em] pt-4  flex flex-col">
-                         <h2 class="pt-8 pb-4 pr-6 text-3xl font-bold text-right text-white md:pr-12 ">
-                             Other Sections :
+                         <h2 class="pt-8 pb-12 pr-6 text-3xl font-bold text-right text-white md:pr-12 ">
+                             You might also like :
                          </h2>
                      </div>
 
@@ -217,7 +215,7 @@
                          class="grid grid-cols-1 gap-4 md:px-4 mx-8 text-white sm:gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                          @foreach ($posts as $post)
                              <div
-                                 class="xl:max-w-[1280px] text-sm pb-6 w-56 mx-auto text-black rounded-xl cursor-pointer sm:w-64 card hover:bg-gray-700 hover:text-whitesmoke hover:duration-300 bg-whitesmoke">
+                             class="text-sm pb-6 w-72 md:w-56 mx-auto text-black rounded-xl cursor-pointer sm:w-64 overflow-hidden z-2 hover:scale-105 card hover:bg-gray-700 hover:text-whitesmoke hover:duration-300">
 
                                  <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
                                      <div class="max-w-xs mb-2 rounded-lg shadow-lg">
