@@ -1,8 +1,17 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
+@tailwind components;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+@import url('./reset.css');
+
+
+
+body, * {
+  scroll-behavior: smooth;
+}
+
 
 
 .top{
@@ -38,17 +47,15 @@
 }
 
 .card{
-
     background-color: hsl(0 0% 100% / 0.9);
-    box-shadow: 0 15px 25px rgba(129, 124, 124, 0.2);
-    background-color: rgba(255, 255, 255, 0.2);
-}
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 5px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 0px 0px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  }
 
 #img-preview {
-    display: none; 
     width: 155px;   
-    border: 2px dashed #333;  
-    margin-bottom: 20px;
   }
   #img-preview img {  
     width: 100%;
@@ -59,10 +66,121 @@
   :root{
     --bs-dark: #212529;
   }
-  .theme-container {
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
+
+
+  /* wave container */
+.waves {
+  overflow:hidden;
+  position:relative;
+  width: 100%;
+  height:20vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+  transform:rotate(180deg)
+}
+
+.content {
+  overflow:hidden;
+
+  position:relative;
+  height:25vh;
+  text-align:center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+   transform: translate3d(-90px,0,0);
   }
+  100% { 
+    transform: translate3d(85px,0,0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height:80px;
+    min-height:80px;
+  }
+  .content {
+    height:30vh;
+  }
+}
+
+button,
+input,
+optgroup,
+select,
+textarea,html input[type="button"],
+input[type="reset"],
+input[type="submit"],button[disabled],
+html input[disabled],button::-moz-focus-inner,
+input::-moz-focus-inner, input[type="checkbox"],
+input[type="radio"], input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button, input[type="search"], input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration{
+  border:none;
+  background-image:none;
+  background-color:transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+input {
+  border: none; /* Removes the default border */
+}
+
+input:focus {
+  outline: none /* Removes the border when the input is clicked */
+}
+
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #4B5563 inset !important;
+    box-shadow: 0 0 0 30px #4B5563 inset !important;
+    color:white !important;
+
+} */
+
+.dark-input{
+  
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #4B5563 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}

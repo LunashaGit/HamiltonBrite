@@ -3,15 +3,12 @@
         Create Event Page
     </x-slot>
     <x-slot name="content">
+        <div class="flex my-32 flex-col items-center">
         @foreach ($posts as $post)
             <div
-                class="card rounded-lg mx-auto max-w-sm transition text-black hover:bg-gray-800 hover:text-white duration-100 ease-in-out hover:duration-500 cursor-pointer justify-between bg-whitesmoke">
+                class="card my-6 w-96">
 
                 <a class="{{ $loop->even ? 'Even' : 'No' }}" href="/posts/<?= $post->slug ?>">
-                    <div class=" ">
-                        <img class="w-full max-h-48  object-cover bg-center rounded-t-lg"
-                             src="/storage/images/{{ $post->image }}" alt="Picture of a bridge">
-                    </div>
                     <h2 class=" text-lg lg:text-xl justify-center font-bold m-2 md:m-4 line-clamp-2">
                         {{ $post->title }}
                     </h2>
@@ -28,16 +25,17 @@
                         </div>
                     </div>
                 </a>
+                @auth()
+                    @if(request()->user()->is_admin == 1)
+                        <form method="POST" action="admin-view/posts/{{ $post->id }}/delete">
+                            @csrf
+                            @method('DELETE')
+                            <input autocomplete="off" type="submit" value="Delete">
+                        </form>
+                    @endif
+                @endauth
             </div>
-            @auth()
-                @if(request()->user()->is_admin == 1)
-                    <form method="POST" action="admin-view/posts/{{ $post->id }}/delete">
-                        @csrf
-                        @method('DELETE')
-                        <input autocomplete="off" type="submit" value="Delete">
-                    </form>
-                @endif
-            @endauth
         @endforeach
+        </div>
     </x-slot>
 </x-layout>
