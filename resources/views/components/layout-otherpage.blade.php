@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="/ressources/css/tailwind.css" rel="stylesheet">
+    <link href="../ressources/css/tailwind.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
           integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
           crossorigin=""/>
@@ -26,10 +26,10 @@
         <div class="flex  my-auto ">
           <span class="text-2xl md:text-3xl cursor-pointer">
             <img class="inline mb-[.42em]"
-                 src="assets/logo.svg">
+                 src="../assets/logo.svg">
             <a href="/">Hamilton Brite</a>
-          
-          </span>   
+
+          </span>
           <div class="theme-container shadow-dark pl-4">
             <img id="theme-icon" src="https://www.uplooder.net/img/image/2/addf703a24a12d030968858e0879b11e/moon.svg" alt="ERR">
             </div>
@@ -40,15 +40,15 @@
                     </svg>
              </span>
         </div>
-      
-        
+
+
         <ul class="burger-links md:flex text-gray-800 dark:text-whitesmoke dark:bg-gray-800 md:items-center z-[500] md:static absolute bg-whitesmoke w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 opacity-0 top-[-400px] transition-all ease-in duration-500">
-            
+
             @auth()
                 <li class="mx-4 my-6 md:my-0">
                     <a href="/" class="text-xl duration-500 hover:text-lightblue">HOME</a>
                 </li>
-               
+
                 <li class="mx-4 my-6 md:my-0">
                     <a href="/new" class="text-xl duration-500 hover:text-lightblue">CREATE</a>
                 </li>
@@ -62,9 +62,9 @@
                     @csrf
                     <input class="text-xl duration-500 hover:text-lightblue" type="submit" value="LOG OUT">
                 </form>
-    
+
             @else
-    
+
             <li class="mx-4 my-6 md:my-0">
                 <a href="/" class="text-xl duration-500 hover:text-lightblue">HOME</a>
             </li>
@@ -80,13 +80,13 @@
             @endauth
         </ul>
     </nav>
-    
+
 
 <div class="min-h-screen text-gray-700 bg-whitesmoke dark:text-whitesmoke dark:bg-gray-700 lg:text-xl document font-nunito transition-all ease-in duration-500">
     <div class="min-h-screen overflow-hidden text-center place-content-center">
         {{$content}}
     </div>
-    
+
 </div>
 <footer class="w-full h-48 text-center dark:text-white dark:bg-gray-800 bg-silver-blue text-black">
     <div class="py-4 mx-auto my-auto ">
@@ -101,10 +101,10 @@
     </div>
 </footer>
 
-<script src="ressources/js/nav.js"></script>
-<script src="ressources/js/parallax.js"></script>
-<script src="ressources/js/preload-image.js"></script>
-<script src="ressources/js/dark-mode.js"></script>
+<script src="../ressources/js/nav.js"></script>
+<script src="../ressources/js/parallax.js"></script>
+<script src="../ressources/js/preload-image.js"></script>
+<script src="../ressources/js/dark-mode.js"></script>
 
 </body>
 </html>

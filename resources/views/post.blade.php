@@ -1,4 +1,4 @@
-<x-layout>
+<x-layout-otherpage>
     <x-slot name="title">
         {{ $post->title }}
     </x-slot>
@@ -8,9 +8,7 @@
                 height: 15rem;
                 width: 15rem;
             }
-
         </style>
-
         <section class="w-auto h-full pt-8 pb-16 bg-cover bg-paris bg-silver-blue">
             <div class="card flex flex-col gap-2 p-8 text-black md:w-[50vw] mx-auto">
                 <div class="post__top">
@@ -22,7 +20,7 @@
                     </p>
 
                     <p>{{ $post->body }}</p>
-                    <div class="flex flex-col float-left text-left">
+                    <div class="">
                         <label>Starting :</label>
                         <h6>{{ $post->date_start }}</h6>
                         <label>At :</label>
@@ -34,6 +32,15 @@
                         <label>At :</label>
                         <h5>{{ $post->end_hour }}</h5>
                     </div>
+                    @auth()
+                        @if ($post->author->id == auth()->id())
+                            <form method="POST" action="/posts/{{ $post->id }}/delete">
+                                @csrf
+                                @method('DELETE')
+                                <input autocomplete="off" type="submit" value="Delete">
+                            </form>
+                        @endif
+                    @endauth
                 </div>
                 @auth()
                 @if (request()->user()->username == $post->author->username && request()->user()->id == $post->author->id)
@@ -65,7 +72,6 @@
                                 <button class="border-2 border-white " type="submit" value="Participate">I
                                     participate</button>
                             @endif
-
                             <a class="flex justify-center float-right align-center" href="/">Go Back</a>
                         </div>
                         <div class="comment__section">
@@ -115,4 +121,4 @@
         </script>
     </x-slot>
 
-</x-layout>
+</x-layout-otherpage>

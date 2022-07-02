@@ -16,4 +16,4 @@ const simpleParallax = (elem, modifier) => {
 simpleParallax('top',8);
 
 let text=document.getElementsByClassName('.para__text');
-simpleParallax('para__text',8);
+simpleParallax('parallax',8);

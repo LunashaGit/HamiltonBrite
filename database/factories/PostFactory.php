@@ -29,8 +29,9 @@ class PostFactory extends Factory
             'end_hour' => $this->faker->time,
             'excerpt' => $this->faker->sentence,
             'body' => $this->faker->paragraph,
+            'address' => $this->faker->address,
             'latitude' => $this->faker->latitude,
-            'longitude' => $this->faker->longitude
+            'longitude' => $this->faker->longitude,
         ];
     }
 }

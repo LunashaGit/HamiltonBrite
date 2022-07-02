@@ -57,7 +57,10 @@ class PostController extends Controller
         $post->title = $request->title;
         $post->excerpt = $request->excerpt;
         $post->body = $request->body;
-        $post->date = $request->date;
+        $post->date_start = $request->date_start;
+        $post->date_end = $request->date_end;
+        $post->start_hour = $request->start_hour;
+        $post->end_hour = $request->end_hour;
         $post->slug = $post->title;
         $post->slug = str_replace(" ", "-", $post->slug);
         $post->save();
@@ -65,6 +68,12 @@ class PostController extends Controller
         return $this->redirect('/');
     }
 
+    public function destroy($id)
+    {
+        $post = Post::where('id', $id)->first();
+        $post->delete();
+        return $this->redirect('/')->with('Success', 'Your post has been deleted');
+    }
 
 
 }

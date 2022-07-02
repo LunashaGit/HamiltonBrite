@@ -1,4 +1,6 @@
 module.exports = {
+    darkMode: 'class',
+
     content: [
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
@@ -11,6 +13,9 @@ module.exports = {
 
         },
         extend: {
+            maxWidth: {
+                'address': '22ch',
+              },
             backgroundImage: {
                 'concert': "url('/assets/livephoto.jpg')",
                 'manathan': "url('/assets/manathan.jpg')",
@@ -21,7 +26,7 @@ module.exports = {
                   'silver':'#E5E4E2',
                   'dark-silver':'#7F8CA1',
                   'silver-blue':'#506587',
-                  'lightblue':'#5EB4E6',
+                  'lightblue':'#91B2C7',
                   'pourpre':'#A0366F',
                   'whitesmoke':'#f5f5f5',
               }

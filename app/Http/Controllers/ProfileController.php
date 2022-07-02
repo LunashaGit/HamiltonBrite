@@ -34,18 +34,25 @@ class ProfileController extends Controller
     {
         $user = User::where('id', $id)->first();
         $user->username = $request->username;
-        $user->name = $request->name;
+        $user->firstname = $request->firstname;
+        $user->lastname = $request->lastname;
+        $user->bio = $request->bio;
         $user->email = $request->email;
 
         if($request->password != $request->passwordconfirm){
             return "No";
         }
 
+        $file = $request->file('image');
+        $imageName = time().'.'.$request->image->extension();
+        $user->profile_picture = $imageName;
+        $file->storeAs('public/images', $imageName);
+
         $user->password = $request->password;
 
         bcrypt($user->password);
         $user->save();
 
-        return $this->redirect('/');
+        return $this->redirect('/')->with('Success', 'Profile has been changed !');
     }
 }
